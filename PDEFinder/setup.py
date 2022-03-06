@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="demopackage",
+    name="PDETool",
     version="1.0.0",
-    author="demo_author",
-    author_email="demo@email.com",
-    description="A small demo package",
+    author="José Freitas",
+    author_email="jpsfreitas12@gmail.com",
+    description="Package for plastic degrading enzymes prediction from metagenomic samples",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/username/demopackage",
+    url="https://github.com/pg42872/PDETool",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
