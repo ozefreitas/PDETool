@@ -1,0 +1,10 @@
+# IDE generated files #
+############
+*.code-worspace
+*.idea
+
+# Packages #
+############
+*.zip
+*.tar
+*.rar
