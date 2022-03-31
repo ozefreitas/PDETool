@@ -8,3 +8,7 @@
 *.zip
 *.tar
 *.rar
+
+# Databases #
+############
+**/Databases
