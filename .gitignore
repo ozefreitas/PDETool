@@ -12,3 +12,7 @@
 # Databases #
 ############
 **/Databases
+
+# Pypl dependencies #
+############
+src/PDETool.egg-info/
