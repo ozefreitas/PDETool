@@ -15,8 +15,18 @@ seq_id = diamond_outfile[["Query accession", "Target accession", "Sequence ident
 print(seq_id)
 
 # retirar os grupos de enzimas com similaridade de 60% a 90% com incrementos de 5%
-for perc in range(60, 91, 5):
-    print(perc)
+target_enzymes = {}
+for perc in range(60, 86, 5):
+    chave = str(perc)+"-"+str(perc+5)
+    for index, seq in seq_id.iterrows():
+        if seq["Sequence identity"] >= perc and seq["Sequence identity"] < perc+5:
+            if chave not in target_enzymes.keys():
+                target_enzymes[chave] = [seq["Target accession"]]
+            else:
+                target_enzymes[chave].append(seq["Target accession"])
+
+print(target_enzymes.keys())
+print(target_enzymes.values())
 
 # passar a csv ambos 
 diamond_outfile.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/BLAST/best_matches.csv")
