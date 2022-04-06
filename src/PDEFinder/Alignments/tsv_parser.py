@@ -6,7 +6,7 @@ header = ["Query accession", "Target accession", "Sequence identity",
             "Query end", "Target start", "Target end", "E-value", "Bit score"]
 
 # ler file em csv separado por tabs
-diamond_outfile = pd.read_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/BLAST/diamond_out.tsv", sep="\t", names=header)
+diamond_outfile = pd.read_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/diamond_out.tsv", sep="\t", names=header)
 print(diamond_outfile)
 
 # selecionar colunas com perc. identity juntamente com os IDs das sequencias
@@ -29,5 +29,5 @@ print(target_enzymes.keys())
 print(target_enzymes.values())
 
 # passar a csv ambos 
-diamond_outfile.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/BLAST/best_matches.csv")
-seq_id.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/BLAST/sequences_identity.csv")
+diamond_outfile.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/best_matches.csv")
+seq_id.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/sequences_identity.csv")
