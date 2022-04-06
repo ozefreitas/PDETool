@@ -4,10 +4,13 @@ def fasta_retriever(seq_ids = None, filename = None):
     file = open(file=filename, mode="w")
     for seq in seq_ids:
         data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + str(seq) + ".fasta")
-        fasta = data.read()
-        fasta = fasta.splitlines()
+        dados = data.read()
+        encoding = 'utf-8'
+        fasta = dados.decode(encoding)
+        fasta = fasta.split("\n")
     for line in fasta:
-        file.writelines(line)
+        file.write(line)
+        file.write("\n")
     file.close()
 
 # seq = fasta_retriever()
