@@ -31,3 +31,5 @@ print(target_enzymes.values())
 # passar a csv ambos 
 diamond_outfile.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/best_matches.csv")
 seq_id.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/sequences_identity.csv")
+
+# PASSAR PARA FUNÇÃO E CRIAR NOVO SCRIPT PARA RETIRAR AS SEQUENCIAS DA UNIPROT
