@@ -15,10 +15,11 @@ def fasta_retriever(seq_ids, filename):
     for seqs in seq_ids.values():
         for seq in seqs:
             # muda a seq para o codigo que o uniprot aceite como ID
-
+            code = re.findall("\|.*\|", seq)
+            clean = re.sub("\|", "", code[0])
             try:
                 # faz o download da sequencia em formato fasta
-                data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + str(seq) + ".fasta")
+                data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + clean + ".fasta")
             except:
                 continue
             dados = data.read()
@@ -36,7 +37,7 @@ def fasta_retriever(seq_ids, filename):
 # seq = fasta_retriever()
 # print(seq)
 
-def url_retriever(seq_ids=None):
+def test_retriever():
     code = "Q7Z7W5"
     data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + code + ".fasta")
     dados = data.read()
