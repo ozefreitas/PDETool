@@ -2,17 +2,18 @@ import urllib.request
 import re
 
 
-def fasta_retriever(seq_ids, filename):
+def fasta_retriever(seq_ids, filename=None):
     """Given a dictionary with UniProt ID's, write a fasta file with all fasta sequences of the corresponding ID's
 
     Args:
         seq_ids (dictionary): A dictionary where the keys are intervals of sequence similarity, and values are lists of UniProtKB queries 
-        filename (string): A name to asign to the fasta file containing all sequences
+        filename (string, optional): A name to asign to the fasta file containing all sequences
     """
-    # abre o ficheiro no modo write
-    file = open(file=filename, mode="w")
+
     # iterar pelos values do dicionário, que são listas
-    for seqs in seq_ids.values():
+    for ident, seqs in seq_ids.items():
+        # abre o ficheiro no modo write
+        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond" + ident + ".fasta", mode="w")
         for seq in seqs:
             # muda a seq para o codigo que o uniprot aceite como ID
             code = re.findall("\|.*\|", seq)
@@ -32,7 +33,7 @@ def fasta_retriever(seq_ids, filename):
                 # vai adicionar uma linha ao ficheiro, juntamente com o \n no final, para fazer uma nova linha
                 file.write(line)
                 file.write("\n")
-    file.close()
+        file.close()
 
 # seq = fasta_retriever()
 # print(seq)
