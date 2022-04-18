@@ -2,7 +2,7 @@ import urllib.request
 import re
 
 
-def fasta_retriever(seq_ids, filename=None):
+def fasta_retriever(seq_ids, dic=False, filename=None):
     """Given a dictionary with UniProt ID's, write a fasta file with all fasta sequences of the corresponding ID's
 
     Args:
@@ -11,10 +11,33 @@ def fasta_retriever(seq_ids, filename=None):
     """
 
     # iterar pelos values do dicionário, que são listas
-    for ident, seqs in seq_ids.items():
-        # abre o ficheiro no modo write
-        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond" + ident + ".fasta", mode="w")
-        for seq in seqs:
+    if dic:
+        for ident, seqs in seq_ids.items():
+            # abre o ficheiro no modo write
+            file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond" + ident + ".fasta", mode="w")
+            for seq in seqs:
+                # muda a seq para o codigo que o uniprot aceite como ID
+                code = re.findall("\|.*\|", seq)
+                clean = re.sub("\|", "", code[0])
+                try:
+                    # faz o download da sequencia em formato fasta
+                    data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + clean + ".fasta")
+                except:
+                    continue
+                dados = data.read()
+                # urllib.request.urlopen retorna os dados em forma de bytes, tem que ser convertido em string
+                encoding = 'utf-8'
+                fasta = dados.decode(encoding)
+                fasta = fasta.split("\n")
+                # para cada elemento da lista gerado pelo split
+                for line in fasta:
+                    # vai adicionar uma linha ao ficheiro, juntamente com o \n no final, para fazer uma nova linha
+                    file.write(line)
+                    file.write("\n")
+            file.close()
+    else:
+        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond_target_enzymes.fasta", mode="w")
+        for seq in seq_ids:
             # muda a seq para o codigo que o uniprot aceite como ID
             code = re.findall("\|.*\|", seq)
             clean = re.sub("\|", "", code[0])

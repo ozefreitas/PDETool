@@ -50,5 +50,17 @@ def iter_per_sim(dataframe):
                     target_enzymes[chave].append(seq["Target accession"])
     return target_enzymes
 
+def above_60(dataframe, inc_100=False):
+    seq_id = dataframe[["Query accession", "Target accession", "Sequence identity"]]
+    target_enzymes = []
+    for index, seq in seq_id.iterrows():
+        if inc_100:
+            if seq["Sequence identity"] >= 60:
+                target_enzymes.append(seq["Target accession"])
+        else:
+            if seq["Sequence identity"] >= 60 and seq["Sequence identity"] < 90:
+                target_enzymes.append(seq["Target accession"])
+    return target_enzymes
+
 # passar a csv
 # seq_id.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/sequences_identity.csv")
