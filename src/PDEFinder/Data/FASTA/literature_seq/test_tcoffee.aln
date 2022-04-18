@@ -1,0 +1,95 @@
+CLUSTAL FORMAT for T-COFFEE Version_12.00.7fb08c2 [http://www.tcoffee.org] [MODE:  ], CPU=0.11 sec, SCORE=390, Nseq=5, Len=606 
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  MPFNK--KSVLALCGAGALLFSMSALANNPAPT--DPGDSGGGSAYQR--
+sp|G9BY57|PETH_UNKP             MDGVLWRVRTAALMAALLALAAWALVWA--SPS--VEA---QSNPYQR--
+tr|O22443|O22443_SOYBN          MGSMR--LLVVALLCAFAMHAGFSVSYAQLTPT--FYRET-CPNLFPIVF
+sp|Q02567|PEM1_PHACH            MAFKS--LIAFVALAA-AVRAAPTAVCP--DGTRVSHA-A-CCAFIPL--
+sp|Q9HTK9|RURE_PSEAE            MSERA--PLVIIGTGL-A-GYNLAREWR---------K-L-------D--
+                                *        .             :                          
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  GPDPSVSFLEADRGQYS---VRSSRVSS-LV----------SGFGGGTIY
+sp|G9BY57|PETH_UNKP             GPNPTRSALTAD-GPFS---VATYTVSRLSV----------SGFGGGVIY
+tr|O22443|O22443_SOYBN          GVIFDASFTDPRIGASL---MRLHFHDC-FV----------QGCDGSVLL
+sp|Q02567|PEM1_PHACH            AQDLQETIFQNECGEDAHEVIRLTFHDA-IAISRSQGPKAGGGADGSMLL
+sp|Q9HTK9|RURE_PSEAE            GETPL-LMITAD--------------------------------DGRSYS
+                                .                                           .*    
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  YPTGTTGTMGAVVVI------PGFVSAESSIDWWGPKLASYGFVVMTIDT
+sp|G9BY57|PETH_UNKP             YPTGTSLTFGGIAMS------PGYTADASSLAWLGRRLASHGFVVLVINT
+tr|O22443|O22443_SOYBN          NNTDTI--------ESEQDALPNINSI-RGLD------------------
+sp|Q02567|PEM1_PHACH            FPTVE----------------PNFSAN-NGI------------------D
+sp|Q9HTK9|RURE_PSEAE            KPMLS----------------TGFSKN-KDA------------------D
+                                                     ..      .                    
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  -------------------------------------NTGFDQPPSRARQ
+sp|G9BY57|PETH_UNKP             -------------------------------------NSRFDYPDSRASQ
+tr|O22443|O22443_SOYBN          V-VNDIKTAVENSCPDTVSCADILAIAAEIAS-VLGGGPGWPVPLGRRDS
+sp|Q02567|PEM1_PHACH            DSVNNLIPFMQK--HNTISAADLVQFAGAVALSNCPGAPRLEFLAGRPNK
+sp|Q9HTK9|RURE_PSEAE            -------------------------------------GLAMAEPGAMAEQ
+                                                                             .   .
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  INNALDYLVSQNSRSSSPVRGMIDTN------------RLGVIG------
+sp|G9BY57|PETH_UNKP             LSAALNYLRTS---SPSAVRARLDAN------------RLAVAG------
+tr|O22443|O22443_SOYBN          LTA---------NRTL--ANQNLPAP------------FFNLTQLKASFA
+sp|Q02567|PEM1_PHACH            TIA--------------AVDGLIPEP------------QDSVTKILQRFE
+sp|Q9HTK9|RURE_PSEAE            LNARILTH--------TRVTGIDPGHQRIWIGEEEVRYRDLVLA------
+                                                  .                      :        
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  --W--------SMGGGGTLRVASEG-RIKAAIPLAP-WDTT-SYYASRSQ
+sp|G9BY57|PETH_UNKP             --H--------SMGGGGTLRIAEQNPSLKAAVPLTP-WHTD-KTFN--TS
+tr|O22443|O22443_SOYBN          -VQGLNTLDLVTLSGGHTFGRARCSTFINRLYNFSNTGNPD-PTLN--TT
+sp|Q02567|PEM1_PHACH            DAGGFTPFEVVSLLASHSVARA--D-KVDQTIDAAP-FDSTPFTFD--TQ
+sp|Q9HTK9|RURE_PSEAE            --W-----------GAEPIRVPVEG-DAQDA--LYP-INDL-EDYARFRQ
+                                              .. ..  .  .   .         .           
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  A--PT------------------------------------LI-------
+sp|G9BY57|PETH_UNKP             V--PV------------------------------------LI-------
+tr|O22443|O22443_SOYBN          Y-LEV------------------------------------LRARC----
+sp|Q02567|PEM1_PHACH            VFLEV------------------------------------LLKGVGFPG
+sp|Q9HTK9|RURE_PSEAE            A--AAGKRRVLLLGAGLIGCEFANDLSSGGYQLDVVAPCEQVMPGLLHPA
+                                    .                                    :        
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  --------------------------------------------------
+sp|G9BY57|PETH_UNKP             --------------------------------------------------
+tr|O22443|O22443_SOYBN          PQ----------------------------------NATGDNLTNLDLST
+sp|Q02567|PEM1_PHACH            SA----------------------------------NNTGEVASPLPLGS
+sp|Q9HTK9|RURE_PSEAE            AAKAVQAGLEGLGVRFHLGPVLASLKKAGEGLEAHLSDGEVIPCD-----
+                                                                                  
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  -------------------FACESDV------------------------
+sp|G9BY57|PETH_UNKP             -------------------VGAEADT------------------------
+tr|O22443|O22443_SOYBN          -PDQFDNRYYSNLLQLNGLLQSDQEL------------------------
+sp|Q02567|PEM1_PHACH            GSDTGEM-----------RLQSDFALAHDPRTACIWQ-G-FVNEQAFMAA
+sp|Q9HTK9|RURE_PSEAE            --------------------LVVSAVGLRPRTELAFAAGLAVNRGIVVDR
+                                                                                  
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  ------------------------I--------APVL-------QHASPF
+sp|G9BY57|PETH_UNKP             ------------------------V--------APVS-------QHAIPF
+tr|O22443|O22443_SOYBN          ------------------------F--------STPG-------ADTIPI
+sp|Q02567|PEM1_PHACH            SFRAAMSKLAVLGHNRNSLIDCSDV--------VPVP-------KPATGQ
+sp|Q9HTK9|RURE_PSEAE            SLRTSHANIYALG-------DCAEVDGLNLLYVMPLMACARALAQTLAGN
+                                                        .         .               
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  YNSLPSSIDKAFVEIN---------GGSHYCGNGGSIYND-VLSRFGVSW
+sp|G9BY57|PETH_UNKP             YQNLPSTTPKVYVELD---------NASHFAPNS---NNA-AISVYTISW
+tr|O22443|O22443_SOYBN          VNSFSSNQ------------------------------NT-FFSNFRVSM
+sp|Q02567|PEM1_PHACH            PAMFPASTGPQDLELS---------CPSERFPTL---TTQPGASQSLIA-
+sp|Q9HTK9|RURE_PSEAE            PSQV--AYGPMPVTVKTPACPLVVSPPPRGMDGQ---WLVEGSGTDLKV-
+                                   .                                       .      
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  MKLH--------------LDEDSRYKQFLCGPNHTSDS-QISDYRG---N
+sp|G9BY57|PETH_UNKP             MKLW--------------VDNDTRYRQFLCNVN---DP-ALSDFRTNNRH
+tr|O22443|O22443_SOYBN          IKMGNIGVLTGDEGEIRLQCNFVNGDSFGLASV---ASKDAKQ--KLVAQ
+sp|Q02567|PEM1_PHACH            ------------------HCPDGSMSCPGVQFN---GP-A----------
+sp|Q9HTK9|RURE_PSEAE            ------------------LCRDTAGRVIGYALT---GA-AVNEKLALNKE
+                                                                     .            
+
+tr|A0A1H6AD45|A0A1H6AD45_9PSED  CPY---
+sp|G9BY57|PETH_UNKP             CQ----
+tr|O22443|O22443_SOYBN          SK----
+sp|Q02567|PEM1_PHACH            ------
+sp|Q9HTK9|RURE_PSEAE            LPGLMA
+                                      
+
+
+
