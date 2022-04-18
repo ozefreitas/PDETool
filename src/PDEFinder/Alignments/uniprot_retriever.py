@@ -36,7 +36,7 @@ def fasta_retriever(seq_ids, dic=False, filename=None):
                     file.write("\n")
             file.close()
     else:
-        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond_target_enzymes.fasta", mode="w")
+        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond/Diamond_target_enzymes.fasta", mode="w")
         for seq in seq_ids:
             # muda a seq para o codigo que o uniprot aceite como ID
             code = re.findall("\|.*\|", seq)
