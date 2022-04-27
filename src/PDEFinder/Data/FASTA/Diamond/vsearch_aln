@@ -1,0 +1,797 @@
+vsearch --cluster_fast Diamond_target_enzymes.fasta --msaout vsearch_msa --alnout vsearch_aln --id 0.9
+vsearch v2.10.4_linux_x86_64, 12.4GB RAM, 12 cores
+
+Query >tr|A0A379INR0|A0A379INR0_PSEME
+ %Id   TLen  Target
+ 93%    259  tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+ Query 259nt >tr|A0A379INR0|A0A379INR0_PSEME
+Target 259nt >tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+Qry   1 + msavvvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarthtrtgdghk 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + msavvvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarthtrtgdghk 64
+
+Qry  65 + rwgavayrdvawgarvgdadavnddyarrsavagkrrvgaggcandtaggyvacvmghaaaaav 128
+          |||||          ||||||||||||||||||||||||||||||| |||||||||||||| ||
+Tgt  65 + rwgavyrdvawgarvvgdadavnddyarrsavagkrrvgaggcandsaggyvacvmghaaasav 128
+
+Qry 129 + agggvrhgvasdrgdaatsdgsvcdavvsavgrrtaaaaagdnrgvmvdrhrtshanyagdcav 192
+          |||||||||||||| ||||||  ||||||||||||||||||||||||||| |||||||||||||
+Tgt 129 + agggvrhgvasdrg-aatsdgracdavvsavgrrtaaaaagdnrgvmvdr-rtshanyagdcav 190
+
+Qry 193 + dgnyvmmacaraaktagtavsygm-tvktvcvvsrgsgwtvgsgsdkacr-asgagyatgaavk 254
+          |||||||||||||||||||||||| ||||||||||||||||||||||||| |||||||||||||
+Tgt 191 + dgnyvmmacaraaktagtavsygmvtvktvcvvsrgsgwtvgsgsdkacrdasgagyatgaavk 254
+
+Qry 255 + ankaa 259
+          |||||
+Tgt 255 + ankaa 259
+
+261 cols, 243 ids (93.1%), 4 gaps (1.5%)
+
+Query >tr|A0A1G5XLW2|A0A1G5XLW2_9PSED
+ %Id   TLen  Target
+ 97%    259  tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+ Query 258nt >tr|A0A1G5XLW2|A0A1G5XLW2_9PSED
+Target 259nt >tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+Qry   1 + msavvvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarthtrtgdghk 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + msavvvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarthtrtgdghk 64
+
+Qry  65 + rwgavyrdvawgarvvgdadavnddyarrsavagkrrvgaggcandsaggyvacvmghaaasav 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + rwgavyrdvawgarvvgdadavnddyarrsavagkrrvgaggcandsaggyvacvmghaaasav 128
+
+Qry 129 + agggvrhgvasdrgdaatsdgrcdavvsavgrrtaaaaagdnrgvmvdrrtshanyagdcavdg 192
+          |||||||||||||| |      ||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + agggvrhgvasdrgaatsdgracdavvsavgrrtaaaaagdnrgvmvdrrtshanyagdcavdg 192
+
+Qry 193 + nyvmmacaraaktagtavsygmvtvktvcvvsrgsgwtvgsgsdkacr-asgagyatgaavkan 255
+          |||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||
+Tgt 193 + nyvmmacaraaktagtavsygmvtvktvcvvsrgsgwtvgsgsdkacrdasgagyatgaavkan 256
+
+Qry 256 + kaa 258
+          |||
+Tgt 257 + kaa 259
+
+259 cols, 251 ids (96.9%), 1 gaps (0.4%)
+
+Query >tr|A0A024HPL2|A0A024HPL2_PSEKB
+ %Id   TLen  Target
+ 93%    258  tr|A0A239GSC2|A0A239GSC2_9PSED
+
+ Query 257nt >tr|A0A024HPL2|A0A024HPL2_PSEKB
+Target 258nt >tr|A0A239GSC2|A0A239GSC2_9PSED
+
+Qry   1 + msnavgtgagynarwrkdgt-taddgrsyskmstgskdkdadgamagamakarthtrvtgdghk 63
+          |||||||||||||||||| | |||||||||||||||| ||||||||||||||||||||||||||
+Tgt   1 + msnavgtgagynarwrkdatvtaddgrsyskmstgsknkdadgamagamakarthtrvtgdghk 64
+
+Qry  64 + rwgvyrdvawgatrvvgda-rnddyarraaaagksrvgaggcandssggy-dvvacvmghaaaa 125
+          |||||||||||||||||||  ||||||||||||| ||||||||||| ||| |||||||||||||
+Tgt  65 + rwgvyrdvawgatrvvgdadanddyarraaaagkrrvgaggcandsaggyrdvvacvmghaaaa 128
+
+Qry 126 + avagggvkhgvnragdaahsdgscdvvsavgrrdaagagvnrgvvvnrrtshanyagdcavdgn 189
+          ||||||| |||||   |||||| ||||||||||||| |||||||||||||||||||||||||||
+Tgt 129 + avagggvrhgvnrragaahsdgvcdvvsavgrrdaa-agvnrgvvvnrrtshanyagdcavdgn 191
+
+Qry 190 + yvmmacaraatagktavsygmvtvktvcvvsrgsdgwvgsgadkvcrdaagrgyatgaavnksn 253
+          |||| |||||||||||| |||||||||||||||||||||||||||||| ||||||||||| |||
+Tgt 192 + yvmmncaraatagktavaygmvtvktvcvvsrgsdgwvgsgadkvcrdtagrgyatgaavgksn 255
+
+Qry 254 + kam 256
+          || 
+Tgt 256 + kAA 258
+
+259 cols, 240 ids (92.7%), 4 gaps (1.5%)
+
+Query >tr|A0A127N1R3|A0A127N1R3_9PSED
+ %Id   TLen  Target
+ 97%    258  tr|A0A239GSC2|A0A239GSC2_9PSED
+
+ Query 257nt >tr|A0A127N1R3|A0A127N1R3_9PSED
+Target 258nt >tr|A0A239GSC2|A0A239GSC2_9PSED
+
+Qry   1 + msnavgtgagynarwrkda-staddgrsyskmstgsknkdadgamagamakarthtrvtgdghk 63
+          |||||||||||||||||||  |||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + msnavgtgagynarwrkdatvtaddgrsyskmstgsknkdadgamagamakarthtrvtgdghk 64
+
+Qry  64 + rwgvyrdvawgatrvvgdadanddyarraaaagkrrvgaggcandsaggyrdvvacvmghaaaa 127
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + rwgvyrdvawgatrvvgdadanddyarraaaagkrrvgaggcandsaggyrdvvacvmghaaaa 128
+
+Qry 128 + avagggvrhgvnrragsahsdgvcdvvsavgrrdaasgvnrgvvvnrrtshanyagdcavdgny 191
+          |||||||||||||||| ||||||||||||||||||| |||||||||||||||||||||||||||
+Tgt 129 + avagggvrhgvnrragaahsdgvcdvvsavgrrdaaagvnrgvvvnrrtshanyagdcavdgny 192
+
+Qry 192 + vmmscaraatagktavsygmvtvktvcvvsrgsdgwvgsgadkvcrdtagrgyatgaavsksnk 255
+          ||| |||||||||||| |||||||||||||||||||||||||||||||||||||||||| ||||
+Tgt 193 + vmmncaraatagktavaygmvtvktvcvvsrgsdgwvgsgadkvcrdtagrgyatgaavgksnk 256
+
+Qry 256 + aa 257
+          ||
+Tgt 257 + AA 258
+
+258 cols, 251 ids (97.3%), 1 gaps (0.4%)
+
+Query >tr|A0A1G7P1G2|A0A1G7P1G2_9PSED
+ %Id   TLen  Target
+ 95%    259  tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+ Query 257nt >tr|A0A1G7P1G2|A0A1G7P1G2_9PSED
+Target 259nt >tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+Qry   1 + msavvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarththtgdghkr 64
+             ||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||
+Tgt   2 + savvvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarthtrtgdghkr 65
+
+Qry  65 + wgavyrdvawgarvvgdadavnddyarrsavagkrrvgaggcandsaggyvacvmghaaasava 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  66 + wgavyrdvawgarvvgdadavnddyarrsavagkrrvgaggcandsaggyvacvmghaaasava 129
+
+Qry 129 + gggvrhgvasdrgdaatsdgrcdavvsavgrrtaaaaagdnrgvmvdrrtshanyagdcavdgn 192
+          ||||||||||||| |      |||||||||||||||||||||||||||||||||||||||||||
+Tgt 130 + gggvrhgvasdrgaatsdgracdavvsavgrrtaaaaagdnrgvmvdrrtshanyagdcavdgn 193
+
+Qry 193 + yvmmacaraaktagtavsygmvtvktvcvvsrgsgwtvgsgsdkacr-asgagyatgaavkank 255
+          ||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||
+Tgt 194 + yvmmacaraaktagtavsygmvtvktvcvvsrgsgwtvgsgsdkacrdasgagyatgaavkank 257
+
+Qry 256 + aa 257
+          ||
+Tgt 258 + aa 259
+
+258 cols, 246 ids (95.3%), 1 gaps (0.4%)
+
+Query >tr|A0A1I5NWE0|A0A1I5NWE0_9PSED
+ %Id   TLen  Target
+ 93%    259  tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+ Query 257nt >tr|A0A1I5NWE0|A0A1I5NWE0_9PSED
+Target 259nt >tr|A0A1I5YHU4|A0A1I5YHU4_9PSED
+
+Qry   1 + msavvvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarthtrtgdghk 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + msavvvgtgagynakwrkdtttaddgrsyskmstggknkdadgamaagamanarthtrtgdghk 64
+
+Qry  65 + rwgavyrdvawgarvvgdada-nddyarrsavagkrrvgaggcandsaggyvacvmghaaasav 127
+          ||||||||||||||||||||| ||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + rwgavyrdvawgarvvgdadavnddyarrsavagkrrvgaggcandsaggyvacvmghaaasav 128
+
+Qry 128 + agggvrhgvasdhgdaassdgscdavvsavgrraaaaagdvnrgvmvdrrtshanyagdcavdg 191
+          |||||||||||| | | |    ||||||||||| ||||   |||||||||||||||||||||||
+Tgt 129 + agggvrhgvasdrgaatsdgracdavvsavgrrtaaaaagdnrgvmvdrrtshanyagdcavdg 192
+
+Qry 192 + nyvmmacaraaktagtavsygmvtvktacvvsrgrgwtvgsgsdkvcr-aygagyatgaavkan 254
+          ||||||||||||||||||||||||||| |||||| |||||||||| || | |||||||||||||
+Tgt 193 + nyvmmacaraaktagtavsygmvtvktvcvvsrgsgwtvgsgsdkacrdasgagyatgaavkan 256
+
+Qry 255 + kaa 257
+          |||
+Tgt 257 + kaa 259
+
+259 cols, 242 ids (93.4%), 2 gaps (0.8%)
+
+Query >tr|A0A4Z0INC7|A0A4Z0INC7_9PSED
+ %Id   TLen  Target
+ 97%    258  tr|A0A239GSC2|A0A239GSC2_9PSED
+
+ Query 256nt >tr|A0A4Z0INC7|A0A4Z0INC7_9PSED
+Target 258nt >tr|A0A239GSC2|A0A239GSC2_9PSED
+
+Qry   1 + msnavgtgagynarwrkdat-taddgrsyskmstgskdkdadgamagamakarthtrvtgdghk 63
+          |||||||||||||||||||| |||||||||||||||| ||||||||||||||||||||||||||
+Tgt   1 + msnavgtgagynarwrkdatvtaddgrsyskmstgsknkdadgamagamakarthtrvtgdghk 64
+
+Qry  64 + rwgvyrdvawgatrvvgdadanddyarraaaagkrrvgaggcandsaggyrdvvacvmghaaaa 127
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + rwgvyrdvawgatrvvgdadanddyarraaaagkrrvgaggcandsaggyrdvvacvmghaaaa 128
+
+Qry 128 + avagggvrhgvn-ragsahsdgvcdvvsavgrrdatsgvnrgvvvnrrtshanyagdcavdgny 190
+          |||||||||||| ||| ||||||||||||||||||  |||||||||||||||||||||||||||
+Tgt 129 + avagggvrhgvnrragaahsdgvcdvvsavgrrdaaagvnrgvvvnrrtshanyagdcavdgny 192
+
+Qry 191 + vmmscaraatagktavsygmvtvktvcvvsrgsdgwvgsgadkvcrdtagrgyatgaavsksnk 254
+          ||| |||||||||||| |||||||||||||||||||||||||||||||||||||||||| ||||
+Tgt 193 + vmmncaraatagktavaygmvtvktvcvvsrgsdgwvgsgadkvcrdtagrgyatgaavgksnk 256
+
+Qry 255 + aa 256
+          ||
+Tgt 257 + AA 258
+
+258 cols, 249 ids (96.5%), 2 gaps (0.8%)
+
+Query >tr|Q8NKA9|Q8NKA9_9APHY
+ %Id   TLen  Target
+100%    253  tr|Q8NKA9|Q8NKA9_9APHY
+
+ Query 253nt >tr|Q8NKA9|Q8NKA9_9APHY
+Target 253nt >tr|Q8NKA9|Q8NKA9_9APHY
+
+Qry   1 + mastvavaaaaraattdsavcsdgttvnnaaccaadanndcgdahvrthdaassgtagggadgs 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + mastvavaaaaraattdsavcsdgttvnnaaccaadanndcgdahvrthdaassgtagggadgs 64
+
+Qry  65 + mtvnganngddsvnnmkhntsagdvagavaancgaragrnkttaadgvdsvtkradagnsvvsa 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + mtvnganngddsvnnmkhntsagdvagavaancgaragrnkttaadgvdsvtkradagnsvvsa 128
+
+Qry 129 + shsaradkvdtdaadsttdtvvkgvggaanntgvtstgsgadtgmrsdaardsrtacwgvnama 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + shsaradkvdtdaadsttdtvvkgvggaanntgvtstgsgadtgmrsdaardsrtacwgvnama 192
+
+Qry 193 + ssraamskavghsrsadcsdvvkavnkaTASTGDACTTSKTTTDGASTHCSDGSMSCADGA 253
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + ssraamskavghsrsadcsdvvkavnkaTASTGDACTTSKTTTDGASTHCSDGSMSCADGA 253
+
+253 cols, 253 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q8NKA9|Q8NKA9_9APHY
+ %Id   TLen  Target
+100%    253  tr|Q8NKA9|Q8NKA9_9APHY
+
+ Query 253nt >tr|Q8NKA9|Q8NKA9_9APHY
+Target 253nt >tr|Q8NKA9|Q8NKA9_9APHY
+
+Qry   1 + mastvavaaaaraattdsavcsdgttvnnaaccaadanndcgdahvrthdaassgtagggadgs 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + mastvavaaaaraattdsavcsdgttvnnaaccaadanndcgdahvrthdaassgtagggadgs 64
+
+Qry  65 + mtvnganngddsvnnmkhntsagdvagavaancgaragrnkttaadgvdsvtkradagnsvvsa 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + mtvnganngddsvnnmkhntsagdvagavaancgaragrnkttaadgvdsvtkradagnsvvsa 128
+
+Qry 129 + shsaradkvdtdaadsttdtvvkgvggaanntgvtstgsgadtgmrsdaardsrtacwgvnama 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + shsaradkvdtdaadsttdtvvkgvggaanntgvtstgsgadtgmrsdaardsrtacwgvnama 192
+
+Qry 193 + ssraamskavghsrsadcsdvvkavnkaTASTGDACTTSKTTTDGASTHCSDGSMSCADGA 253
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + ssraamskavghsrsadcsdvvkavnkaTASTGDACTTSKTTTDGASTHCSDGSMSCADGA 253
+
+253 cols, 253 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q8NKA7|Q8NKA7_9APHY
+ %Id   TLen  Target
+100%    249  tr|Q8NKA7|Q8NKA7_9APHY
+
+ Query 249nt >tr|Q8NKA7|Q8NKA7_9APHY
+Target 249nt >tr|Q8NKA7|Q8NKA7_9APHY
+
+Qry   1 + maasaavavasarrngavcsdgtrvsngaccamdnvncgdahvrthdaasrsgkagggadgsmt 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + maasaavavasarrngavcsdgtrvsngaccamdnvncgdahvrthdaasrsgkagggadgsmt 64
+
+Qry  65 + vnaanngddsvnnmkhntsagdvagavatncgaragrnktaavdgddvtkkrddaggtvvsash 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + vnaanngddsvnnmkhntsagdvagavatncgaragrnktaavdgddvtkkrddaggtvvsash 128
+
+Qry 129 + svaradkvdstdaadsttdtvvkgtggsnntgvasvgtgsdtgmrsdaardrtacwsvnmsask 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + svaradkvdstdaadsttdtvvkgtggsnntgvasvgtgsdtgmrsdaardrtacwsvnmsask 192
+
+Qry 193 + aamskavghnrnttdcsavkkatattsakdtcrarTTTDGATAHCNGSMNCTSVNGA 249
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + aamskavghnrnttdcsavkkatattsakdtcrarTTTDGATAHCNGSMNCTSVNGA 249
+
+249 cols, 249 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+ %Id   TLen  Target
+100%    247  tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+
+ Query 247nt >tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+Target 247nt >tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+
+Qry   1 + maaaavtavgtraatavcdgtrvnnavccaadstvmndcgdaharthdavasrsgkagggadgs 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + maaaavtavgtraatavcdgtrvnnavccaadstvmndcgdaharthdavasrsgkagggadgs 64
+
+Qry  65 + mtvnsanngddsvnnmakhtsagdvagavasncgaragrnhtaadgdsvtkrdaggtvvsasht 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + mtvnsanngddsvnnmakhtsagdvagavasncgaragrnhtaadgdsvtkrdaggtvvsasht 128
+
+Qry 129 + varadkvdtdaadsttdtvvkgvdgtdnntgvaskgsgndtgmrsdaardrtacwgvnmssska 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + varadkvdtdaadsttdtvvkgvdgtdnntgvaskgsgndtgmrsdaardrtacwgvnmssska 192
+
+Qry 193 + amskaghnrasdcsdvvkavnkasaTTGKDTCKRTTVDHGATTHCSNGGDCADGA 247
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + amskaghnrasdcsdvvkavnkasaTTGKDTCKRTTVDHGATTHCSNGGDCADGA 247
+
+247 cols, 247 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|A0ELU1|A0ELU1_9APHY
+ %Id   TLen  Target
+100%    247  tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+
+ Query 247nt >tr|A0ELU1|A0ELU1_9APHY
+Target 247nt >tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+
+Qry   1 + maaaavtavgtraatavcdgtrvnnavccaadstvmndcgdaharthdavasrsgkagggadgs 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + maaaavtavgtraatavcdgtrvnnavccaadstvmndcgdaharthdavasrsgkagggadgs 64
+
+Qry  65 + mtvnsanngddsvnnmakhtsagdvagavasncgaragrnhtaadgdsvtkrdaggtvvsasht 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + mtvnsanngddsvnnmakhtsagdvagavasncgaragrnhtaadgdsvtkrdaggtvvsasht 128
+
+Qry 129 + varadkvdtdaadsttdtvvkgvdgtdnntgvaskgsgndtgmrsdaardrtacwgvnmssska 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + varadkvdtdaadsttdtvvkgvdgtdnntgvaskgsgndtgmrsdaardrtacwgvnmssska 192
+
+Qry 193 + amskaghnrasdcsdvvkavnkasaTTGKDTCKRTTVDHGATTHCSNGGDCADGA 247
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + amskaghnrasdcsdvvkavnkasaTTGKDTCKRTTVDHGATTHCSNGGDCADGA 247
+
+247 cols, 247 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|A0ELU1|A0ELU1_9APHY
+ %Id   TLen  Target
+100%    247  tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+
+ Query 247nt >tr|A0ELU1|A0ELU1_9APHY
+Target 247nt >tr|A0A8E2DGE3|A0A8E2DGE3_9APHY
+
+Qry   1 + maaaavtavgtraatavcdgtrvnnavccaadstvmndcgdaharthdavasrsgkagggadgs 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + maaaavtavgtraatavcdgtrvnnavccaadstvmndcgdaharthdavasrsgkagggadgs 64
+
+Qry  65 + mtvnsanngddsvnnmakhtsagdvagavasncgaragrnhtaadgdsvtkrdaggtvvsasht 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + mtvnsanngddsvnnmakhtsagdvagavasncgaragrnhtaadgdsvtkrdaggtvvsasht 128
+
+Qry 129 + varadkvdtdaadsttdtvvkgvdgtdnntgvaskgsgndtgmrsdaardrtacwgvnmssska 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + varadkvdtdaadsttdtvvkgvdgtdnntgvaskgsgndtgmrsdaardrtacwgvnmssska 192
+
+Qry 193 + amskaghnrasdcsdvvkavnkasaTTGKDTCKRTTVDHGATTHCSNGGDCADGA 247
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + amskaghnrasdcsdvvkavnkasaTTGKDTCKRTTVDHGATTHCSNGGDCADGA 247
+
+247 cols, 247 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q8NKA8|Q8NKA8_9APHY
+ %Id   TLen  Target
+100%    247  tr|Q8NKA8|Q8NKA8_9APHY
+
+ Query 247nt >tr|Q8NKA8|Q8NKA8_9APHY
+Target 247nt >tr|Q8NKA8|Q8NKA8_9APHY
+
+Qry   1 + MAttavaaamtraatavcsdgtrvsnaaccavadtmgdcgdahvvrthdaassgkagggadgsm 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MAttavaaamtraatavcsdgtrvsnaaccavadtmgdcgdahvvrthdaassgkagggadgsm 64
+
+Qry  65 + tnganngddsvnnmkhntsagdvagavaancgaragrnktaavdgdsvtkrdagnsvvsashsa 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + tnganngddsvnnmkhntsagdvagavaancgaragrnktaavdgdsvtkrdagnsvvsashsa 128
+
+Qry 129 + radkvdtdaadsttdtvvkgtggtnvtgvasvgsgdtgmrsdaardsrtacwgvnamaasraam 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + radkvdtdaadsttdtvvkgtggtnvtgvasvgsgdtgmrsdaardsrtacwgvnamaasraam 192
+
+Qry 193 + akavghnrnsdcsdvvkavnkaTATKGKDTCNARTTTDGATHCSDGGMDCAVDGA 247
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + akavghnrnsdcsdvvkavnkaTATKGKDTCNARTTTDGATHCSDGGMDCAVDGA 247
+
+247 cols, 247 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q8NKA8|Q8NKA8_9APHY
+ %Id   TLen  Target
+100%    247  tr|Q8NKA8|Q8NKA8_9APHY
+
+ Query 247nt >tr|Q8NKA8|Q8NKA8_9APHY
+Target 247nt >tr|Q8NKA8|Q8NKA8_9APHY
+
+Qry   1 + MAttavaaamtraatavcsdgtrvsnaaccavadtmgdcgdahvvrthdaassgkagggadgsm 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MAttavaaamtraatavcsdgtrvsnaaccavadtmgdcgdahvvrthdaassgkagggadgsm 64
+
+Qry  65 + tnganngddsvnnmkhntsagdvagavaancgaragrnktaavdgdsvtkrdagnsvvsashsa 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + tnganngddsvnnmkhntsagdvagavaancgaragrnktaavdgdsvtkrdagnsvvsashsa 128
+
+Qry 129 + radkvdtdaadsttdtvvkgtggtnvtgvasvgsgdtgmrsdaardsrtacwgvnamaasraam 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + radkvdtdaadsttdtvvkgtggtnvtgvasvgsgdtgmrsdaardsrtacwgvnamaasraam 192
+
+Qry 193 + akavghnrnsdcsdvvkavnkaTATKGKDTCNARTTTDGATHCSDGGMDCAVDGA 247
+          |||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + akavghnrnsdcsdvvkavnkaTATKGKDTCNARTTTDGATHCSDGGMDCAVDGA 247
+
+247 cols, 247 ids (100.0%), 0 gaps (0.0%)
+
+Query >sp|P19136|PEM4_PHACH
+ %Id   TLen  Target
+100%    246  sp|P19136|PEM4_PHACH
+
+ Query 246nt >sp|P19136|PEM4_PHACH
+Target 246nt >sp|P19136|PEM4_PHACH
+
+Qry   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+
+Qry  65 + ansgddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + ansgddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+
+Qry 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+
+Qry 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+
+246 cols, 246 ids (100.0%), 0 gaps (0.0%)
+
+Query >sp|P19136|PEM4_PHACH
+ %Id   TLen  Target
+100%    246  sp|P19136|PEM4_PHACH
+
+ Query 246nt >sp|P19136|PEM4_PHACH
+Target 246nt >sp|P19136|PEM4_PHACH
+
+Qry   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+
+Qry  65 + ansgddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + ansgddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+
+Qry 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+
+Qry 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+
+246 cols, 246 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q12170|Q12170_PHACH
+ %Id   TLen  Target
+100%    246  sp|P19136|PEM4_PHACH
+
+ Query 246nt >tr|Q12170|Q12170_PHACH
+Target 246nt >sp|P19136|PEM4_PHACH
+
+Qry   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+
+Qry  65 + anngddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+          || |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + ansgddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+
+Qry 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+
+Qry 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+
+246 cols, 245 ids (99.6%), 0 gaps (0.0%)
+
+Query >tr|Q12170|Q12170_PHACH
+ %Id   TLen  Target
+100%    246  sp|P19136|PEM4_PHACH
+
+ Query 246nt >tr|Q12170|Q12170_PHACH
+Target 246nt >sp|P19136|PEM4_PHACH
+
+Qry   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+
+Qry  65 + anngddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+          || |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + ansgddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+
+Qry 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+
+Qry 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+
+246 cols, 245 ids (99.6%), 0 gaps (0.0%)
+
+Query >tr|Q12170|Q12170_PHACH
+ %Id   TLen  Target
+100%    246  sp|P19136|PEM4_PHACH
+
+ Query 246nt >tr|Q12170|Q12170_PHACH
+Target 246nt >sp|P19136|PEM4_PHACH
+
+Qry   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MAgsavaaatraatasavcdgtrvtnaaccaadtgdcgdahvrthdaassgagggadgsmhtns 64
+
+Qry  65 + anngddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+          || |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + ansgddsvnnmkhdtsaadvagavasncgarmagrnttavgdsvtkrdagnsvvsashtvarad 128
+
+Qry 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + kvdtdaadsTTDTVVKGTGGSNNNTGVMSGSGSDTGmrsdaardrtacwsvnmaaskaamakag 192
+
+Qry 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + hsrssdcsdvvvkavnkaTATKGKDDTTCKAKTTSDGATTHCSNGGMSCGVDGA 246
+
+246 cols, 245 ids (99.6%), 0 gaps (0.0%)
+
+Query >tr|A0A0L9VE24|A0A0L9VE24_PHAAN
+ %Id   TLen  Target
+ 93%    242  tr|A0A1S3VJ71|A0A1S3VJ71_VIGRR
+
+ Query 241nt >tr|A0A0L9VE24|A0A0L9VE24_PHAAN
+Target 242nt >tr|A0A1S3VJ71|A0A1S3VJ71_VIGRR
+
+Qry   1 + masmsavvvvvcaamhagvtnastyntctsdvnvsnastdrgasrhhdcvgcdgsvnntdssda 64
+          | || |||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MGsmnavvvtvcaamhagvtnastyntctsdvnvsnastdrgasrhhdcvgcdgsvnntdssda 64
+
+Qry  65 + annsrgdvvnnktavdsctvscadaaavgsvgggswdvgrrdsnasaannatvdasaaGNTTDV 128
+          |||||||||||||||||||||||||||| ||||||||||||||||||||||||| |||||||||
+Tgt  65 + annsrgdvvnnktavdsctvscadaaavasvgggswdvgrrdsnasaannatvdssaaGNTTDV 128
+
+Qry 129 + TSGAHTGrarcsnrysndtgndtnttytrgcnatvdntndst-ddnkyysnngsdsttgadtvd 191
+          |||||||||||| ||||||||||||||||||||||||||||| |||||||||||||||||||||
+Tgt 129 + TSGAHTGrarcssrysndtgndtnttytrgcnatvdntndstaddnkyysnngsdsttgadtvd 192
+
+Qry 192 + vnsssdsaanvvsmkmgnsvtgtdgrtcnvngnsstaavvskdkvnvask 241
+          ||||||| |||||||||||||||||||||||||||  | |     |||||
+Tgt 193 + vnsssdsvanvvsmkmgnsvtgtdgrtcnvngnssatagvaskdknvask 242
+
+242 cols, 226 ids (93.4%), 1 gaps (0.4%)
+
+Query >tr|A0A0S3S4A2|A0A0S3S4A2_PHAAN
+ %Id   TLen  Target
+ 93%    242  tr|A0A1S3VJ71|A0A1S3VJ71_VIGRR
+
+ Query 241nt >tr|A0A0S3S4A2|A0A0S3S4A2_PHAAN
+Target 242nt >tr|A0A1S3VJ71|A0A1S3VJ71_VIGRR
+
+Qry   1 + masmsavvvvvcaamhagvtnastyntctsdvnvsnastdrgasrhhdcvgcdgsvnntdssda 64
+          | || |||| ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MGsmnavvvtvcaamhagvtnastyntctsdvnvsnastdrgasrhhdcvgcdgsvnntdssda 64
+
+Qry  65 + annsrgdvvnnktavdsctvscadaaavgsvgggswdvgrrdsnasaannatvdasaaGNTTDV 128
+          |||||||||||||||||||||||||||| ||||||||||||||||||||||||| |||||||||
+Tgt  65 + annsrgdvvnnktavdsctvscadaaavasvgggswdvgrrdsnasaannatvdssaaGNTTDV 128
+
+Qry 129 + TSGAHTGrarcsnrysndtgndtnttytrgcnatvdntndst-ddnkyysnngsdsttgadtvd 191
+          |||||||||||| ||||||||||||||||||||||||||||| |||||||||||||||||||||
+Tgt 129 + TSGAHTGrarcssrysndtgndtnttytrgcnatvdntndstaddnkyysnngsdsttgadtvd 192
+
+Qry 192 + vnsssdsaanvvsmkmgnsvtgtdgrtcnvngnsstaavvskdkvnvask 241
+          ||||||| |||||||||||||||||||||||||||  | |     |||||
+Tgt 193 + vnsssdsvanvvsmkmgnsvtgtdgrtcnvngnssatagvaskdknvask 242
+
+242 cols, 226 ids (93.4%), 1 gaps (0.4%)
+
+Query >tr|A0A0S3S4A8|A0A0S3S4A8_PHAAN
+ %Id   TLen  Target
+100%    237  tr|A0A0L9VDU5|A0A0L9VDU5_PHAAN
+
+ Query 237nt >tr|A0A0S3S4A8|A0A0S3S4A8_PHAAN
+Target 237nt >tr|A0A0L9VDU5|A0A0L9VDU5_PHAAN
+
+Qry   1 + MGsmrvvvavcsahagsvtnastyrttcnnvvasttdrgasrhhdcvgcdasvnntatsdannn 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MGsmrvvvavcsahagsvtnastyrttcnnvvasttdrgasrhhdcvgcdasvnntatsdannn 64
+
+Qry  65 + srgdvvnnktavnscgtvscadaaavgsvggggwvgrrdstanrtannantkaaavgnttdvas 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + srgdvvnnktavnscgtvscadaaavgsvggggwvgrrdstanrtannantkaaavgnttdvas 128
+
+Qry 129 + gghtgrahcstnnrynnntgndtnttyatrcndtgnntndttddnkyysnhngsdstgadtvns 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + gghtgrahcstnnrynnntgndtnttyatrcndtgnntndttddnkyysnhngsdstgadtvns 192
+
+Qry 193 + ssnnaanvasmkmgngvtgtdgrtcnvngnsgasmaskdkkrvsy 237
+          |||||||||||||||||||||||||||||||||||||||||||||
+Tgt 193 + ssnnaanvasmkmgngvtgtdgrtcnvngnsgasmaskdkkrvsy 237
+
+237 cols, 237 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q9XFL3|Q9XFL3_PHAVU
+ %Id   TLen  Target
+ 99%    236  tr|V7BNF9|V7BNF9_PHAVU
+
+ Query 229nt >tr|Q9XFL3|Q9XFL3_PHAVU
+Target 236nt >tr|V7BNF9|V7BNF9_PHAVU
+
+Qry   1 + VVGVVGassdadsyrntcsvhsvrvrnvsksdrmasrhhdcvgcdasnntdtvsannsrgdvvn 64
+           | |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   8 + Cvvvvgassdadsyrntcsvhsvrvrnvsksdrmasrhhdcvgcdasnntdtvsannsrgdvvn 71
+
+Qry  65 + ktavnacgvvscadtaassvagdwkvgrkdstanrtannantkaaavgnttdvasgahtgracs 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  72 + ktavnacgvvscadtaassvagdwkvgrkdstanrtannantkaaavgnttdvasgahtgracs 135
+
+Qry 129 + tvnrynsnTGNDTNTTYTRAVCNGGGGTNTNDTTdkdknyysnvhkgsdstgadtdvnrssnts 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 136 + tvnrynsntgndtnttytravCNGGGGTNTNDTTdkdknyysnvhkgsdstgadtdvnrssnts 199
+
+Qry 193 + kaamkmGNGVTGSGRKCNVNGNSAGATATKSSDGVSS 229
+          |||||||||||||||||||||||||||||||||||||
+Tgt 200 + kaamkmgngvtgsgrkcnvngnsagatatkssdgvss 236
+
+229 cols, 227 ids (99.1%), 0 gaps (0.0%)
+
+Query >tr|Q9XFL3|Q9XFL3_PHAVU
+ %Id   TLen  Target
+ 99%    236  tr|V7BNF9|V7BNF9_PHAVU
+
+ Query 229nt >tr|Q9XFL3|Q9XFL3_PHAVU
+Target 236nt >tr|V7BNF9|V7BNF9_PHAVU
+
+Qry   1 + VVGVVGassdadsyrntcsvhsvrvrnvsksdrmasrhhdcvgcdasnntdtvsannsrgdvvn 64
+           | |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   8 + Cvvvvgassdadsyrntcsvhsvrvrnvsksdrmasrhhdcvgcdasnntdtvsannsrgdvvn 71
+
+Qry  65 + ktavnacgvvscadtaassvagdwkvgrkdstanrtannantkaaavgnttdvasgahtgracs 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  72 + ktavnacgvvscadtaassvagdwkvgrkdstanrtannantkaaavgnttdvasgahtgracs 135
+
+Qry 129 + tvnrynsnTGNDTNTTYTRAVCNGGGGTNTNDTTdkdknyysnvhkgsdstgadtdvnrssnts 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 136 + tvnrynsntgndtnttytravCNGGGGTNTNDTTdkdknyysnvhkgsdstgadtdvnrssnts 199
+
+Qry 193 + kaamkmGNGVTGSGRKCNVNGNSAGATATKSSDGVSS 229
+          |||||||||||||||||||||||||||||||||||||
+Tgt 200 + kaamkmgngvtgsgrkcnvngnsagatatkssdgvss 236
+
+229 cols, 227 ids (99.1%), 0 gaps (0.0%)
+
+Query >tr|I3S5N6|I3S5N6_MEDTR
+ %Id   TLen  Target
+100%    218  tr|A0A072V4V7|A0A072V4V7_MEDTR
+
+ Query 217nt >tr|I3S5N6|I3S5N6_MEDTR
+Target 218nt >tr|A0A072V4V7|A0A072V4V7_MEDTR
+
+Qry   1 + MGsnvgvvwcavmhagyassystcyvrvastdrgasrhhdcvgcdgsvnntntvsdannsrgdv 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + MGsnvgvvwcavmhagyassystcyvrvastdrgasrhhdcvgcdgsvnntntvsdannsrgdv 64
+
+Qry  65 + vn-tavncatvscadtaavasvgggswgrrdstanaannatdkaavgnttdvtsgahtgrakcs 127
+          || |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + vnktavncatvscadtaavasvgggswgrrdstanaannatdkaavgnttdvtsgahtgrakcs 128
+
+Qry 128 + tnrynnsTGNDTNTTYTRCNGTGNNTNDTTndnkysnshkgsdstnadtavnsssnanrvsmkm 191
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + tnrynnsTGNDTNTTYTRCNGTGNNTNDTTndnkysnshkgsdstnadtavnsssnanrvsmkm 192
+
+Qry 192 + ansvtgngrcnnadssgsggaskdss 217
+          ||||||||||||||||||||||||||
+Tgt 193 + ansvtgngrcnnadssgsggaskdss 218
+
+218 cols, 217 ids (99.5%), 1 gaps (0.5%)
+
+Query >tr|A0A031MKR8|A0A031MKR8_9PSED
+ %Id   TLen  Target
+100%    213  tr|A0A031MKR8|A0A031MKR8_9PSED
+
+ Query 213nt >tr|A0A031MKR8|A0A031MKR8_9PSED
+Target 213nt >tr|A0A031MKR8|A0A031MKR8_9PSED
+
+Qry   1 + mnknssammaagasssaavntdgtddayrgdsvaatghsvrtsrvsgvsggggthytgttgtma 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + mnknssammaagasssaavntdgtddayrgdsvaatghsvrtsrvsgvsggggthytgttgtma 64
+
+Qry  65 + avvgvsasswwgkashgvvmtdtntgdsrarnnadyvsntsrtsvngmdtrgvgwsmggggtrv 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + avvgvsasswwgkashgvvmtdtntgdsrarnnadyvsntsrtsvngmdtrgvgwsmggggtrv 128
+
+Qry 129 + asgrkaaawdttrrgvatacsdavrshasyndddkayvnngshycangggnndvsrgvswmkrd 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + asgrkaaawdttrrgvatacsdavrshasyndddkayvnngshycangggnndvsrgvswmkrd 192
+
+Qry 193 + ndtryscgnhsdrnsyrGNCY 213
+          |||||||||||||||||||||
+Tgt 193 + ndtryscgnhsdrnsyrGNCY 213
+
+213 cols, 213 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q47RJ6|Q47RJ6_THEFY
+ %Id   TLen  Target
+100%    210  tr|J7FDJ1|J7FDJ1_BURCE
+
+ Query 210nt >tr|Q47RJ6|Q47RJ6_THEFY
+Target 210nt >tr|J7FDJ1|J7FDJ1_BURCE
+
+Qry   1 + mavmtrrrsssravtaaaatavtavsaaahaanyrgntdaassgsvsnvsrsasggggtyyrnn 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + mavmtrrrsssravtaaaatavtavsaaahaanyrgntdaassgsvsnvsrsasggggtyyrnn 64
+
+Qry  65 + tygavasgytgtasawgrashGVVTDTTTddsranaanhmnrasstvrsrdssravmghsmggg 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + tygavasgytgtasawgrashGVVTDTTTddsranaanhmnrasstvrsrdssravmghsmggg 128
+
+Qry 129 + gtrasrdkaatwhnknwssvtvtgaddtavathakynsssskaydgathannkgkysvawkrvd 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + gtrasrdkaatwhnknwssvtvtgaddtavathakynsssskaydgathannkgkysvawkrvd 192
+
+Qry 193 + ndTRYTCGRDGGVYRSTC 210
+          ||||||||||||||||||
+Tgt 193 + ndTRYTCGRDGGVYRSTC 210
+
+210 cols, 210 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|Q6A0I4|Q6A0I4_THEFU
+ %Id   TLen  Target
+100%    210  tr|J7FDJ1|J7FDJ1_BURCE
+
+ Query 210nt >tr|Q6A0I4|Q6A0I4_THEFU
+Target 210nt >tr|J7FDJ1|J7FDJ1_BURCE
+
+Qry   1 + mavmtrrrsssravtaaaatavtavsaaahaanyrgntdaassgsvsnvsrsasggggtyyrnn 64
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt   1 + mavmtrrrsssravtaaaatavtavsaaahaanyrgntdaassgsvsnvsrsasggggtyyrnn 64
+
+Qry  65 + tygavasgytgtasawgrashGVVTDTTTddsranaanhmnrasstvrsrdssravmghsmggg 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  65 + tygavasgytgtasawgrashGVVTDTTTddsranaanhmnrasstvrsrdssravmghsmggg 128
+
+Qry 129 + gtrasrdkaatwhnknwssvtvtgaddtavathakynsssskaydgathannkgkysvawkrvd 192
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 129 + gtrasrdkaatwhnknwssvtvtgaddtavathakynsssskaydgathannkgkysvawkrvd 192
+
+Qry 193 + ndTRYTCGRDGGVYRSTC 210
+          ||||||||||||||||||
+Tgt 193 + ndTRYTCGRDGGVYRSTC 210
+
+210 cols, 210 ids (100.0%), 0 gaps (0.0%)
+
+Query >tr|E0Z5H1|E0Z5H1_THEFU
+ %Id   TLen  Target
+ 98%    210  tr|J7FDJ1|J7FDJ1_BURCE
+
+ Query 180nt >tr|E0Z5H1|E0Z5H1_THEFU
+Target 210nt >tr|J7FDJ1|J7FDJ1_BURCE
+
+Qry   1 + aanyrgntdaarsgsvsnvsrsasggggtyyrsntygavasgytgtasawgrashGVVTDTTTd 64
+          ||||||||||| |||||||||||||||||||| |||||||||||||||||||||||||||||||
+Tgt  31 + aanyrgntdaassgsvsnvsrsasggggtyyrnntygavasgytgtasawgrashGVVTDTTTd 94
+
+Qry  65 + dsranaanhmnrasstvrsrdssravmghsmggggtrasrdkaatwhnknwssvtvtgaddtav 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  95 + dsranaanhmnrasstvrsrdssravmghsmggggtrasrdkaatwhnknwssvtvtgaddtav 158
+
+Qry 129 + athakynsssskaydgathannkgkysvawkwvdndTRYTCGRDGGVYRSTC 180
+          ||||||||||||||||||||||||||||||| ||||||||||||||||||||
+Tgt 159 + athakynsssskaydgathannkgkysvawkrvdndTRYTCGRDGGVYRSTC 210
+
+180 cols, 177 ids (98.3%), 0 gaps (0.0%)
+
+Query >tr|E9LVH8|E9LVH8_THECS
+ %Id   TLen  Target
+ 99%    210  tr|J7FDJ1|J7FDJ1_BURCE
+
+ Query 180nt >tr|E9LVH8|E9LVH8_THECS
+Target 210nt >tr|J7FDJ1|J7FDJ1_BURCE
+
+Qry   1 + manyrgntdaassgsvsnvsrsasggggtyyrnntygavasgytgtasawgrashGVVTDTTTd 64
+           |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  31 + aanyrgntdaassgsvsnvsrsasggggtyyrnntygavasgytgtasawgrashGVVTDTTTd 94
+
+Qry  65 + dsranaanhmnrasstvrsrdssravmghsmggggtrasrdkaatwhnknwssvtvtgaddtav 128
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt  95 + dsranaanhmnrasstvrsrdssravmghsmggggtrasrdkaatwhnknwssvtvtgaddtav 158
+
+Qry 129 + athakynsssskaydgathannkgkysvawkrvdndTRYTCGRDGGVYRSTC 180
+          ||||||||||||||||||||||||||||||||||||||||||||||||||||
+Tgt 159 + athakynsssskaydgathannkgkysvawkrvdndTRYTCGRDGGVYRSTC 210
+
+180 cols, 179 ids (99.4%), 0 gaps (0.0%)
