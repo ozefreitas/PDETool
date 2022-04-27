@@ -2,7 +2,7 @@ import urllib.request
 import re
 
 
-def fasta_retriever(seq_ids, dic=False, filename=None):
+def fasta_retriever(seq_ids, dic=False, filename=None, query=False):
     """Given a dictionary with UniProt ID's, write a fasta file with all fasta sequences of the corresponding ID's
 
     Args:
@@ -13,8 +13,11 @@ def fasta_retriever(seq_ids, dic=False, filename=None):
     # iterar pelos values do dicionário, que são listas
     if dic:
         for ident, seqs in seq_ids.items():
+            if query:
+                ident = re.findall("\|.*\|", ident)
+                ident = re.sub("\|", "", ident[0])
             # abre o ficheiro no modo write
-            file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond" + ident + ".fasta", mode="w")
+            file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond/" + ident + ".fasta", mode="w")
             for seq in seqs:
                 # muda a seq para o codigo que o uniprot aceite como ID
                 code = re.findall("\|.*\|", seq)
@@ -36,7 +39,7 @@ def fasta_retriever(seq_ids, dic=False, filename=None):
                     file.write("\n")
             file.close()
     else:
-        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond/Diamond_target_enzymes.fasta", mode="w")
+        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond/" + filename + ".fasta", mode="w")
         for seq in seq_ids:
             # muda a seq para o codigo que o uniprot aceite como ID
             code = re.findall("\|.*\|", seq)
