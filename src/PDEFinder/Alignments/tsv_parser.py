@@ -64,3 +64,22 @@ def above_60(dataframe, inc_100=False):
 
 # passar a csv
 # seq_id.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/sequences_identity.csv")
+
+def devide_by_query(dataframe, inc_100=False):
+    seq_id = dataframe[["Query accession", "Target accession", "Sequence identity"]]
+    target_enzymes = {}
+    for index, seq in seq_id.iterrows():
+        if inc_100:
+            if seq["Sequence identity"] >= 60:
+                if seq["Query accession"] not in target_enzymes.keys():
+                    target_enzymes[seq["Query accession"]] = [seq["Target accession"]]
+                else:
+                    target_enzymes[seq["Query accession"]].append(seq["Target accession"])
+        else:
+            if seq["Sequence identity"] >= 60 and seq["Sequence identity"] < 90:
+                if seq["Query accession"] not in target_enzymes.keys():
+                    target_enzymes[seq["Query accession"]] = [seq["Target accession"]]
+                else:
+                    target_enzymes[seq["Query accession"]].append(seq["Target accession"])
+    return target_enzymes
+
