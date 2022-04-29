@@ -2,7 +2,7 @@ import urllib.request
 import re
 
 
-def fasta_retriever(seq_ids, dic=False, filename=None, query=False):
+def fasta_retriever(seq_ids, dic=False, filename=None, query=False, seq_proc=False):
     """Given a dictionary with UniProt ID's, write a fasta file with all fasta sequences of the corresponding ID's
 
     Args:
@@ -17,11 +17,14 @@ def fasta_retriever(seq_ids, dic=False, filename=None, query=False):
                 ident = re.findall("\|.*\|", ident)
                 ident = re.sub("\|", "", ident[0])
             # abre o ficheiro no modo write
-            file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond/" + ident + ".fasta", mode="w")
+            file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/UPIMAPI/" + ident + ".fasta", mode="w")
             for seq in seqs:
                 # muda a seq para o codigo que o uniprot aceite como ID
-                code = re.findall("\|.*\|", seq)
-                clean = re.sub("\|", "", code[0])
+                if seq_proc:
+                    code = re.findall("\|.*\|", seq)
+                    clean = re.sub("\|", "", code[0])
+                else:
+                    clean = seq
                 try:
                     # faz o download da sequencia em formato fasta
                     data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + clean + ".fasta")
