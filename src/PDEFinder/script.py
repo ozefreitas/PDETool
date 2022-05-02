@@ -39,4 +39,4 @@ from docker_run import docker_run_tcoffee
 
 ### Correr t_coffee para todos os ficheiros gerados em cima
 
-docker_run_tcoffee("~/FASTA/CD-HIT/:/data/", "60-65", "1.fasta", "clustalw_aln", "1.clustal_aln")
+docker_run_tcoffee("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/CDHIT:/data", "60-65", "1.fasta", "clustalw_aln", "1.clustal_aln")

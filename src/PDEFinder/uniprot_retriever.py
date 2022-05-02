@@ -1,5 +1,4 @@
 from hashlib import new
-from msilib.schema import Directory
 from operator import ne
 import urllib.request
 import re
@@ -87,7 +86,7 @@ def test_retriever():
 # print(seq)
 
 def fasta_retriever_from_cdhit(seq_ids, threshold):
-    parent_dir = "c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/CD-HIT/"
+    parent_dir = "c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/CDHIT/"
     newpath = os.path.join(parent_dir, threshold)
     if not os.path.exists(newpath):
         os.mkdir(newpath)

@@ -1,5 +1,6 @@
 from subprocess import run
 import sys
+import os
 
 
 def run_command(bashCommand, output='', mode='w', sep=' ', print_message=True, verbose=True):
@@ -12,4 +13,4 @@ def run_command(bashCommand, output='', mode='w', sep=' ', print_message=True, v
             run(bashCommand.split(sep), stdout=output_file)
 
 def docker_run_tcoffee(volume, input_dir, input_file, output_type, output_name):
-    run_command(f'docker run --rm -v {volume} pegi3s/tcoffee t_coffee /data/{input_dir}/{input_file} -run_name /data/{output_name} -output {output_type}')
+    run_command(f'docker`run`--rm`-v`{volume}`pegi3s/tcoffee:latest`t_coffee`/data/{input_dir}/{input_file}`-run_name`/data/{output_name}`-output`{output_type}', sep="`")
