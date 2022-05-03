@@ -14,3 +14,9 @@ def run_command(bashCommand, output='', mode='w', sep=' ', print_message=True, v
 
 def docker_run_tcoffee(volume, input_dir, input_file, output_type, output_name):
     run_command(f'docker`run`--rm`-v`{volume}`pegi3s/tcoffee:latest`t_coffee`/data/{input_dir}/{input_file}`-run_name`/data/{output_name}`-output`{output_type}', sep="`")
+
+def docker_run_hmmbuild(volume, input_file, output_file):
+    run_command(f'docker`run`--rm`-v`{volume}`biocontainers/hmmer:v3.2.1dfsg-1-deb_cv1`hmmbuild`{output_file}`{input_file}', sep="`")
+
+def docker_run_hmmsearch(volume, hmm_file, db, output_file):
+    run_command(f'docker`run`--rm`-v`{volume}`biocontainers/hmmer:v3.2.1dfsg-1-deb_cv1`hmmsearch`{hmm_file}`{db}`>`{output_file}', sep="`")
