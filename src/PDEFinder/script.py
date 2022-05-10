@@ -5,6 +5,7 @@ from docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmse
 import os
 import re
 
+
 # df = diamond_parser("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/diamond_out.tsv")
 
 # enzymes = iter_per_sim(df)
@@ -17,6 +18,9 @@ import re
 # enzymes = devide_by_query(df)
 # print(enzymes)
 # fasta_retriever(enzymes, dic=True, filename="Diamond_target_enzymes_byquery", query=True)
+
+
+### MÉTODO FINAL COM UPIMAPI ###
 
 # upi = UPIMAPI_parser("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv")
 # print(upi)

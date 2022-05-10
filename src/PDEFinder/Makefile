@@ -13,7 +13,7 @@ rule UPIMAPI_parse:
 	input:
 		"Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv"
 	output:
-
+		# é apenas um dataframe
 	script:
 		"tsv_parser.py"
 
@@ -40,7 +40,7 @@ rule cd-hit_parse:
 	input:
 		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{thresholds}.fasta"
 	output:
-
+		# é um dicionario
 	script:
 		"txt_parser.py"
 
@@ -49,7 +49,7 @@ rule seq_download:
 	input:
 		o que sair de cima
 	output:
-		todos os clusters, por threshold
+		"Data/FASTA/CDHIT/{thresholds}/{clusters}.fasta"  # todos os clusters, por threshold
 	script:
 		"uniprot_retriever.py" from_cdhit
 
@@ -77,6 +77,6 @@ rule hmmsearch:
 		"Data/HMMs/After_tcoffee_UPI/{thresholds}/{clusters}.hmm",
 		"path to DB"
 	output:
-
+		"Data/HMMs/HMMsearch_results/After_UPI/{thresholds}/{clusters}.out"
 	shell:
 		"docker run --rm -v ~/PDEFinder/:/data biocontainers/hmmer:v3.2.1dfsg-1-deb_cv1 hmmsearch {input} > {output}"
