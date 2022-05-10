@@ -1,10 +1,12 @@
 rule UPIMAPI_search:
     input:
-        "Data/FASTA/literature_seq/lit_sequences.fasta"
+        sequence = "Data/FASTA/literature_seq/lit_sequences.fasta",
+		database = "path to DB"
     output:
-        "Alignments/BLAST/results/upimapi_results.zip"
+        "Alignments/BLAST/results"
+	threads: 8
     shell:
-        "bwa mem {input} | samtools view -Sb - > {output}"
+        "upimapi.py -i {input.sequence} -o {output} --use-diamond -db {input.database} -t {threads}"
 
 
 rule UPIMAPI_parse:
@@ -72,7 +74,7 @@ rule hmmbuild:
 
 rule hmmsearch:
 	input:
-		"Data/HMMs/After_tcoffee_UPI/{thresholds}/{clusters}.hmm"
+		"Data/HMMs/After_tcoffee_UPI/{thresholds}/{clusters}.hmm",
 		"path to DB"
 	output:
 
