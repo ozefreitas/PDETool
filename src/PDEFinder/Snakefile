@@ -27,7 +27,7 @@ rule seq_download:
 		"uniprot_retriever.py"
 
 
-rule cd-hit_per_threshold:
+rule cdhit_per_threshold:
 	input:
 		"Data/FASTA/UPIMAPI/{thresholds}.fasta"
 	output:
@@ -36,7 +36,7 @@ rule cd-hit_per_threshold:
 		"docker run --rm -v ~/FASTA/UPIMAPI/:/data/ biocontainers/cd-hit:v4.6.8-2-deb_cv1 bash -c "cd-hit -i data/{input} -o {output} -c 0.9 -n 5 -M 16000 -d 0 -T 8"
 
 
-rule cd-hit_parse:
+rule cdhit_parse:
 	input:
 		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{thresholds}.fasta"
 	output:
@@ -47,11 +47,11 @@ rule cd-hit_parse:
 
 rule seq_download:
 	input:
-		o que sair de cima
+		# o que sair de cima
 	output:
 		"Data/FASTA/CDHIT/{thresholds}/{clusters}.fasta"  # todos os clusters, por threshold
 	script:
-		"uniprot_retriever.py" from_cdhit
+		"uniprot_retriever.py" # from_cdhit
 
 
 rule t_coffee:
