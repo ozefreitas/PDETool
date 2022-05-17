@@ -113,3 +113,5 @@ def UPIMAPI_iter_per_sim(dataframe):
                 else:
                     target_enzymes[chave].append(seq["sseqid"])
     return target_enzymes
+
+# guardar tudo em tsv

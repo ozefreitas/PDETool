@@ -1,3 +1,11 @@
+
+
+# faz o output final todo de uma so vez
+rule all:
+	output:
+		"Data/HMMs/HMMsearch_results/After_UPI/{thresholds}/{clusters}.out"
+
+
 rule UPIMAPI_search:
     input:
         sequence = "Data/FASTA/literature_seq/lit_sequences.fasta",
@@ -6,7 +14,7 @@ rule UPIMAPI_search:
         "Alignments/BLAST/results"
 	threads: 8
     shell:
-        "upimapi.py -i {input.sequence} -o {output} --use-diamond -db {input.database} -t {threads}"
+        "upimapi.py -i {input.sequence} -o {output} -db {input.database} -t {threads}"
 
 
 rule UPIMAPI_parse:
