@@ -1,4 +1,4 @@
-
+# fazer config file
 
 # faz o output final todo de uma so vez
 rule all:
