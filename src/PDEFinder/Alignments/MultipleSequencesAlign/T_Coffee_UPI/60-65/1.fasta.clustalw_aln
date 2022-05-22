@@ -1,0 +1,548 @@
+CLUSTAL W (1.83) multiple sequence alignment
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  MASLRYLLAAALVVAFVLEG------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  MASLRYLLAAALLVAFVLEGSPSQAQLSPSFYSSTCPNVLNTIEDVLKKA
+tr|A0A067DM69|A0A067DM69_CITSI  MASLRYLIAAALVVAFVLEG------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  MASLRFLLAAALVVAFVLEG------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  MASLRFLLAAALVVAFVLEG------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  MASLRFLLAAALVVAFVLEG------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  MASLRFLLAAALVVAFVLEG------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  MASLRYLLAAALVVAFVLEG------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  MASLRYLLAAALVVAFVLEG------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  MASLRYLLAAALLVAFVLEGSPSQAQLSPSFYSSTCPNVLNTIEDVLKKA
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  MASLRYLLAAALVVAFVLEG------------------------------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  M-------------HLCLRD------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  FSSDIRIGASLIR-------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  FSSDIRIGASLIRLHFHDCFVDGCDASILLDSTNTIDSEKFAAPNNNSAR
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  --------------------------------------------------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  GFEVIDNMKAAVERACPRVVSCADILTIAAERSVALSGGPSWAVPLGRRD
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  --------------------------------------------------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  SRTANRALANQNLPGPFDTLDELKSSFRNVGLNDKLDLVALSGAHTFGRA
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  --------------------------------------------------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  QCQFFRGRLYDFNNTGKPDPTLDATFLQQLRKLCPQGGNGGVLANFDVTT
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  --------------------------------------------------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  PDVFDNKYFSNLRGRKGLLQSDQELFSTPGADTAAIVEDFGRNQNAFFKN
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  --------------------------------------------------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  FVTSMIRMGNLKPLTGNQGEIRLNCRRVNGNSNIATRSSSSEAALVVAIA
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  --------------------------------------------------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  ---SSPAQAQLSPFFYSSTCPNVTNIIREVLKNAFLSDIRIGASLIRLHF
+tr|A0A067FI92|A0A067FI92_CITSI  -----------------------------------------------LHF
+tr|A0A067DM69|A0A067DM69_CITSI  ---SSPAQAQLSPFFYSSTCPNVTNIIREVLQNAFLSDIRIGASLIRLHF
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  ---SSPAQAQLSPSFYNSTCPNVANIIREVLQNAFLSDIRIGASLIRLHF
+tr|A0A067FI88|A0A067FI88_CITSI  ---SSPAQAQLSPSFYNSTCPNVANIIREVLQNAFLSDIRIGASLIRLHF
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  ---SSPAQAQLSPSFYNSTCPNVANIIREVLQNAFLSDIRIGASLIRLHF
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  ---SSPAQAQLSPSFYNSTCPNVANIIREVLQNAFLSDIRIGASLIRLHF
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  ---SSPAQAQLSPFFYSSTCPNVTNIIREVLKNAFLSDIRIGASLIRLHF
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  ---SSPAQAQLSPFFYSSTCPNVTNIIREVLKNAFLSDIRIGASLIRLHF
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  LEGSSPSQAQLSPFFYSSTCPNVTNIIRGVLQKAFLSDIRIGASLIRLHF
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  ---SSPAQAQLSPFFYSSTCPNVTNIIREVLKNAFLSDIRIGASLIRLHF
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  ---RHQLKLNFLPFFYSSTCPNVTNIIREVLKNAFLSDIRIGASLIRLHF
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  HDCFVNGCDASILLDNTTTIVSEKFAGPNINSARGFEVVDDMKAAVERAC
+tr|A0A067FI92|A0A067FI92_CITSI  HDCFVDGCDASILLDSTNTIDSEKFAAPNNNSARGFEVIDNMKAAVERAC
+tr|A0A067DM69|A0A067DM69_CITSI  HDCFVNGCDASILLDNTTTIDSEKFAAPNNNSARGFEVVDDMKAAVERAC
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  HDCFVNGCDASILLDNTTTIVSEKFAAPNNNSARGFEVVDDMKAAVERAC
+tr|A0A067FI88|A0A067FI88_CITSI  HDCFVNGCDASILLDNTTTIVSEKFAAPNNNSARGFEVVDDMKAAVERAC
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  HDCFVNGCDASILLDNTTTIVSEKFAAPNNNSARGFEVVDDMKAAVERAC
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  HDCFVNGCDASILLDNTTTIVSEKFAAPNNNSARGFEVVDDMKAAVERAC
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  HDCFVNGCDASILLDNTTTIVSEKFAGPNINSARGFEVVDDMKAAVERAC
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  HDCFVNGCDASILLDNTTTIVSEKFAGPNINSARGFEVVDDMKAAVERAC
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  HDCFVNGCDASVLLDNTTTIDSEKFAAPNNNSARGFEVIDQMKAAVEKAC
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  HDCFVNGCDASILLDNTTTIVSEKFAGPNINSARGFEVVDDMKAAVERAC
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  HDCFVNGCDASILLDNTTTIVSEKFAGPNNNSARGFEVVDDMKAAVERAC
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  -------CDASILLDSTNTIDSEKFAAPNNNSARGFEVIDNMKAAVEKAC
+tr|V4TFM1|V4TFM1_CITCL          -----------------------------------------MKAAVERAC
+                                                                         ******:**
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  PGVVSCADILTIAAEESVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A067FI92|A0A067FI92_CITSI  PRVVSCADILTIAAERSVALSGGPSWAVPLGRRDSRTANRALANQNLPGP
+tr|A0A067DM69|A0A067DM69_CITSI  PGVVSCADILTIAAEESVALSGGPAWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  PGVVSCADILTIAAEQSVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A067FI88|A0A067FI88_CITSI  PGVVSCADILTIAAEQSVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  PGVVSCADILTIAAEQSVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  PGVVSCADILTIAAEQSVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  PGVVSCADILTIAAEESVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  PGVVSCADILTIAAEESVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  PRVVSCADILTIAAEQSVALSGGPSWTNLLGRRDSRTANRTLANQNLPSP
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  PGVVSCADILTIAAEESVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  PGVVSCADILTIAAEQSVALSGGPSWTNLLGRRDSRTANRTLANENLPGP
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  PRVVSCADILTIAAERSVALSGGPSWAVPLGRRDSRTANRALANQNLPGP
+tr|V4TFM1|V4TFM1_CITCL          PRVVSCADILTIAAERSVALSGGPSWAVPLGRRDSRTANRALANQNLPGP
+                                * *************.********:*:  ***********:***:***.*
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  NNTLTRLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNNTG
+tr|A0A067FI92|A0A067FI92_CITSI  FDTLDELKSSFRNVGLNDKLDLVALSGAHTFGRAQCQFFRGRLYDFNNTG
+tr|A0A067DM69|A0A067DM69_CITSI  NNSLERLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNNTG
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  NNSLERLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNSTG
+tr|A0A067FI88|A0A067FI88_CITSI  NNSLERLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNSTG
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  NNSLERLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNSTG
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  NNSLERLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNSTG
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  NNTLTRLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNNTG
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  NNTLTRLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNNTG
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  FDTLDRLKASFRNVGLNDNFDLVALSGAHTFGRAQCRFFSVRLFNFNNTG
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  NNTLTRLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNNTG
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  NNNLTRLKDRFRNVGLNDNFDLVALSGAHTFGRAQCRTFSDRLFNFNNTG
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  FDTLDVLKSSFRNVGLNDKFDLVALSGAHTFGRAQCQFFRGRLYDFNNTG
+tr|V4TFM1|V4TFM1_CITCL          FDTLDELKSSFRNVGLNDKLDLVALSGAHTFGRAQCQFFRGRLYDFNNTG
+                                 :.*  **  ********::****************: *  **::**.**
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDLFDNKYFFNLQIRK
+tr|A0A067FI92|A0A067FI92_CITSI  KPDPTLDATFLQQLRKLCPQGGNGGVLANFDVTTPDVFDNKYFSNLRGRK
+tr|A0A067DM69|A0A067DM69_CITSI  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDLFDNKYFFNLQISK
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDVFDNKYFFNLQIHK
+tr|A0A067FI88|A0A067FI88_CITSI  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDVFDNKYFFNLQIHK
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDVFDNKYFFNLQIHK
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDVFDNKYFFNLQIHK
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDLFDNKYFFNLQIRK
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDLFDNKYFFNLQIRK
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  NPDPTLDATFLQQLRQLCPQGGNGSVLTNLDVTTPNVFDNKYFSNLRNRK
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDLFDNKYFFNLQIRK
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  NPDPTLNTTLLQQLRQLCPQGGNGSVLTNLDVTTPDLFDNKYFFNLQIRK
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  KPDPTLDSTFLQQLRKLCPQGGNGGVLANFDVTTPDVFDNKYFSNLRGRK
+tr|V4TFM1|V4TFM1_CITCL          KPDPTLDATFLQQLRKLCPQGGNGGVLANFDVTTPDVFDNKYFSNLRGRK
+                                :*****::*:*****:********.**:*:*****::****** **:  *
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  GLLQSDQELFSTPGADTAAIVNVFSSNQAAFFQSFVISMIRMGNLRPLTG
+tr|A0A067FI92|A0A067FI92_CITSI  GLLQSDQELFSTPGADTAAIVEDFGRNQNAFFKNFVTSMIRMGNLKPLTG
+tr|A0A067DM69|A0A067DM69_CITSI  GLLQSDQELFSTPGADTTAIVNVFSSNQAAFFKSFVISMIRMGNLKPLTG
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  GLLQSDQELFSTPGADTAAIVNNFGRNQTAFFENFVTSMIRMGNLKPLTG
+tr|A0A067FI88|A0A067FI88_CITSI  GLLQSDQELFSTPGADTAAIVNNFGRNQTAFFENFVTSMIRMGNLKPLTG
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  GLLQSDQELFSTPGADTAAIVNNFGRNQTAFFENFVTSMIRMGNLKPLTG
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  GLLQSDQELFSTPGADTAAIVNNFGRNQTAFFENFVTSMIRMGNLKPLTG
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  GLLQSDQELFSTPGADTAAIVNVFSSNQAAFFQSFVISMIRMGNLRPLTG
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  GLLQSDQELFSTPGADTAAIVNN------AFFKNFVTSMIRMGNLKPLTG
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  GLLQSDQELFSTPGADTIDIVNVFRKNQAAFFKSFVTSMIRMGNLKPLTG
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  GLLQSDQELFSTPGADTAAIVNVFSSNQAAFFQSFVISMIRMGNLRPLTG
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  GLLQSDQELFSTPGADTAAIVNVFSSNQAAFFKSFVISMIRMG-------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  GLLQSDQELFSTPGADTAAIVEDFGRNQTAFFKNFVTSMIRMGNLKPLTG
+tr|V4TFM1|V4TFM1_CITCL          GLLQSDQELFSTPGADTAAIVEDFGRNQNAFFKNFVTSMIRMGNLKPLTG
+                                *****************  **:       ***:.** ******       
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  NQGEIRLNCRRVNGNSNIETRSS---------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  NQGEIRLNCRRVNGNSNIA-------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  NQGEIRSNCRRVNGNSNIETRSS---------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  NQGEIRLNCRRVNGNSNIATRSS---------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  NQGEIRLNCRRVNGNSNIATRSS---------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  NQGEIRLNCRRVNGNSNIATRSS---------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  NQGEIRLNCRRVNGNSNIATRSS---------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  NQGEIRLNCRRVNGNSNIETRSSS--------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  NQGEIRLNCRRVNGNSNIATRSSS--------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  NEGEIRLNCRRVNGNSNIQ-------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  NQGEIRLNCRRVNGNSNIETRSSSEDKMASLRYLLAAALLVAFVLEGSPS
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  NQGEIRLNCRRVNGNSNIA-------------------------------
+tr|V4TFM1|V4TFM1_CITCL          NQGEIRLNCRRVNGNSNIA-------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  QAQLSPSFYSSTCPNVLNTIEDVLKKAFSSDIRIGASLIRLHFHDCFVDG
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  CDASILLDSTNTIDSEKFAAPNNNSARGFEVIDNMKAAVERACPRVVSCA
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  DILTIAAERSVALSGGPSWAVPLGRRDSRTANRALANQNLPGPFDTLDEL
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  KSSFRNVGLNDKLDLVALSGAHTFGRAQCQFFRGRLYDFNNTGKPDPTLD
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  ATFLQQLRKLCPQGGNGGVLANFDVTTPDVFDNKYFSNLRGRKGLLQSDQ
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  --------------------------------------------------
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  --------------------------------------------------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  ELFSTPGADTAAIVEDFGRNQNAFFKNFVTSMIRMGNLKPLTGNQGEIRL
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  ------------------EAALVVAIALEGSSPSQAQLSPFFYSSTCPNV
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  -----------------SEAALVVAIALEGSSPSQAQLSPFFYSSTCPNV
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  NCRRVNGNSNIATRSSSSEAALVVAIALEGSSPSQAQLSPFFYSSTCPNV
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  TNIIRGVLQKAFLSDIRIGASLIRLHFHDCFVNGCDASVLLDNTTTIDSE
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  TNIIRGVLQKAFLSDIRIGASLIRLHFHDCFVNGCDASVLLDNTTTIDSE
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  TNIIRGVLQKAFLSDIRIGASLIRLHFHDCFVNGCDASVLLDNTTTIDSE
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  KFAAPNNNSARGFEVIDQMKAAVEKACPRVVSCADILTIAAEQSVALSGG
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  KFAAPNNNSARGFEVIDQMKAAVEKACPRVVSCADILTIAAEQSVALSGG
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  KFAAPNNNSARGFEVIDQMKAAVEKACPRVVSCADILTIAAEQSVALSGG
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  PSWTNLLGRRDSRTANRTLANQNLPSPFDTLDRLKASFRNVGLNDNFDLV
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  PSWTNLLGRRDSRTANRTLANQNLPSPFDTLDRLKASFRNVGLNDNFDLV
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  PSWTNLLGRRDSRTANRTLANQNLPSPFDTLDRLKASFRNVGLNDNFDLV
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  ALSGAHTFGRAQCRFFSVRLFNFNNTGNPDPTLDATFLQQLRQLCPQGGN
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  ALSGAHTFGRAQCRFFSVRLFNFNNTGNPDPTLDATFLQQLRQLCPQGGN
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  ALSGAHTFGRAQCRFFSVRLFNFNNTGNPDPTLDATFLQQLRQLCPQGGN
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  GSVLTNLDVTTPNVFDNKYFSNLRNRKGLLQSDQELFSTPGADTIDIVNV
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  GSVLTNLDVTTPNVFDNKYFSNLRNRKGLLQSDQELFSTPGADTIDIVNV
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  --------------------------------------------------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  GSVLTNLDVTTPNVFDNKYFSNLRNRKGLLQSDQELFSTPGADTIDIVNV
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  FRKNQAAFFKSFVTSMIRMGNLKPLTGNEGEIRLNCRRVNGNSNIQLSFS
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  FRKNQAAFFKSFVTSMIRMGNLKPLTGNEGEIRLNCRRVNGNSNIQLSFS
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  ----------------------------------------------LSFS
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  FRKNQAAFFKSFVTSMIRMGNLKPLTGNEGEIRLNCRRVNGNSNIQLSFS
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  RLCLTNHHLKLSLRQIFTTPHALMHQTSFWNAFNSDIRITASLIRLHFHD
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  RLCLTNHHLKLSLRQIFTTPHALMHQTSFWNAFNSDIRITASLIRLHFHD
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  RLCLTNHHLKLSLRQIFTTPHALMHQTSFWNAFNSDIRITASLIRLHFHD
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  RLCLTNHHLKLSLRQIFTTPHALMHQTSFWNAFNSDIRITASLIRLHFHD
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  CFVNGCDGSILLDNVANDTSIDSEKFSMANNNSARGFEVVDAMKAALESA
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  CFVNGCDGSILLDNVANDTSIDSEKFSMANNNSARGFEVVDAMKAALESA
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  CFVNGCDGSILLDNVANDTSIDSEKFSMANNNSARGFEVVDAMKAALESA
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  CFVNGCDGSILLDNVANDTSIDSEKFSMANNNSARGFEVVDAMKAALESA
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  CPGIVSCADILAIASEQSVNLSGGPSWTVPLGRRDGRTANRSLADQNLPT
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  CPGIVSCADILAIASEQSVNLSGGPSWTVPLGRRDGRTANRSLADQNLPT
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  CPGIVSCADILAIASEQSVNLSGGPSWTVPLGRRDGRTANRSLADQNLPT
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  CPGIVSCADILAIASEQSVNLSGGPSWTVPLGRRDGRTANRSLADQNLPT
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  PFQTLDLLKGRFTNVGLNDNTDLVALSGAHTFGRAQCQFFSQRLFNFNGT
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  PFQTLDLLKGRFTNVGLNDNTDLVALSGAHTFGRAQCQFFSQRLFNFNGT
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  PFQTLDLLKGRFTNVGLNDNTDLVALSGAHTFGRAQCQFFSQRLFNFNGT
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  PFQTLDLLKGRFTNVGLNDNTDLVALSGAHTFGRAQCQFFSQRLFNFNGT
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  GNPDPTLNATLLAQLQQLCPQGGNGSVLTNLDLSTPDGFDNDYFSNLQAN
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  GNPDPTLNATLLAQLQQLCPQGGNGSVLTNLDLSTPDGFDNDYFSNLQAN
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  GNPDPTLNATLLAQLQQLCPQGGNGSVLTNLDLSTPDGFDNDYFSNLQAN
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  GNPDPTLNATLLAQLQQLCPQGGNGSVLTNLDLSTPDGFDNDYFSNLQAN
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  --------------------------------------------------
+tr|A0A067FI92|A0A067FI92_CITSI  --------------------------------------------------
+tr|A0A067DM69|A0A067DM69_CITSI  --------------------------------------------------
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  --------------------------------------------------
+tr|A0A067FI88|A0A067FI88_CITSI  --------------------------------------------------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  --------------------------------------------------
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  --------------------------------------------------
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  NGLLQSDQELFSTPGADTIPIVNNFSSNETAFFESFAVSMIRMGNLSLLT
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  NGLLQSDQELFSTPGADTIPIVNNFSSNETAFFESFAVSMIRMGNLSLLT
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  NGLLQSDQELFSTPGADTIPIVNNFSSNETAFFESFAVSMIRMGNLSLLT
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  NGLLQSDQELFSTPGADTIPIVNNFSSNETAFFESFAVSMIRMGNLSLLT
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  --------------------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  --------------------------------------------------
+tr|V4TFM1|V4TFM1_CITCL          --------------------------------------------------
+                                                                                  
+
+tr|A0A067F9U0|A0A067F9U0_CITSI  ------------------------SEGDLISS--------F
+tr|A0A067FI92|A0A067FI92_CITSI  -------------------TRSSSSEGDLVSSF--------
+tr|A0A067DM69|A0A067DM69_CITSI  ------------------------SEGDLISS--------F
+tr|A0A2H5PD17|A0A2H5PD17_CITUN  -----------------------SSEGDLG-----------
+tr|A0A067FI88|A0A067FI88_CITSI  -----------------------SSEGDLVSSF--------
+tr|A0A2H5PC82|A0A2H5PC82_CITUN  -----------------------SSEGDLRHFSL---FSKS
+tr|A0A2H5PC87|A0A2H5PC87_CITUN  -----------------------SSEGDLFDKIVGKNFL--
+tr|A0A2H5PC95|A0A2H5PC95_CITUN  GTQGEIRSNCRRVNANNLSTR-SSSDGGLVSS--------I
+tr|A0A2H5PD23|A0A2H5PD23_CITUN  GTQGEIRSNCRRVNANNLSTR-SSSDGGLVSSI--------
+tr|A0A2H5PC92|A0A2H5PC92_CITUN  GTQGEIRSNCRRVNANNLSTR-SSSDGGLVSSI--------
+tr|A0A2H5PC88|A0A2H5PC88_CITUN  GTQGEIRSNCRRVNANNLSTR-SSSDGGLVSSI--------
+tr|A0A4T9WAB8|A0A4T9WAB8_9FIRM  -----------------------------------------
+tr|A0A4T9WA86|A0A4T9WA86_9FIRM  -------------------TRSSSSEGDLVSSF--------
+tr|V4TFM1|V4TFM1_CITCL          -------------------TRSSSSEGDLVSSF--------
+                                                                         
+
+
+
