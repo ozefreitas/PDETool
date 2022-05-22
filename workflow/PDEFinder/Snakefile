@@ -27,7 +27,7 @@ rule UPIMAPI_parse:
 
 rule seq_download:
 	input:
-		# o que sai da de cima
+		"Data/Tables/UPIMAPI_results_per_sim.tsv" # o que sai da de cima
 	output:
 		"Data/FASTA/UPIMAPI/{thresholds}.fasta"
 	script:

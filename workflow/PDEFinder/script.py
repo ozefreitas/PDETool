@@ -1,4 +1,5 @@
-from scripts.tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query, UPIMAPI_parser, UPIMAPI_iter_per_sim
+from scripts.UPIMAPI_parser import UPIMAPI_parser, UPIMAPI_iter_per_sim, save_as_tsv
+from scripts.tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query
 from scripts.uniprot_retriever import fasta_retriever, fasta_retriever_from_cdhit
 from scripts.txt_parser import cdhit_parser, counter
 from docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmsearch
@@ -22,13 +23,13 @@ import re
 
 ### MÉTODO FINAL COM UPIMAPI ###
 
-# upi = UPIMAPI_parser("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv")
-# print(upi)
-# 
-# upi_enzymes = UPIMAPI_iter_per_sim(upi)
-# print(upi_enzymes.keys())
-# print(upi_enzymes)
-# 
+upi = UPIMAPI_parser("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv")
+print(upi)
+
+upi_enzymes = UPIMAPI_iter_per_sim(upi)
+print(upi_enzymes.keys())
+print(upi_enzymes)
+save_as_tsv(upi_enzymes)
 # fasta_retriever(upi_enzymes, dic=True)
 
 
@@ -86,22 +87,22 @@ import re
 
 ### Correr hmmsearch para todos os modelos contra a UniProt
 
-hmmpath = "C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/HMMs/After_tcoffee_UPI"
-dest_path = "C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/HMMsearch_results/After_UPI"
-
-for fold in os.listdir(hmmpath):
-    newpath = os.path.join(dest_path, fold)
-    if not os.path.exists(newpath):
-        os.mkdir(newpath)
-    for file in os.listdir(os.path.join(hmmpath, fold)):
-        print("Executing hmmbuild for file", file, "in the", fold, "thresold.", "\n")
-        outname = ""
-        for i in file:
-            if i != ".":
-                outname += i
-            else:
-                outname += ".out"
-                break
-        print("Output name:", outname)
-        docker_run_hmmsearch("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder:/data", "Data/HMMs/After_tcoffee_UPI/" + fold + file, 
-                            "C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Data/FASTA/DataBases/familiesDB.fasta", "Data/HMMsearch_results/After_UPI/" + fold + "/" + outname)
+# hmmpath = "C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/HMMs/After_tcoffee_UPI"
+# dest_path = "C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/HMMsearch_results/After_UPI"
+# 
+# for fold in os.listdir(hmmpath):
+#     newpath = os.path.join(dest_path, fold)
+#     if not os.path.exists(newpath):
+#         os.mkdir(newpath)
+#     for file in os.listdir(os.path.join(hmmpath, fold)):
+#         print("Executing hmmbuild for file", file, "in the", fold, "thresold.", "\n")
+#         outname = ""
+#         for i in file:
+#             if i != ".":
+#                 outname += i
+#             else:
+#                 outname += ".out"
+#                 break
+#         print("Output name:", outname)
+#         docker_run_hmmsearch("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder:/data", "Data/HMMs/After_tcoffee_UPI/" + fold + file, 
+#                             "C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Data/FASTA/DataBases/familiesDB.fasta", "Data/HMMsearch_results/After_UPI/" + fold + "/" + outname)
