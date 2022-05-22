@@ -1,3 +1,4 @@
+from textwrap import indent
 import pandas as pd
 
 
@@ -33,7 +34,8 @@ def UPIMAPI_iter_per_sim(dataframe):
     return target_enzymes
 
 def save_as_tsv(dic):
-    int_df = pd.DataFrame.from_dict(dic)
+    int_df = pd.DataFrame.from_dict(dic, orient="index")
+    # int_df.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Data/Tables/UPIMAPI_results_per_sim.tsv", sep="\t")
     int_df.to_csv(snakemake.output[0], sep="\t")
 
 
