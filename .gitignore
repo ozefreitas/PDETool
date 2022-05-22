@@ -12,9 +12,13 @@
 
 # Databases #
 ############
-**/DataBases/*
-!**/DataBases/familiesDB.fasta
+**/DataBases
+# !**/DataBases/familiesDB.fasta
 
 # Pypl dependencies #
 ############
 src/PDETool.egg-info/
+
+# snakemake logs #
+############
+# **/.snakemake
