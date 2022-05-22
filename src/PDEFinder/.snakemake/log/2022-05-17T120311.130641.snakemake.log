@@ -1,0 +1,3 @@
+CreateRuleException in line 55 of /mnt/c/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/src/PDEFinder/Snakefile:
+The name seq_download is already used by another rule
+  File "/mnt/c/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/src/PDEFinder/Snakefile", line 55, in <module>
