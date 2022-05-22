@@ -1,0 +1,34 @@
+import pandas as pd
+
+
+def UPIMAPI_parser(filepath):
+    UPIMAPI_outfile = pd.read_csv(filepath, sep="\t")
+    return UPIMAPI_outfile
+
+def UPIMAPI_iter_per_sim(dataframe):
+    """    Given a pandas DataFrame, return a dictionary with a list of sequences form the iteration of the sequence similarity between queries and database sequences.
+
+    Args:
+        dataframe (DataFrame): A pandas dataframe with diamond documented columns names as header
+
+    Returns:
+        dictionary: A dictionary where the keys are intervals of sequence similarity, and values are lists of UniProtKB queries
+    """
+
+    # selecionar colunas com perc. identity juntamente com os IDs das sequencias
+    # print(dataframe.columns)
+    seq_id = dataframe[["qseqid", "sseqid", "pident"]]
+    # print(seq_id)
+
+    # retirar os grupos de enzimas com similaridade de 60% a 90% com incrementos de 5%
+    target_enzymes = {}
+    for perc in range(60, 86, 5):
+        chave = str(perc)+"-"+str(perc+5)
+        for index, seq in seq_id.iterrows():
+            if seq["pident"] >= perc and seq["pident"] < perc+5:
+                if chave not in target_enzymes.keys():
+                    target_enzymes[chave] = [seq["sseqid"]]
+                else:
+                    target_enzymes[chave].append(seq["sseqid"])
+    return target_enzymes
+

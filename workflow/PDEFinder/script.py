@@ -1,6 +1,6 @@
-from tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query, UPIMAPI_parser, UPIMAPI_iter_per_sim
-from uniprot_retriever import fasta_retriever, fasta_retriever_from_cdhit
-from txt_parser import cdhit_parser, counter
+from scripts.tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query, UPIMAPI_parser, UPIMAPI_iter_per_sim
+from scripts.uniprot_retriever import fasta_retriever, fasta_retriever_from_cdhit
+from scripts.txt_parser import cdhit_parser, counter
 from docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmsearch
 import os
 import re
@@ -103,4 +103,5 @@ for fold in os.listdir(hmmpath):
                 outname += ".out"
                 break
         print("Output name:", outname)
-        docker_run_hmmsearch("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder:/data", "Data/HMMs/After_tcoffee_UPI/" + fold + file, database_file, "Data/HMMsearch_results/After_UPI/" + fold + "/" + outname)
+        docker_run_hmmsearch("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder:/data", "Data/HMMs/After_tcoffee_UPI/" + fold + file, 
+                            "C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Data/FASTA/DataBases/familiesDB.fasta", "Data/HMMsearch_results/After_UPI/" + fold + "/" + outname)
