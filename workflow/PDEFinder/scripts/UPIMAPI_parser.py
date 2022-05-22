@@ -6,7 +6,7 @@ def UPIMAPI_parser(filepath):
     return UPIMAPI_outfile
 
 def UPIMAPI_iter_per_sim(dataframe):
-    """    Given a pandas DataFrame, return a dictionary with a list of sequences form the iteration of the sequence similarity between queries and database sequences.
+    """Given a pandas DataFrame, return a dictionary with a list of sequences form the iteration of the sequence similarity between queries and database sequences.
 
     Args:
         dataframe (DataFrame): A pandas dataframe with diamond documented columns names as header
@@ -32,3 +32,11 @@ def UPIMAPI_iter_per_sim(dataframe):
                     target_enzymes[chave].append(seq["sseqid"])
     return target_enzymes
 
+def save_as_tsv(dic):
+    int_df = pd.DataFrame.from_dict(dic)
+    int_df.to_csv(snakemake.output[0], sep="\t")
+
+
+handle = UPIMAPI_parser(snakemake.input[0])
+dicionario_identidades = UPIMAPI_iter_per_sim(handle)
+save_as_tsv(dicionario_identidades)

@@ -8,7 +8,7 @@ rule all:
 rule UPIMAPI_search:
 	input:
 		sequence="Data/FASTA/literature_seq/lit_sequences.fasta",
-		database="Alignments/BLAST/DataBases/familiesDB.fasta"
+		database="Data/FASTA/DataBases/familiesDB.fasta"
 	output:
 		"Alignments/BLAST/results_test"
 	threads: 8
@@ -20,9 +20,9 @@ rule UPIMAPI_parse:
 	input:
 		"Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv"
 	output:
-		# é apenas um dataframe, mudar para criar um tsv e dar com output 
+		"Data/Tables/UPIMAPI_results_per_sim.tsv"
 	script:
-		"tsv_parser.py"
+		"UPIMAPI_parser.py"
 
 
 rule seq_download:
