@@ -12,30 +12,30 @@ def get_fasta_sequences(tsv_file, out_filename=None, seq_proc=False):
         seq_proc (bool, optional): Decides if is necessary to process UniProt ID's. Defaults to False.
     """
     # abrir tsv como DataFrame
-    df = pd.read_csv(tsv_file, sep="\t")
-    print(df)
-    # iterar pelos values do dicionário, que são listas
-#    file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond/" + out_filename + ".fasta", mode="w")
-#    for seq in seq_ids:
-#        # muda a seq para o codigo que o uniprot aceite como ID
-#        if seq_proc:
-#            code = re.findall("\|.*\|", seq)
-#            clean = re.sub("\|", "", code[0])
-#        else:
-#            clean = seq
-#        try:
-#            # faz o download da sequencia em formato fasta
-#            data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + clean + ".fasta")
-#        except:
-#            continue
-#        dados = data.read()
-#        # urllib.request.urlopen retorna os dados em forma de bytes, tem que ser convertido em string
-#        encoding = 'utf-8'
-#        fasta = dados.decode(encoding)
-#        fasta = fasta.split("\n")
-#        # para cada elemento da lista gerado pelo split
-#        for line in fasta:
-#            # vai adicionar uma linha ao ficheiro, juntamente com o \n no final, para fazer uma nova linha
-#            file.write(line)
-#            file.write("\n")
-#    file.close()
+    df = pd.read_csv(tsv_file, sep="\t", index_col=0)
+    # iterar pelas linhas
+    for index, content in df.iterrows():
+        file = open(file="c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/Diamond/" + index + ".fasta", mode="w")
+        for uni_id in list(content):
+        # muda a seq para o codigo que o uniprot aceite como ID
+            if seq_proc:
+                code = re.findall("\|.*\|", uni_id)
+                clean = re.sub("\|", "", code[0])
+            else:
+                clean = uni_id
+            try:
+                # faz o download da sequencia em formato fasta
+                data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + clean + ".fasta")
+            except:
+                continue
+            dados = data.read()
+            # urllib.request.urlopen retorna os dados em forma de bytes, tem que ser convertido em string
+            encoding = 'utf-8'
+            fasta = dados.decode(encoding)
+            fasta = fasta.split("\n")
+            # para cada elemento da lista gerado pelo split
+            for line in fasta:
+                # vai adicionar uma linha ao ficheiro, juntamente com o \n no final, para fazer uma nova linha
+                file.write(line)
+                file.write("\n")
+        file.close()
