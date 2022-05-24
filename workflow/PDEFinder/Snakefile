@@ -1,4 +1,4 @@
-# fazer config file
+configfile: "config.yaml"
 
 rule all:
 	input:
@@ -22,16 +22,16 @@ rule UPIMAPI_parse:
 	output:
 		"Data/Tables/UPIMAPI_results_per_sim.tsv"
 	script:
-		"UPIMAPI_parser.py"
+		"scripts/UPIMAPI_parser.py"
 
 
 rule seq_download:
 	input:
-		"Data/Tables/UPIMAPI_results_per_sim.tsv" # o que sai da de cima
+		"Data/Tables/UPIMAPI_results_per_sim.tsv"
 	output:
 		"Data/FASTA/UPIMAPI/{thresholds}.fasta"
 	script:
-		"uniprot_retriever.py"
+		"scripts/seq_download.py"
 
 
 rule cdhit_per_threshold:
@@ -49,7 +49,7 @@ rule cdhit_parse:
 	output:
 		# é um dicionario
 	script:
-		"txt_parser.py"
+		"scripts/txt_parser.py"
 
 
 rule seq_download_2:
@@ -58,7 +58,7 @@ rule seq_download_2:
 	output:
 		"Data/FASTA/CDHIT/{thresholds}/{clusters}.fasta"  # todos os clusters, por threshold
 	script:
-		"uniprot_retriever.py" # from_cdhit
+		"scripts/uniprot_retriever.py" # from_cdhit
 
 
 rule t_coffee:
