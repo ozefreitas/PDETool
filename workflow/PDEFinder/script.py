@@ -2,6 +2,7 @@ from scripts.UPIMAPI_parser import UPIMAPI_parser, UPIMAPI_iter_per_sim, save_as
 from scripts.tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query
 from scripts.uniprot_retriever import fasta_retriever, fasta_retriever_from_cdhit
 from scripts.txt_parser import cdhit_parser, counter
+from scripts.seq_download import get_fasta_sequences
 from docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmsearch
 import os
 import re
@@ -31,7 +32,7 @@ print(upi_enzymes.keys())
 print(upi_enzymes)
 save_as_tsv(upi_enzymes)
 # fasta_retriever(upi_enzymes, dic=True)
-
+get_fasta_sequences("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Data/Tables/UPIMAPI_results_per_sim.tsv")
 
 ### Processamento dos cd-hit depois do upimapi e criacao dos ficheiros fasta com cada cluster
 

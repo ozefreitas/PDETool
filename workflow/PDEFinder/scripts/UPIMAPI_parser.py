@@ -35,10 +35,10 @@ def UPIMAPI_iter_per_sim(dataframe):
 
 def save_as_tsv(dic):
     int_df = pd.DataFrame.from_dict(dic, orient="index")
-    # int_df.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Data/Tables/UPIMAPI_results_per_sim.tsv", sep="\t")
-    int_df.to_csv(snakemake.output[0], sep="\t")
+    int_df.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Data/Tables/UPIMAPI_results_per_sim.tsv", sep="\t")
+    # int_df.to_csv(snakemake.output[0], sep="\t")
 
 
-handle = UPIMAPI_parser(snakemake.input[0])
-dicionario_identidades = UPIMAPI_iter_per_sim(handle)
-save_as_tsv(dicionario_identidades)
+# handle = UPIMAPI_parser(snakemake.input[0])
+# dicionario_identidades = UPIMAPI_iter_per_sim(handle)
+# save_as_tsv(dicionario_identidades)

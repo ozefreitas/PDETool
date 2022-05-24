@@ -3,7 +3,7 @@ import re
 import urllib.request
 
 
-def fasta_retriever(tsv_file, out_filename=None, seq_proc=False):
+def get_fasta_sequences(tsv_file, out_filename=None, seq_proc=False):
     """Given a .tsv file with UniProt ID's as data, first column as thresholds, write a fasta file with all fasta sequences of the corresponding ID's,
         by similarity thresholds.
     Args:
