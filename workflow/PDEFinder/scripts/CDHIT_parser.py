@@ -27,7 +27,8 @@ def cdhit_parser(txtfile):
     return seqs_by_cluster
 
 def counter(clstr_lst, remove_single=True, tsv_ready=False):
-    """_summary_
+    """Functions receives a dictionary with keys as the number of the cluster and UniProt sequences IDs as values and returns another dictionary
+    with the number of sequences per cluster, with the option of removing single sequence clusters.
 
     Args:
         clstr_lst (dictionary): A dictionary with the number of the cluster as key and the UniProt ID's for the sequences inside each cluster as value.
@@ -49,3 +50,11 @@ def counter(clstr_lst, remove_single=True, tsv_ready=False):
         else:
             number_seqs_by_cluster[k] = (v, len(v))
     return number_seqs_by_cluster
+
+def save_as_tsv(dic):
+    int_df = pd.DataFrame.from_dict(dic, orient="index")
+    int_df.to_csv(snakemake.output[0], sep="\t")
+
+
+handle = cdhit_parser(snakemake.input[0])
+handle2 = counter(handle, tsv_ready=True)

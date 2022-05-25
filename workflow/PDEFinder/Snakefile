@@ -53,14 +53,14 @@ rule cdhit_parse:
 	input:
 		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta.clstr"
 	output:
-		# é um dicionario, passar para um tsv
+		"Data/Tables/cdhit_clusters_per_threshold_afterUPIMAPI.tsv"
 	script:
-		"scripts/txt_parser.py"
+		"scripts/CDHIT_parser.py"
 
 
 rule seq_download_2:
 	input:
-		# o que sair de cima, será um tsv
+		"Data/Tables/cdhit_clusters_per_threshold_afterUPIMAPI.tsv"
 	output:
 		"Data/FASTA/CDHIT/{threshold}/{clusters}.fasta"  # todos os clusters, por threshold
 	script:
