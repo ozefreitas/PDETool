@@ -39,3 +39,6 @@ def get_fasta_sequences(tsv_file, out_filename=None, seq_proc=False):
                 file.write(line)
                 file.write("\n")
         file.close()
+
+
+# get_fasta_sequences(snakemake.input[0])

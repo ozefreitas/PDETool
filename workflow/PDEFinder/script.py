@@ -23,15 +23,16 @@ import re
 
 ### MÉTODO FINAL COM UPIMAPI ###
 
-upi = UPIMAPI_parser("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv")
-print(upi)
+# upi = UPIMAPI_parser("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv")
+# print(upi)
+# 
+# upi_enzymes = UPIMAPI_iter_per_sim(upi)
+# print(upi_enzymes.keys())
+# print(upi_enzymes)
+# 
+# fasta_retriever(upi_enzymes, dic=True)
 
-upi_enzymes = UPIMAPI_iter_per_sim(upi)
-print(upi_enzymes.keys())
-print(upi_enzymes)
-
-fasta_retriever(upi_enzymes, dic=True)
-
+### Fazer cdhit que foi para os ficheiros C:\Users\jpsfr\OneDrive\Ambiente de Trabalho\TOOL\PDETool\workflow\PDEFinder\Data\FASTA\UPIMAPI\cd-hit90_after_diamond_60-65.fasta.clstr
 
 ### Processamento dos cd-hit depois do upimapi e criacao dos ficheiros fasta com cada cluster
 
