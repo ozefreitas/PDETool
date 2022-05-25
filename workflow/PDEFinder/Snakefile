@@ -12,6 +12,10 @@ rule UPIMAPI_search:
 	output:
 		"Alignments/BLAST/results_test"
 	threads: 8
+	log:
+		"logs/UPIMAPI_search.log"
+	conda:
+		"envs/"
 	shell:
 		"upimapi.py -i {input.sequence} -o {output} -db {input.database} -t {threads}"
 
@@ -21,6 +25,8 @@ rule UPIMAPI_parse:
 		"Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv"
 	output:
 		"Data/Tables/UPIMAPI_results_per_sim.tsv"
+	conda:
+		"envs/"
 	script:
 		"scripts/UPIMAPI_parser.py"
 
@@ -29,43 +35,43 @@ rule seq_download:
 	input:
 		"Data/Tables/UPIMAPI_results_per_sim.tsv"
 	output:
-		"Data/FASTA/UPIMAPI/{thresholds}.fasta"
+		"Data/FASTA/UPIMAPI/{threshold}.fasta" # ????????
 	script:
 		"scripts/seq_download.py"
 
 
-rule cdhit_per_threshold:
+rule initial_cdhit_per_threshold:
 	input:
-		"Data/FASTA/UPIMAPI/{thresholds}.fasta"
+		"Data/FASTA/UPIMAPI/{threshold}.fasta"
 	output:
-		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{thresholds}.fasta"
+		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta"  # sem .clstr porque ele ja vai fazer os dois ficheiros
 	shell:
 		"docker run --rm -v ~/FASTA/UPIMAPI/:/data/ biocontainers/cd-hit:v4.6.8-2-deb_cv1 bash -c 'cd-hit -i data/{input} -o {output} -c 0.9 -n 5 -M 16000 -d 0 -T 8'"
 
 
 rule cdhit_parse:
 	input:
-		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{thresholds}.fasta"
+		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta.clstr"
 	output:
-		# é um dicionario
+		# é um dicionario, passar para um tsv
 	script:
 		"scripts/txt_parser.py"
 
 
 rule seq_download_2:
 	input:
-		# o que sair de cima
+		# o que sair de cima, será um tsv
 	output:
-		"Data/FASTA/CDHIT/{thresholds}/{clusters}.fasta"  # todos os clusters, por threshold
+		"Data/FASTA/CDHIT/{threshold}/{clusters}.fasta"  # todos os clusters, por threshold
 	script:
 		"scripts/uniprot_retriever.py" # from_cdhit
 
 
 rule t_coffee:
 	input:
-	 	"Data/FASTA/CDHIT/{thresholds}/{clusters}.fasta"
+	 	"Data/FASTA/CDHIT/{threshold}/{clusters}.fasta"
 	output:
-		"Alignments/MultipleSequencesAlign/T_Coffee_UPI/{thresholds}/{clusters}.clustal_aln"
+		"Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{clusters}.clustal_aln"
 	shell:
 		"docker run --rm -v ~/PDEFinder/:/data pegi3s/tcoffee:latest t_coffee data/{input} -run_name data/{output} -output clustalw_aln"
 
@@ -74,16 +80,16 @@ rule hmmbuild:
 	input:
 		"Alignments/MultipleSequencesAlign/T_Coffee_UPI/{thresholds}/{clusters}.clustal_aln"
 	output:
-		"Data/HMMs/After_tcoffee_UPI/{thresholds}/{clusters}.hmm"
+		"Data/HMMs/After_tcoffee_UPI/{threshold}/{clusters}.hmm"
 	shell:
 		"docker run --rm -v ~/PDEFinder/:/data biocontainers/hmmer:v3.2.1dfsg-1-deb_cv1 hmmbuild {output} {input}"
 
 
 rule hmmsearch:
 	input:
-		"Data/HMMs/After_tcoffee_UPI/{thresholds}/{clusters}.hmm",
+		"Data/HMMs/After_tcoffee_UPI/{threshold}/{clusters}.hmm",
 		"path to DB"
 	output:
-		"Data/HMMs/HMMsearch_results/After_UPI/{thresholds}/{clusters}.out"
+		"Data/HMMs/HMMsearch_results/After_UPI/{threshold}/{clusters}.out"
 	shell:
 		"docker run --rm -v ~/PDEFinder/:/data biocontainers/hmmer:v3.2.1dfsg-1-deb_cv1 hmmsearch {input} > {output}"
