@@ -30,12 +30,12 @@ def cdhit_parser(txtfile):
             seqs_by_cluster[cluster].append(clean)
     return seqs_by_cluster
 
-def counter(clstr_lst, remove_single=False):
+def counter(clstr_lst, remove_single=True):
     """_summary_
 
     Args:
         clstr_lst (dictionary): A dictionary with the number of the cluster as key and the UniProt ID's for the sequences inside each cluster as value.
-        remove_single (bool, optional): Decides to remove single sequence clusters. Defaults to False.
+        remove_single (bool, optional): Decides to remove single sequence clusters. Defaults to True.
 
     Returns:
         dictionary: A dictionary with the number of the cluster as key and the UniProt ID's for the sequences inside each cluster, as well as the size
@@ -46,5 +46,7 @@ def counter(clstr_lst, remove_single=False):
         if remove_single:
             if len(v) > 1:
                 number_seqs_by_cluster[k] = (v, len(v))
+        else:
+            number_seqs_by_cluster[k] = (v, len(v))
     return number_seqs_by_cluster
 
