@@ -12,7 +12,7 @@ def fasta_retriever_from_cdhit(tsv_file, threshold):
     df = pd.read_csv(tsv_file, sep="\t", index_col=0)
     for index, content in df.iterrows():
         # abre o ficheiro no modo write
-        file = open(file=newpath + "/" + str(index) + ".fasta", mode="w")
+        file = open("c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/CDHIT" + threshold + "/" + str(index) + ".fasta", mode="w")
         for seq in list(content):
             try:
                 # faz o download da sequencia em formato fasta
@@ -32,4 +32,4 @@ def fasta_retriever_from_cdhit(tsv_file, threshold):
         file.close()
 
 
-# fasta_retriever_from_cdhit(snakemake.input[0])
+# fasta_retriever_from_cdhit(snakemake.input[0], threshold)

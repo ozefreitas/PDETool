@@ -58,7 +58,7 @@ rule cdhit_parse:
 		"scripts/CDHIT_parser.py"
 
 
-rule seq_download_2:
+rule seq_download_cdhit:
 	input:
 		"Data/Tables/cdhit_clusters_per_threshold_afterUPIMAPI.tsv"
 	output:
