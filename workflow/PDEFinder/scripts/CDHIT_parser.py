@@ -58,3 +58,4 @@ def save_as_tsv(dic):
 
 handle = cdhit_parser(snakemake.input[0])
 handle2 = counter(handle, tsv_ready=True)
+save_as_tsv(handle2)

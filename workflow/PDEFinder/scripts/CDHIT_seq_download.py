@@ -1,16 +1,19 @@
-import os
+import pandas as pd
 import urllib.request
 
 
-def fasta_retriever_from_cdhit(seq_ids, threshold):
-    parent_dir = "c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/CDHIT/"
-    newpath = os.path.join(parent_dir, threshold)
-    if not os.path.exists(newpath):
-        os.mkdir(newpath)
-    for clstr, seqs in seq_ids.items():
+def fasta_retriever_from_cdhit(tsv_file, threshold):
+    """_summary_
+
+    Args:
+        tsv_file (string): String containing the name of the .tsv file to be processed.
+        threshold (string): interval of the similarity threshold.
+    """
+    df = pd.read_csv(tsv_file, sep="\t", index_col=0)
+    for index, content in df.iterrows():
         # abre o ficheiro no modo write
-        file = open(file=newpath + "/" + str(clstr) + ".fasta", mode="w")
-        for seq in seqs[0]:
+        file = open(file=newpath + "/" + str(index) + ".fasta", mode="w")
+        for seq in list(content):
             try:
                 # faz o download da sequencia em formato fasta
                 data = urllib.request.urlopen("http://www.uniprot.org/uniprot/" + seq + ".fasta")
@@ -28,3 +31,5 @@ def fasta_retriever_from_cdhit(seq_ids, threshold):
                 file.write("\n")
         file.close()
 
+
+# fasta_retriever_from_cdhit(snakemake.input[0])

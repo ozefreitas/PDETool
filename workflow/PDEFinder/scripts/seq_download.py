@@ -7,7 +7,7 @@ def get_fasta_sequences(tsv_file, out_filename=None, seq_proc=False):
     """Given a .tsv file with UniProt ID's as data, first column as thresholds, write a fasta file with all fasta sequences of the corresponding ID's,
         by similarity thresholds.
     Args:
-        tsv_file (bool, optional): _description_. Defaults to False.
+        tsv_file (string): String containing the name of the .tsv file to be processed.
         out_filename (string, optional): A name to asign to the fasta file containing all sequences. Defaults to None.
         seq_proc (bool, optional): Decides if is necessary to process UniProt ID's. Defaults to False.
     """

@@ -35,7 +35,7 @@ rule seq_download:
 	input:
 		"Data/Tables/UPIMAPI_results_per_sim.tsv"
 	output:
-		"Data/FASTA/UPIMAPI/{threshold}.fasta" # ????????
+		"Data/FASTA/UPIMAPI/{threshold}.fasta" # 1 ficheiro para cada threshold com todas as sequencias desse
 	script:
 		"scripts/seq_download.py"
 
@@ -53,7 +53,7 @@ rule cdhit_parse:
 	input:
 		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta.clstr"
 	output:
-		"Data/Tables/cdhit_clusters_per_threshold_afterUPIMAPI.tsv"
+		"Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv"
 	script:
 		"scripts/CDHIT_parser.py"
 
@@ -62,9 +62,9 @@ rule seq_download_2:
 	input:
 		"Data/Tables/cdhit_clusters_per_threshold_afterUPIMAPI.tsv"
 	output:
-		"Data/FASTA/CDHIT/{threshold}/{clusters}.fasta"  # todos os clusters, por threshold
+		"Data/FASTA/CDHIT/{threshold}/{clusters}.fasta"  # um ficheiro por cada cluster, por threshold, com as sequencias
 	script:
-		"scripts/uniprot_retriever.py" # from_cdhit
+		"scripts/CDHIT_seq_download.py" # from_cdhit
 
 
 rule t_coffee:
