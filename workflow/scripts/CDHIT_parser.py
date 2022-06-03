@@ -51,11 +51,11 @@ def counter(clstr_lst, remove_single=True, tsv_ready=False):
             number_seqs_by_cluster[k] = (v, len(v))
     return number_seqs_by_cluster
 
-def save_as_tsv(dic):
+def save_as_tsv(dic, out_path):
     int_df = pd.DataFrame.from_dict(dic, orient="index")
-    int_df.to_csv(snakemake.output[0], sep="\t")
+    int_df.to_csv(out_path, sep="\t")
 
 
-handle = cdhit_parser(snakemake.input[0])
-handle2 = counter(handle, tsv_ready=True)
-save_as_tsv(handle2)
+# handle = cdhit_parser(snakemake.input[0])
+# handle2 = counter(handle, tsv_ready=True)
+# save_as_tsv(handle2, snakemake.output[0])

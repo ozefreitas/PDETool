@@ -1,8 +1,9 @@
 from scripts.tsv_parser import UPIMAPI_parser, UPIMAPI_iter_per_sim
 from scripts.tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query
 from scripts.uniprot_retriever import fasta_retriever, fasta_retriever_from_cdhit
-from scripts.txt_parser import cdhit_parser, counter
+# from scripts.txt_parser import cdhit_parser, counter
 from docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmsearch
+from scripts.CDHIT_parser import cdhit_parser, counter, save_as_tsv
 import os
 import re
 
@@ -29,10 +30,21 @@ import re
 # upi_enzymes = UPIMAPI_iter_per_sim(upi)
 # print(upi_enzymes.keys())
 # print(upi_enzymes)
-# 
-# fasta_retriever(upi_enzymes, dic=True)
+
+# Para o snakemake, os IDS das enzimas que vieram do UPIMAPI e que foram divididas por thresholds, passam a .tsv
+
+# fasta_retriever(upi_enzymes, dic=True)  # download das sequencias
+
 
 ### Fazer cdhit que foi para os ficheiros C:\Users\jpsfr\OneDrive\Ambiente de Trabalho\TOOL\PDETool\workflow\PDEFinder\Data\FASTA\UPIMAPI\cd-hit90_after_diamond_60-65.fasta.clstr
+
+# Para o snakemake, os ficheiros .clstr seráo processados por cluster e transformados em .tsv, por cada threshold
+
+for perc in range(60, 86, 5):
+    chave = str(perc)+"-"+str(perc+5)
+    sequencias = cdhit_parser("C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_" + chave + ".fasta.clstr")
+    numb_seq = counter(sequencias, remove_single=True, tsv_ready=True)
+    save_as_tsv(numb_seq, "C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/Tables/cdhit_clusters_" + chave + "_afterUPIMAPI.tsv")
 
 ### Processamento dos cd-hit depois do upimapi e criacao dos ficheiros fasta com cada cluster
 
@@ -44,9 +56,7 @@ import re
 #     fasta_retriever_from_cdhit(numb_seq, chave)
 
 
-
 ### Correr t_coffee para todos os ficheiros gerados em cima
-
 
 # docker_run_tcoffee("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/CDHIT:/data", "60-65", "1.fasta", "clustalw_aln", "1.clustal_aln")
 # docker_run_tcoffee("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder:/data", "Data/FASTA/CDHIT/60-65", "1.fasta", "clustalw_aln", "Alignments/MultipleSequencesAlign/T_Coffee_UPI/1.clustal_aln")
