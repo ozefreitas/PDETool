@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 23 of /mnt/c/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/PDEFinder/Snakefile:
+Missing input files for rule UPIMAPI_parse:
+Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv

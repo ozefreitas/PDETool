@@ -1,4 +1,4 @@
-configfile: "config.yaml"
+configfile: "config/config.yaml"
 
 rule all:
 	input:
@@ -7,17 +7,19 @@ rule all:
 
 rule UPIMAPI_search:
 	input:
-		sequence="Data/FASTA/literature_seq/lit_sequences.fasta",
-		database="Data/FASTA/DataBases/familiesDB.fasta"
+		sequence="workflow/PDEFinder/Data/FASTA/literature_seq/lit_sequences.fasta",
+		database="workflow/PDEFinder/Data/FASTA/DataBases/familiesDB.fasta"
 	output:
-		"Alignments/BLAST/results_test"
+		"Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv"
+	params:
+		outdir="Alignments/BLAST/results/upimapi_results"
 	threads: 8
 	log:
 		"logs/UPIMAPI_search.log"
 	conda:
 		"envs/"
 	shell:
-		"upimapi.py -i {input.sequence} -o {output} -db {input.database} -t {threads}"
+		"upimapi.py -i {input.sequence} -o {params.outdir} -db {input.database} -t {threads}"
 
 
 rule UPIMAPI_parse:
@@ -30,19 +32,19 @@ rule UPIMAPI_parse:
 	script:
 		"scripts/UPIMAPI_parser.py"
 
-
+# esta fica dependente desta
 rule seq_download:
 	input:
 		"Data/Tables/UPIMAPI_results_per_sim.tsv"
 	output:
-		"Data/FASTA/UPIMAPI/{threshold}.fasta" # 1 ficheiro para cada threshold com todas as sequencias desse
+		"Data/FASTA/UPIMAPI/{threshold}.fasta"
 	script:
 		"scripts/seq_download.py"
 
 
 rule initial_cdhit_per_threshold:
 	input:
-		"Data/FASTA/UPIMAPI/{threshold}.fasta"
+		expand("Data/FASTA/UPIMAPI/{threshold}.fasta", threshold=config["thresholds"])
 	output:
 		"Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta"  # sem .clstr porque ele ja vai fazer os dois ficheiros
 	shell:

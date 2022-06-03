@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 8 of /mnt/c/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/PDEFinder/Snakefile:
+Missing input files for rule UPIMAPI_search:
+workflow/PDEFinder/Data/FASTA/DataBases/familiesDB.fasta
