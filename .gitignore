@@ -17,6 +17,7 @@
 # Pypl dependencies #
 ############
 */__pycache__
+**/__pycache__
 
 # snakemake logs #
 logs/**
