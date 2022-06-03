@@ -35,6 +35,7 @@ rule UPIMAPI_parse:
 
 wildcard_constraints:
     threshold="[0-9 \-]+"
+	cluster="[0-9]+"
 
 
 rule seq_download:
@@ -58,16 +59,6 @@ rule initial_cdhit_per_threshold:
 		"cd-hit -i data/{input} -o {output} -c 0.9 -n 5 -M 16000 -d 0 -T 8"
 
 
-#rule mockup:
-#	input:
-#		expand("workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta", threshold=config["thresholds"])
-#	output:
-#		"mockup.out"
-#	run:
-#		with open("mockup.out") as f:
-#			f.write("sucess!")
-
-
 rule cdhit_parse:
 	input:
 		"workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta.clstr"
@@ -77,24 +68,35 @@ rule cdhit_parse:
 		"scripts/CDHIT_parser.py"
 
 
+#rule mockup:
+#	input:
+#		expand("workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv", threshold=config["thresholds"])
+#	output:
+#		"mockup.out"
+#	run:
+#		with open("mockup.out") as f:
+#			f.write("sucess!")
+#
+
+
+
+rule seq_download_cdhit:
+	input:
+		"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv"
+	output:
+		"workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta"  # um ficheiro por cada cluster, por threshold, com as sequencias
+	script:
+		"scripts/CDHIT_seq_download.py" # from_cdhit
+
+
 rule mockup:
 	input:
-		expand("workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv", threshold=config["thresholds"])
+		expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", threshold=config["thresholds"], cluster=config[clusters])
 	output:
 		"mockup.out"
 	run:
 		with open("mockup.out") as f:
 			f.write("sucess!")
-
-
-rule seq_download_cdhit:
-	input:
-		"Data/Tables/cdhit_clusters_per_threshold_afterUPIMAPI.tsv"
-	output:
-		"Data/FASTA/CDHIT/{threshold}/{cluster}.fasta"  # um ficheiro por cada cluster, por threshold, com as sequencias
-	script:
-		"scripts/CDHIT_seq_download.py" # from_cdhit
-
 
 from glob import glob
 
@@ -108,7 +110,7 @@ rule t_coffee:
 	output:
 		"Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln"
 	shell:
-		"docker run --rm -v ~/PDEFinder/:/data pegi3s/tcoffee:latest t_coffee data/{input} -run_name data/{output} -output clustalw_aln"
+		"t_coffee data/{input} -run_name data/{output} -output clustalw_aln"
 
 
 rule hmmbuild:
@@ -117,7 +119,7 @@ rule hmmbuild:
 	output:
 		"Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm"
 	shell:
-		"docker run --rm -v ~/PDEFinder/:/data biocontainers/hmmer:v3.2.1dfsg-1-deb_cv1 hmmbuild {output} {input}"
+		"hmmbuild {output} {input}"
 
 
 rule hmmsearch:
@@ -127,4 +129,4 @@ rule hmmsearch:
 	output:
 		"Data/HMMs/HMMsearch_results/After_UPI/{threshold}/{cluster}.out"
 	shell:
-		"docker run --rm -v ~/PDEFinder/:/data biocontainers/hmmer:v3.2.1dfsg-1-deb_cv1 hmmsearch {input} > {output}"
+		"hmmsearch {input} > {output}"
