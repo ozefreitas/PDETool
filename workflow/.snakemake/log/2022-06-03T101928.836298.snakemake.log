@@ -1,3 +1,0 @@
-WorkflowError in line 1 of /mnt/c/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/PDEFinder/Snakefile:
-Workflow defines configfile config.yaml but it is not present or accessible.
-  File "/mnt/c/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/PDEFinder/Snakefile", line 1, in <module>

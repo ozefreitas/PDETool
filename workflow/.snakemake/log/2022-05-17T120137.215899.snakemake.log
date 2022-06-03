@@ -1,3 +1,0 @@
-IndentationError in line 12 of <tokenize>:
-unindent does not match any outer indentation level (<tokenize>, line 12)
-  File "/home/josepedro/mambaforge/envs/thesis/lib/python3.6/tokenize.py", line 585, in _tokenize

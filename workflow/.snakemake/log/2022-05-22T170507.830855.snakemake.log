@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 8 of /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/PDEFinder/Snakefile:
-Missing input files for rule UPIMAPI_search:
-    output: Alignments/BLAST/results_test
-    affected files:
-        Alignments/BLAST/DataBases/familiesDB.fasta
