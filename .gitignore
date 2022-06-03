@@ -1,6 +1,6 @@
 # IDE generated files #
 ############
-*.code-workspace
+.code-workspace
 .idea/
 .vscode/
 
@@ -11,14 +11,14 @@
 *.rar
 
 # Databases #
-############
-**/DataBases
-# !**/DataBases/familiesDB.fasta
+############/
+**/Databases
 
 # Pypl dependencies #
 ############
-src/PDETool.egg-info/
 
 # snakemake logs #
-############
-# **/.snakemake
+logs/**
+*/.snakemake/log/
+.snakemake
+.snakemake/**
