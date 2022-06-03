@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in line 43 of /mnt/c/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/PDEFinder/Snakefile:
-Wildcards in input files cannot be determined from output files:
-'threshold'
