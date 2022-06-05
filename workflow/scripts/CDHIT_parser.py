@@ -55,6 +55,13 @@ def save_as_tsv(dic, out_path):
     int_df = pd.DataFrame.from_dict(dic, orient="index")
     int_df.to_csv(out_path, sep="\t")
 
+def get_clusters(tsv_file):
+    df = pd.read_csv(tsv_file, sep="\t", index_col=0)
+    return list(df.index.values)
+
+def get_number_clusters(tsv_file):
+    df = pd.read_csv(tsv_file, sep="\t", index_col=0)
+    return len(df.index)
 
 # handle = cdhit_parser(snakemake.input[0])
 # handle2 = counter(handle, tsv_ready=True)

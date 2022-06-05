@@ -1,8 +1,9 @@
 import pandas as pd
 import urllib.request
+from CDHIT_parser import get_clusters, get_number_clusters
 
 
-def fasta_retriever_from_cdhit(tsv_file, out_folder):
+def fasta_retriever_from_cdhit(tsv_file, out_file):
     """Given a .tsv file for each similarity threshold with UniProt ID's as data, first column as number of the cluster, 
     write a fasta file with all fasta sequences of the corresponding ID's, by cluster.
 
@@ -11,8 +12,8 @@ def fasta_retriever_from_cdhit(tsv_file, out_folder):
         threshold (string): interval of the similarity threshold.
     """
     df = pd.read_csv(tsv_file, sep="\t", index_col=0)
-    cluster = out_folder.split("/")[-2]
-    threshold = out_folder.split("/")[-1].split(".f")[0]
+    cluster = out_file.split("/")[-2]
+    threshold = out_file.split("/")[-1].split(".f")[0]
     print(cluster)
     print(threshold)
     for index, content in df.iterrows():
@@ -38,5 +39,5 @@ def fasta_retriever_from_cdhit(tsv_file, out_folder):
             file.close()
 
 
-# fasta_retriever_from_cdhit(snakemake.input[0], threshold)
+# fasta_retriever_from_cdhit(snakemake.input[0], snakemake.output[0])
 # fasta_retriever_from_cdhit("C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/Tables/cdhit_clusters_60-65_afterUPIMAPI.tsv", "C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/FASTA/CDHIT/60-65/1.fasta")

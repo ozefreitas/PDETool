@@ -76,8 +76,6 @@ rule cdhit_parse:
 #	run:
 #		with open("mockup.out") as f:
 #			f.write("sucess!")
-#
-
 
 
 rule seq_download_cdhit:
@@ -85,6 +83,8 @@ rule seq_download_cdhit:
 		"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv"
 	output:
 		"workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta"  # um ficheiro por cada cluster, por threshold, com as sequencias
+	run:
+		from scripts.CDHIT_seq_download import fasta_retriever_from_cdhit
 	script:
 		"scripts/CDHIT_seq_download.py" # from_cdhit
 
