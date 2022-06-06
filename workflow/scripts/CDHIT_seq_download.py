@@ -1,17 +1,18 @@
 import pandas as pd
 import urllib.request
-from CDHIT_parser import get_clusters, get_number_clusters
+# from CDHIT_parser import get_clusters, get_number_clusters
 
 
-def fasta_retriever_from_cdhit(tsv_file, out_file):
+def fasta_retriever_from_cdhit(tsv_file: str, out_file: str):
     """Given a .tsv file for each similarity threshold with UniProt ID's as data, first column as number of the cluster, 
     write a fasta file with all fasta sequences of the corresponding ID's, by cluster.
 
     Args:
         tsv_file (string): String containing the name of the .tsv file to be processed.
-        threshold (string): interval of the similarity threshold.
+        out_file (string): Path to the resulting fasta file.
     """
     df = pd.read_csv(tsv_file, sep="\t", index_col=0)
+    # numb_cluster = get_number_clusters(tsv_file)
     cluster = out_file.split("/")[-2]
     threshold = out_file.split("/")[-1].split(".f")[0]
     print(cluster)
