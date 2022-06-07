@@ -48,6 +48,16 @@ rule seq_download:
 		"scripts/seq_download.py"
 
 
+# rule mockup:
+# 	input:
+# 		expand("workflow/Data/FASTA/UPIMAPI/{threshold}.fasta", threshold=config["thresholds"])
+# 	output:
+# 		"mockup.out"
+# 	run:
+# 		with open("mockup.out") as f:
+# 			f.write("sucess!")
+
+
 rule initial_cdhit_per_threshold:
 	input:
 		"workflow/Data/FASTA/UPIMAPI/{threshold}.fasta"  # é o output da regra anterior com wildcards
@@ -78,10 +88,7 @@ rule cdhit_parse:
 # 			f.write("sucess!")
 
 
-# junta num dicionário os thresholds com os clusters correspondentes
-from scripts.CDHIT_parser import get_clusters
 from glob import glob
-from itertools import product
 # vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
 files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config["thresholds"]}
 threshold2clusters = {}
@@ -90,31 +97,6 @@ for thresh, path in files.items():
 
 # fazer uma lista de listas com todos os clusters, por ordem de threshold
 big_list_clusters = [v for k, v in threshold2clusters.items()]
-max_clusters = max([max(x) for x in big_list_clusters])
-all_clusters = [i for i in range(0, max_clusters+1)]
-
-# função vai fazer todas as combinações entre thresholds e clusters correspondentes
-def util(lista_thresholds, lista_de_listas_clusters):
-	autorized_combs = []
-	for threshold in range(len(lista_thresholds)):
-		for cluster in lista_de_listas_clusters[threshold]:
-			combinacao = (lista_thresholds[threshold], cluster)
-			autorized_combs.append(combinacao)
-	autorized_combs_frozen = {frozenset(t) for t in autorized_combs}
-	return autorized_combs_frozen
-
-# função que vai fazer o produto entre todos, e so devolve os desejados
-def match_threshold_W_cluster(combinador, desired_combs) -> tuple:
-    def match_threshold_W_cluster(*args, **kwargs):
-        for combo in combinador(*args, **kwargs):
-            if frozenset(combo) in desired_combs:
-                yield combo
-    return match_threshold_W_cluster
-
-# combinações que são desejadas
-desired = util(config["thresholds"], big_list_clusters)
-# inicializar função de combinação
-filtered_product = match_threshold_W_cluster(product, desired)
 
 
 rule seq_download_cdhit:
@@ -123,42 +105,31 @@ rule seq_download_cdhit:
 	output:
 		# um ficheiro por cada cluster, por threshold, com as sequencias
 		"workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta"
-		# expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", filtered_product, threshold=config["thresholds"], cluster=(range(0, max_clusters+1)))
+		# expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", filtered_product, threshold=config["thresholds"], cluster=all_clusters)
 	script:
 		"scripts/CDHIT_seq_download.py" # from_cdhit
 
 
-# files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in config["thresholds"]}
-# threshold2clusters = {k : [v.split("/")[-1].split('.f')[0] for v in values] for k, values in files.items()}
-
-
-# rule mockup:
-# 	input:
-# 		expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", filtered_product, threshold=config["thresholds"], cluster=(range(0, max_clusters+1)))
-# 	output:
-# 		"mockup.out"
-# 	run:
-# 		with open("mockup.out") as f:
-# 			f.write("sucess!")
+files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in config["thresholds"]}
+threshold2clusters = {k : [v.split("/")[-1].split('.f')[0] for v in values] for k, values in files.items()}
 
 
 rule t_coffee:
 	input:
-	 	"workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta"
+		# ["workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta".format(threshold=config["thresholds"][x], 
+		# cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
+		"workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta"
 	output:
-		"workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln"
+		expand("workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln", threshold=config["thresholds"], cluster=files[{threshold}])
 	shell:
 		"t_coffee {input} -run_name {output} -output clustalw_aln"
 
 
-rule mockup:
-	input:
-		expand("workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln", filtered_product, threshold=config["thresholds"], cluster=all_clusters)
-	output:
-		"mockup.out"
-	run:
-		with open("mockup.out") as f:
-			f.write("sucess!")
+files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in config["thresholds"]}
+threshold2clusters = {k : [v.split("/")[-1].split('.f')[0] for v in values] for k, values in files.items()}
+
+def cat_hmms_input(wildcards):
+    return expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm", threshold=wildcards.threshold, cluster=threshold2clusters[wildcards.threshold])
 
 
 rule hmmbuild:
@@ -168,6 +139,15 @@ rule hmmbuild:
 		"workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm"
 	shell:
 		"hmmbuild {output} {input}"
+
+
+rule cat_hmms:
+	input:
+	    cat_hmms_input
+	output:
+		expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm", threshold=config["thresholds"])
+	shell:
+		"cat {input} > {output}"
 
 
 rule hmmsearch:
