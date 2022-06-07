@@ -70,7 +70,7 @@ print(files)
 big_list_clusters = [v for k, v in threshold2clusters.items()]
 max_clusters = max([max(x) for x in big_list_clusters])
 all_clusters = [str(i) for i in range(0, max_clusters+1)]
-print(all_clusters)
+# print(all_clusters)
 
 # função vai fazer todas as combinações entre thresholds e clusters correspondentes
 def util(lista_thresholds, lista_de_listas_clusters):
@@ -91,14 +91,19 @@ def match_threshold_W_cluster(combinador, desired_combs) -> tuple:
     return match_threshold_W_cluster
 
 
-desired = util(thresholds, big_list_clusters)
-print(desired)
-produto_cartesiano = product(thresholds, all_clusters)
-sucess = 0
-for x in produto_cartesiano:
-    if frozenset(x) in desired:
-       print(x)
+# desired = util(thresholds, big_list_clusters)
+# print(desired)
+# produto_cartesiano = product(thresholds, all_clusters)
+# sucess = 0
+# for x in produto_cartesiano:
+#     if frozenset(x) in desired:
+#        print(x)
 
+
+files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in thresholds}
+print(files)
+threshold2clusters = {k : [v.split("/")[-1].split("\\")[-1].split('.f')[0] for v in values] for k, values in files.items()}
+print(threshold2clusters)
 
 # filtered_product = match_threshold_W_cluster(product, desired)
 
