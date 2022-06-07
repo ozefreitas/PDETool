@@ -87,7 +87,7 @@ rule cdhit_parse:
 # 		with open("mockup.out") as f:
 # 			f.write("sucess!")
 
-
+from scripts.CDHIT_parser import get_clusters
 from glob import glob
 # vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
 files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config["thresholds"]}
@@ -110,8 +110,18 @@ rule seq_download_cdhit:
 		"scripts/CDHIT_seq_download.py" # from_cdhit
 
 
-files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in config["thresholds"]}
-threshold2clusters = {k : [v.split("/")[-1].split('.f')[0] for v in values] for k, values in files.items()}
+# rule mockup:
+# 	input:
+# 		# expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", threshold=config["thresholds"], 
+# 		# cluster=(threshold2clusters[threshold][clt] for threshold in config["thresholds"] for clt in range(len(threshold2clusters[threshold]))))
+
+# 		["workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta".format(threshold=config["thresholds"][x], 
+# 		cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
+# 	output:
+# 		"mockup.out"
+# 	run:
+# 		with open("mockup.out") as f:
+# 			f.write("sucess!")
 
 
 rule t_coffee:
@@ -120,34 +130,73 @@ rule t_coffee:
 		# cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
 		"workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta"
 	output:
-		expand("workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln", threshold=config["thresholds"], cluster=files[{threshold}])
+		"workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln"
+		# expand("workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln", threshold=config["thresholds"], cluster=threshold2clusters[threshold])
 	shell:
 		"t_coffee {input} -run_name {output} -output clustalw_aln"
 
 
-files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in config["thresholds"]}
-threshold2clusters = {k : [v.split("/")[-1].split('.f')[0] for v in values] for k, values in files.items()}
-
-def cat_hmms_input(wildcards):
-    return expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm", threshold=wildcards.threshold, cluster=threshold2clusters[wildcards.threshold])
+# rule mockup:
+#  	input:
+#  		["workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln".format(threshold=config["thresholds"][x], 
+# 		cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
+#  	output:
+#  		"mockup.out"
+#  	run:
+#  		with open("mockup.out") as f:
+#  			f.write("sucess!")
 
 
 rule hmmbuild:
 	input:
-		"workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{thresholds}/{cluster}.clustal_aln"
+		"workflow/Alignments/MultipleSequencesAlign/T_Coffee_UPI/{threshold}/{cluster}.clustal_aln"
 	output:
 		"workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm"
 	shell:
 		"hmmbuild {output} {input}"
 
 
+#rule mockup:
+# 	input:
+# 		["workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm".format(threshold=config["thresholds"][x], 
+#		cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
+# 	output:
+# 		"mockup.out"
+# 	run:
+# 		with open("mockup.out") as f:
+# 			f.write("sucess!")
+
+
+files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in config["thresholds"]}
+threshold2clusters = {k : [v.split("/")[-1].split("\\")[-1].split('.f')[0] for v in values] for k, values in files.items()}
+
+
+#def cat_hmms_input(wildcards):
+#    return expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm", threshold=wildcards.threshold, cluster=threshold2clusters[wildcards.threshold])
+
+def cat_hmms_input(wildcard):
+	return ["workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm".format(threshold=config["thresholds"][x], 
+			cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
+
+
 rule cat_hmms:
 	input:
-	    cat_hmms_input
+	    cat_hmms_input(wildcards.threshold)
 	output:
-		expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm", threshold=config["thresholds"])
+		"workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm"
 	shell:
 		"cat {input} > {output}"
+
+
+rule mockup:
+	input:
+		expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm", threshold=config["thresholds"])
+	output:
+		"mockup.out"
+	run:
+ 		with open("mockup.out") as f:
+ 			f.write("sucess!")
+
 
 
 rule hmmsearch:
