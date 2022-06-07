@@ -1,11 +1,13 @@
 from scripts.tsv_parser import UPIMAPI_parser, UPIMAPI_iter_per_sim
 from scripts.tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query
 from scripts.uniprot_retriever import fasta_retriever, fasta_retriever_from_cdhit
-# from scripts.txt_parser import cdhit_parser, counter
 from docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmsearch
 from scripts.CDHIT_parser import cdhit_parser, counter, save_as_tsv
+from scripts.CDHIT_parser import get_clusters
+from glob import glob
 import os
 import re
+from itertools import product
 
 
 # df = diamond_parser("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Alignments/Diamond/diamond_out.tsv")
@@ -40,11 +42,11 @@ import re
 
 # Para o snakemake, os ficheiros .clstr seráo processados por cluster e transformados em .tsv, por cada threshold
 
-for perc in range(60, 86, 5):
-    chave = str(perc)+"-"+str(perc+5)
-    sequencias = cdhit_parser("C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_" + chave + ".fasta.clstr")
-    numb_seq = counter(sequencias, remove_single=True, tsv_ready=True)
-    save_as_tsv(numb_seq, "C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/Tables/cdhit_clusters_" + chave + "_afterUPIMAPI.tsv")
+# for perc in range(60, 86, 5):
+#     chave = str(perc)+"-"+str(perc+5)
+#     sequencias = cdhit_parser("C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_" + chave + ".fasta.clstr")
+#     numb_seq = counter(sequencias, remove_single=True, tsv_ready=True)
+#     save_as_tsv(numb_seq, "C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/Tables/cdhit_clusters_" + chave + "_afterUPIMAPI.tsv")
 
 ### Processamento dos cd-hit depois do upimapi e criacao dos ficheiros fasta com cada cluster
 
@@ -55,6 +57,40 @@ for perc in range(60, 86, 5):
 #     print(numb_seq)
 #     fasta_retriever_from_cdhit(numb_seq, chave)
 
+
+thresholds =  ["60-65", "65-70", "70-75", "75-80", "80-85", "85-90"]
+
+files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in thresholds}
+threshold2clusters = {}
+for thresh, path in files.items():
+	threshold2clusters[thresh] = get_clusters(path[0])
+print(files)
+
+# fazer uma lista de listas com todos os clusters, por ordem de threshold
+big_list_clusters = [v for k, v in threshold2clusters.items()]
+print(big_list_clusters)
+
+# função vai fazer todas as combinações entre thresholds e clusters correspondentes
+def util(lista_thresholds, lista_de_listas_clusters):
+    autorized_combs = []
+    for threshold in range(len(lista_thresholds)):
+        for cluster in lista_de_listas_clusters[threshold]:
+            combinacao = (("threshold", lista_thresholds[threshold]), ("cluster", cluster))
+            autorized_combs.append(frozenset(combinacao))
+    return autorized_combs
+
+# função que vai buscar os clusters correspondentes a cada threshold
+def match_threshold_W_cluster(combinador, desired_combs) -> tuple:
+    def match_threshold_W_cluster(*args, **kwargs):
+        for combo in combinador(*args, **kwargs):
+            if frozenset(combo) in desired_combs:
+                print(combo)
+                yield combo
+    return match_threshold_W_cluster
+
+
+desired = util(thresholds, big_list_clusters)
+filtered_product = match_threshold_W_cluster(product, desired)
 
 ### Correr t_coffee para todos os ficheiros gerados em cima
 

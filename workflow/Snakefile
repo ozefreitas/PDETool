@@ -68,19 +68,6 @@ rule cdhit_parse:
 		"scripts/CDHIT_parser.py"
 
 
-# junta num dicionário os thresholds com os clusters correspondentes
-from scripts.CDHIT_parser import get_clusters
-from glob import glob
-# vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
-files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config["thresholds"]}
-threshold2clusters = {}
-for thresh, path in files.items():
-	threshold2clusters[thresh] = get_clusters(path[0])
-
-# fazer uma lista de listas com todos os clusters, por ordem de threshold
-big_list_clusters = [v for k, v in threshold2clusters.items()]
-
-
 # rule mockup:
 # 	input:
 # 		expand("workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv", threshold=config["thresholds"])
@@ -91,24 +78,39 @@ big_list_clusters = [v for k, v in threshold2clusters.items()]
 # 			f.write("sucess!")
 
 
+# junta num dicionário os thresholds com os clusters correspondentes
+from scripts.CDHIT_parser import get_clusters
+from glob import glob
+from itertools import product
+# vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
+files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config["thresholds"]}
+threshold2clusters = {}
+for thresh, path in files.items():
+	threshold2clusters[thresh] = get_clusters(path[0])
+
+# fazer uma lista de listas com todos os clusters, por ordem de threshold
+big_list_clusters = [v for k, v in threshold2clusters.items()]
+
 # função vai fazer todas as combinações entre thresholds e clusters correspondentes
 def util(lista_thresholds, lista_de_listas_clusters):
-	for threshold in range(len(lista_thresholds)):
-		for cluster in lista_de_listas_clusters[threshold]:
-			combinacao = (lista_thresholds[threshold], cluster)
-			yield combinacao
-
+    autorized_combs = []
+    for threshold in range(len(lista_thresholds)):
+        for cluster in lista_de_listas_clusters[threshold]:
+            combinacao = (("threshold", lista_thresholds[threshold]), ("cluster", cluster))
+            autorized_combs.append(frozenset(combinacao))
+    return autorized_combs
 
 # função que vai buscar os clusters correspondentes a cada threshold
-def match_threshold_W_cluster(combinador) -> tuple:
-	def match_threshold_W_cluster(*args, **kwargs):
-		for combo in combinador(*args, **kwargs):
-			yield combo
-	return match_threshold_W_cluster
-
+def match_threshold_W_cluster(combinador, desired_combs) -> tuple:
+    def match_threshold_W_cluster(*args, **kwargs):
+        for combo in combinador(*args, **kwargs):
+            if frozenset(combo) in desired_combs:
+                yield combo
+    return match_threshold_W_cluster
 
 # inicializar função de combinação
-thresh_clust_combinations = match_threshold_W_cluster(util)
+desired = util(config["thresholds"], big_list_clusters)
+filtered_product = match_threshold_W_cluster(product, desired)
 
 
 rule seq_download_cdhit:
@@ -128,7 +130,7 @@ rule seq_download_cdhit:
 
 rule mockup:
 	input:
-		expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", thresh_clust_combinations, threshold=config["thresholds"], cluster=big_list_clusters)
+		expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", filtered_product, threshold=config["thresholds"], cluster=big_list_clusters)
 	output:
 		"mockup.out"
 	run:
