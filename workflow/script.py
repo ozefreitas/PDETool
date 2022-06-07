@@ -68,29 +68,52 @@ print(files)
 
 # fazer uma lista de listas com todos os clusters, por ordem de threshold
 big_list_clusters = [v for k, v in threshold2clusters.items()]
-print(big_list_clusters)
+max_clusters = max([max(x) for x in big_list_clusters])
+all_clusters = [i for i in range(0, max_clusters+1)]
+print(all_clusters)
 
 # função vai fazer todas as combinações entre thresholds e clusters correspondentes
 def util(lista_thresholds, lista_de_listas_clusters):
     autorized_combs = []
     for threshold in range(len(lista_thresholds)):
         for cluster in lista_de_listas_clusters[threshold]:
-            combinacao = (("threshold", lista_thresholds[threshold]), ("cluster", cluster))
-            autorized_combs.append(frozenset(combinacao))
-    return autorized_combs
+            combinacao = (lista_thresholds[threshold], cluster)
+            autorized_combs.append(combinacao)
+    autorized_combs_frozen = {frozenset(t) for t in autorized_combs}
+    return autorized_combs_frozen
 
 # função que vai buscar os clusters correspondentes a cada threshold
 def match_threshold_W_cluster(combinador, desired_combs) -> tuple:
     def match_threshold_W_cluster(*args, **kwargs):
         for combo in combinador(*args, **kwargs):
             if frozenset(combo) in desired_combs:
-                print(combo)
                 yield combo
     return match_threshold_W_cluster
 
 
 desired = util(thresholds, big_list_clusters)
-filtered_product = match_threshold_W_cluster(product, desired)
+print(desired)
+produto_cartesiano = product(thresholds, range(0, max_clusters+1))
+sucess = 0
+for x in produto_cartesiano:
+    if frozenset(x) in desired:
+       print(x)
+
+
+# text=["A", "B", "C"]
+# num=[1, 2]
+# 
+# forbidden = {
+#     frozenset({"B", 1}),
+#     frozenset({"C", 2})}
+# 
+# pro = product(text, num)
+# for y in pro:
+#     if frozenset(y) not in forbidden:
+#         print(frozenset(y))
+
+
+# filtered_product = match_threshold_W_cluster(product, desired)
 
 ### Correr t_coffee para todos os ficheiros gerados em cima
 
