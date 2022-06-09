@@ -2,7 +2,8 @@ configfile: "config/config.yaml"
 
 rule all:
 	input:
-		"Data/HMMs/HMMsearch_results/After_UPI/{threshold}/{cluster}.out"
+		["workflow/Data/HMMs/HMMsearch_results/After_UPI/{threshold}/{cluster}.out".format(threshold=config["thresholds"][x], 
+		cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
 
 
 rule UPIMAPI_search:
@@ -64,7 +65,6 @@ rule initial_cdhit_per_threshold:
 	output:
 		"workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta",
 		"workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta.clstr"
-		# expand("workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta", threshold=config["thresholds"])  # sem .clstr porque ele ja vai fazer os dois ficheiros
 	shell:
 		"cd-hit -i {input} -o {output} -c 0.9 -n 5 -M 16000 -d 0 -T 8"
 
@@ -201,7 +201,7 @@ rule cat_hmms:
 rule hmmsearch:
 	input:
 		hmms = "workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm",
-		database = "path to DB"
+		database = "workflow/Data/FASTA/Databases/familiesDB.fasta"
 	output:
 		"workflow/Data/HMMs/HMMsearch_results/After_UPI/{threshold}/{cluster}.out"
 	shell:
