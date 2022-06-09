@@ -181,22 +181,21 @@ def cat_hmms_input(wildcard):
 
 rule cat_hmms:
 	input:
-	    cat_hmms_input(wildcards.threshold)
+	    lambda wildcards: cat_hmms_input(wildcards.threshold)
 	output:
 		"workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm"
 	shell:
 		"cat {input} > {output}"
 
 
-rule mockup:
-	input:
-		expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm", threshold=config["thresholds"])
-	output:
-		"mockup.out"
-	run:
- 		with open("mockup.out") as f:
- 			f.write("sucess!")
-
+# rule mockup:
+# 	input:
+# 		expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm", threshold=config["thresholds"])
+# 	output:
+# 		"mockup.out"
+# 	run:
+#  		with open("mockup.out") as f:
+#  			f.write("sucess!")
 
 
 rule hmmsearch:

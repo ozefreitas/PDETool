@@ -4,15 +4,21 @@ from itertools import product
 
 
 # vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
-files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config["thresholds"]}
-threshold2clusters = {}
-for thresh, path in files.items():
-	threshold2clusters[thresh] = get_clusters(path[0])
+def get_tsv_files(config_file):
+	files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config_file["thresholds"]}
+	return files
 
+def threshold2clusters(file_list):
+	threshold2clusters = {}
+	for thresh, path in file_list.items():
+		threshold2clusters[thresh] = get_clusters(path[0])
+
+def get_all_clusters(config_file):
 # fazer uma lista de listas com todos os clusters, por ordem de threshold
-big_list_clusters = [v for k, v in threshold2clusters.items()]
-max_clusters = max([max(x) for x in big_list_clusters])
-all_clusters = [str(i) for i in range(0, max_clusters+1)]
+	big_list_clusters = [v for k, v in threshold2clusters.items()]
+	max_clusters = max([max(x) for x in big_list_clusters])
+	all_clusters = [str(i) for i in range(0, max_clusters+1)]
+	return big_list_clusters, all_clusters, max_clusters
 
 # função vai fazer todas as combinações entre thresholds e clusters correspondentes
 def util(lista_thresholds, lista_de_listas_clusters):
@@ -32,6 +38,11 @@ def match_threshold_W_cluster(combinador, desired_combs) -> tuple:
                 yield combo
     return match_threshold_W_cluster
 
-desired = util(config["thresholds"], big_list_clusters)
+# desired = util(config["thresholds"], big_list_clusters)
 # inicializar função de combinação
-filtered_product = match_threshold_W_cluster(product, desired)
+# filtered_product = match_threshold_W_cluster(product, desired)
+
+def cat_hmms_input(wildcard, config_file):
+	list_clusters = get_all_clusters(config_file)[0]
+	return ["workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm".format(threshold=config_file["thresholds"][x], 
+			cluster=list_clusters[x][y]) for x in range(len(config_file["thresholds"])) for y in range(len(list_clusters[x]))]
