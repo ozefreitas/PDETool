@@ -49,24 +49,34 @@ rule seq_download:
 		"scripts/seq_download.py"
 
 
-rule mockup:
-	input:
-		expand("workflow/Data/FASTA/UPIMAPI/{threshold}.fasta", threshold=config["thresholds"])
-	output:
-		"mockup.out"
-	run:
-		with open("mockup.out") as f:
-			f.write("sucess!")
+# rule mockup:
+# 	input:
+# 		expand("workflow/Data/FASTA/UPIMAPI/{threshold}.fasta", threshold=config["thresholds"])
+# 	output:
+# 		"mockup.out"
+# 	run:
+# 		with open("mockup.out", "w") as f:
+# 			f.write("sucess!")
 
 
 rule initial_cdhit_per_threshold:
 	input:
 		"workflow/Data/FASTA/UPIMAPI/{threshold}.fasta"  # é o output da regra anterior com wildcards
 	output:
-		"workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta",
-		"workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta.clstr"
+		"workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta",  # after upimapi!
+		# "workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta.clstr"
 	shell:
 		"cd-hit -i {input} -o {output} -c 0.9 -n 5 -M 16000 -d 0 -T 8"
+
+
+rule mockup:
+	input:
+		expand("workflow/Data/FASTA/UPIMAPI/cd-hit90_after_diamond_{threshold}.fasta", threshold=config["thresholds"])
+	output:
+		"mockup.out"
+	run:
+		with open("mockup.out", "w") as f:
+			f.write("sucess!")
 
 
 rule cdhit_parse:
@@ -84,7 +94,7 @@ rule cdhit_parse:
 # 	output:
 # 		"mockup.out"
 # 	run:
-# 		with open("mockup.out") as f:
+# 		with open("mockup.out", "w") as f:
 # 			f.write("sucess!")
 
 from scripts.CDHIT_parser import get_clusters
@@ -120,7 +130,7 @@ rule seq_download_cdhit:
 # 	output:
 # 		"mockup.out"
 # 	run:
-# 		with open("mockup.out") as f:
+# 		with open("mockup.out", "w") as f:
 # 			f.write("sucess!")
 
 
@@ -143,7 +153,7 @@ rule t_coffee:
 #  	output:
 #  		"mockup.out"
 #  	run:
-#  		with open("mockup.out") as f:
+#  		with open("mockup.out", "w") as f:
 #  			f.write("sucess!")
 
 
@@ -163,7 +173,7 @@ rule hmmbuild:
 # 	output:
 # 		"mockup.out"
 # 	run:
-# 		with open("mockup.out") as f:
+# 		with open("mockup.out", "w") as f:
 # 			f.write("sucess!")
 
 
@@ -189,7 +199,7 @@ rule cat_hmms:
 # 	output:
 # 		"mockup.out"
 # 	run:
-#  		with open("mockup.out") as f:
+#  		with open("mockup.out", "w") as f:
 #  			f.write("sucess!")
 
 
