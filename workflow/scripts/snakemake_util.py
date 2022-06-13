@@ -42,7 +42,11 @@ def match_threshold_W_cluster(combinador, desired_combs) -> tuple:
 # inicializar função de combinação
 # filtered_product = match_threshold_W_cluster(product, desired)
 
-def cat_hmms_input(wildcard, config_file):
-	list_clusters = get_all_clusters(config_file)[0]
-	return ["workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm".format(threshold=config_file["thresholds"][x], 
-			cluster=list_clusters[x][y]) for x in range(len(config_file["thresholds"])) for y in range(len(list_clusters[x]))]
+# def cat_hmms_input(wildcard, config_file):
+# 	list_clusters = get_all_clusters(config_file)[0]
+# 	return ["workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm".format(threshold=config_file["thresholds"][x], 
+# 			cluster=list_clusters[x][y]) for x in range(len(config_file["thresholds"])) for y in range(len(list_clusters[x]))]
+
+def cat_hmms_input(wildcards):
+	return expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm", threshold=wildcards, cluster=threshold2clusters[wildcards])
+

@@ -18,7 +18,7 @@ rule UPIMAPI_search:
 	log:
 		"logs/UPIMAPI_search.log"
 	conda:
-		"envs/"
+		"envs/upimapi.yaml"
 	shell:
 		"upimapi.py -i {input.sequence} -o {params.outdir} -db {input.database} -t {threads}"
 
@@ -170,16 +170,9 @@ rule hmmbuild:
 files = {threshold: glob(f"workflow/Data/FASTA/CDHIT/{threshold}/*.fasta") for threshold in config["thresholds"]}
 threshold2clusters = {k : [v.split("/")[-1].split("\\")[-1].split('.f')[0] for v in values] for k, values in files.items()}
 
-
-#def cat_hmms_input(wildcards):
-#    return expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm", threshold=wildcards.threshold, cluster=threshold2clusters[wildcards.threshold])
-
-# def cat_hmms_input(wildcard):
-#	return ["workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm".format(threshold=config["thresholds"][x], 
-#			cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
-
 def cat_hmms_input(wildcards):
 	return expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}/{cluster}.hmm", threshold=wildcards, cluster=threshold2clusters[wildcards])
+
 
 rule cat_hmms:
 	input:
