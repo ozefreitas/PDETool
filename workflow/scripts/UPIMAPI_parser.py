@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 
 def UPIMAPI_parser(filepath):
@@ -26,18 +27,20 @@ def UPIMAPI_iter_per_sim(dataframe):
         chave = str(perc)+"-"+str(perc+5)
         for index, seq in seq_id.iterrows():
             if seq["pident"] >= perc and seq["pident"] < perc+5:
+                ident = re.findall("\|.*\|", seq["qseqid"])
+                ident = re.sub("\|", "", ident[0])
                 if chave not in target_enzymes.keys():
-                    target_enzymes[chave] = [seq["sseqid"]]
+                    target_enzymes[chave] = [ident]
                 else:
-                    target_enzymes[chave].append(seq["sseqid"])
+                    target_enzymes[chave].append(ident)
     return target_enzymes
 
 def save_as_tsv(dic):
     int_df = pd.DataFrame.from_dict(dic, orient="index")
-    int_df.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/Data/Tables/UPIMAPI_results_per_sim.tsv", sep="\t")
-    # int_df.to_csv(snakemake.output[0], sep="\t")
+    # int_df.to_csv("C:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/Data/Tables/UPIMAPI_results_per_sim.tsv", sep="\t")
+    int_df.to_csv(snakemake.output[0], sep="\t")
 
 
-# handle = UPIMAPI_parser(snakemake.input[0])
-# dicionario_identidades = UPIMAPI_iter_per_sim(handle)
-# save_as_tsv(dicionario_identidades)
+handle = UPIMAPI_parser(snakemake.input[0])
+dicionario_identidades = UPIMAPI_iter_per_sim(handle)
+save_as_tsv(dicionario_identidades)

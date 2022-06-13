@@ -8,8 +8,8 @@ configfile: "config/config.yaml"
 
 rule UPIMAPI_search:
 	input:
-		sequence="workflow/Data/FASTA/literature_seq/lit_sequences.fasta",
-		database="workflow/Data/FASTA/DataBases/familiesDB.fasta"
+		query="workflow/Data/FASTA/DataBases/familiesDB.fasta",
+		database="workflow/Data/FASTA/literature_seq/lit_sequences.fasta"
 	output:
 		"workflow/Alignments/BLAST/upimapi_results/UPIMAPI_results.tsv"
 	params:
@@ -20,7 +20,7 @@ rule UPIMAPI_search:
 	conda:
 		"envs/upimapi.yaml"
 	shell:
-		"upimapi.py -i {input.sequence} -o {params.outdir} -db {input.database} -t {threads}"
+		"upimapi.py -i {input.query} -o {params.outdir} --database {input.database} -t {threads}"
 
 
 rule UPIMAPI_parse:
@@ -29,7 +29,7 @@ rule UPIMAPI_parse:
 	output:
 		"workflow/Data/Tables/UPIMAPI_results_per_sim.tsv"
 	conda:
-		"envs/"
+		"envs/pandas.yaml"
 	script:
 		"scripts/UPIMAPI_parser.py"
 
