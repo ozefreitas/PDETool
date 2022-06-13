@@ -11,9 +11,9 @@ rule UPIMAPI_search:
 		sequence="workflow/Data/FASTA/literature_seq/lit_sequences.fasta",
 		database="workflow/Data/FASTA/DataBases/familiesDB.fasta"
 	output:
-		"workflow/Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv"
+		"workflow/Alignments/BLAST/upimapi_results/UPIMAPI_results.tsv"
 	params:
-		outdir="workflow/Alignments/BLAST/results/upimapi_results"
+		outdir="workflow/Alignments/BLAST/upimapi_results"
 	threads: 8
 	log:
 		"logs/UPIMAPI_search.log"
@@ -25,7 +25,7 @@ rule UPIMAPI_search:
 
 rule UPIMAPI_parse:
 	input:
-		"workflow/Alignments/BLAST/results/upimapi_results/UPIMAPI_results.tsv"
+		"workflow/Alignments/BLAST/upimapi_results/UPIMAPI_results.tsv"
 	output:
 		"workflow/Data/Tables/UPIMAPI_results_per_sim.tsv"
 	conda:
