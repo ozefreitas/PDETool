@@ -11,8 +11,12 @@
 *.rar
 
 # Databases #
-############/
+############
 **/Databases
+
+# UPIMAPI results #
+############
+workflow/Alignments/BLAST/upimapi_results/*.blast
 
 # Pypl dependencies #
 ############

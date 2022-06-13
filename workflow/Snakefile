@@ -49,14 +49,14 @@ rule seq_download:
 		"scripts/seq_download.py"
 
 
-# rule mockup:
-# 	input:
-# 		expand("workflow/Data/FASTA/UPIMAPI/{threshold}.fasta", threshold=config["thresholds"])
-# 	output:
-# 		"mockup.out"
-# 	run:
-# 		with open("mockup.out") as f:
-# 			f.write("sucess!")
+rule mockup:
+	input:
+		expand("workflow/Data/FASTA/UPIMAPI/{threshold}.fasta", threshold=config["thresholds"])
+	output:
+		"mockup.out"
+	run:
+		with open("mockup.out") as f:
+			f.write("sucess!")
 
 
 rule initial_cdhit_per_threshold:
@@ -183,14 +183,14 @@ rule cat_hmms:
 		"cat {input} > {output}"
 
 
-rule mockup:
-	input:
-		expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm", threshold=config["thresholds"])
-	output:
-		"mockup.out"
-	run:
- 		with open("mockup.out") as f:
- 			f.write("sucess!")
+# rule mockup:
+# 	input:
+# 		expand("workflow/Data/HMMs/After_tcoffee_UPI/{threshold}.hmm", threshold=config["thresholds"])
+# 	output:
+# 		"mockup.out"
+# 	run:
+#  		with open("mockup.out") as f:
+#  			f.write("sucess!")
 
 
 rule hmmsearch:
