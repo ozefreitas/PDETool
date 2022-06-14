@@ -63,6 +63,7 @@ def get_number_clusters(tsv_file):
     df = pd.read_csv(tsv_file, sep="\t", index_col=0)
     return len(df.index)
 
-# handle = cdhit_parser(snakemake.input[0])
-# handle2 = counter(handle, tsv_ready=True)
-# save_as_tsv(handle2, snakemake.output[0])
+
+handle = cdhit_parser(snakemake.input[0])
+handle2 = counter(handle, tsv_ready=True)
+save_as_tsv(handle2, snakemake.output[0])
