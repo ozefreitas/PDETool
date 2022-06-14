@@ -88,26 +88,26 @@ rule cdhit_parse:
 		"scripts/CDHIT_parser.py"
 
 
-rule mockup:
-	input:
-		expand("workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv", threshold=config["thresholds"])
-	output:
-		"mockup.out"
-	run:
-		with open("mockup.out", "w") as f:
-			f.write("sucess!")
+# rule mockup:
+# 	input:
+# 		expand("workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv", threshold=config["thresholds"])
+# 	output:
+# 		"mockup.out"
+# 	run:
+# 		with open("mockup.out", "w") as f:
+# 			f.write("sucess!")
 
 
-# from scripts.CDHIT_parser import get_clusters
-# from glob import glob
-# # vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
-# files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config["thresholds"]}
-# threshold2clusters = {}
-# for thresh, path in files.items():
-# 	threshold2clusters[thresh] = get_clusters(path[0])
-# 
-# # fazer uma lista de listas com todos os clusters, por ordem de threshold
-# big_list_clusters = [v for k, v in threshold2clusters.items()]
+from scripts.snakemake_util import get_clusters
+from glob import glob
+# vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
+files = {threshold: glob(f"workflow/Data/Tables/cdhit_clusters_{threshold}_afterUPIMAPI.tsv") for threshold in config["thresholds"]}
+threshold2clusters = {}
+for thresh, path in files.items():
+	threshold2clusters[thresh] = get_clusters(path[0])
+
+# fazer uma lista de listas com todos os clusters, por ordem de threshold
+big_list_clusters = [v for k, v in threshold2clusters.items()]
 
 
 rule seq_download_cdhit:
@@ -121,18 +121,17 @@ rule seq_download_cdhit:
 		"scripts/CDHIT_seq_download.py" # from_cdhit
 
 
-# rule mockup:
-# 	input:
-# 		# expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", threshold=config["thresholds"], 
-# 		# cluster=(threshold2clusters[threshold][clt] for threshold in config["thresholds"] for clt in range(len(threshold2clusters[threshold]))))
-
-# 		["workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta".format(threshold=config["thresholds"][x], 
-# 		cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
-# 	output:
-# 		"mockup.out"
-# 	run:
-# 		with open("mockup.out", "w") as f:
-# 			f.write("sucess!")
+rule mockup:
+	input:
+		# expand("workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta", threshold=config["thresholds"], 
+		# cluster=(threshold2clusters[threshold][clt] for threshold in config["thresholds"] for clt in range(len(threshold2clusters[threshold]))))
+		["workflow/Data/FASTA/CDHIT/{threshold}/{cluster}.fasta".format(threshold=config["thresholds"][x], 
+		cluster=big_list_clusters[x][y]) for x in range(len(config["thresholds"])) for y in range(len(big_list_clusters[x]))]
+	output:
+		"mockup.out"
+	run:
+		with open("mockup.out", "w") as f:
+			f.write("sucess!")
 
 
 rule t_coffee:
