@@ -1,7 +1,15 @@
-from scripts.CDHIT_parser import get_clusters
 from glob import glob
 from itertools import product
+import pandas as pd
 
+
+def get_clusters(tsv_file):
+    df = pd.read_csv(tsv_file, sep="\t", index_col=0)
+    return list(df.index.values)
+
+def get_number_clusters(tsv_file):
+    df = pd.read_csv(tsv_file, sep="\t", index_col=0)
+    return len(df.index)
 
 # vai buscar aos .tsv criados antes, e não fica dependente dos fasta que vão ser criados
 def get_tsv_files(config_file):

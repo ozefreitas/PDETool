@@ -1,6 +1,5 @@
 import pandas as pd
 import urllib.request
-# from CDHIT_parser import get_clusters, get_number_clusters
 
 
 def fasta_retriever_from_cdhit(tsv_file: str, out_file: str):
@@ -13,14 +12,19 @@ def fasta_retriever_from_cdhit(tsv_file: str, out_file: str):
     """
     df = pd.read_csv(tsv_file, sep="\t", index_col=0)
     # numb_cluster = get_number_clusters(tsv_file)
-    cluster = out_file.split("/")[-2]
-    threshold = out_file.split("/")[-1].split(".f")[0]
-    print(cluster)
-    print(threshold)
+    threshold = out_file.split("/")[-2]
+    cluster = out_file.split("/")[-1].split(".f")[0]
+    print(tsv_file)
+    print(out_file)
+    print("cluster", cluster)
+    print("thresh", threshold)
     for index, content in df.iterrows():
-        if index == cluster:
+        print(index, type(index))
+        if index == int(cluster):
+            print("sucesso")
             # abre o ficheiro no modo write
-            file = open("c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/src/PDEFinder/Data/FASTA/CDHIT" + threshold + "/" + str(index) + ".fasta", mode="w")
+            #file = open("c:/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/workflow/Data/FASTA/CDHIT" + threshold + "/" + str(index) + ".fasta", mode="w")
+            file = open(out_file, mode="w")
             for seq in list(content):
                 try:
                     # faz o download da sequencia em formato fasta
@@ -38,7 +42,7 @@ def fasta_retriever_from_cdhit(tsv_file: str, out_file: str):
                     file.write(line)
                     file.write("\n")
             file.close()
+            break
 
-
-# fasta_retriever_from_cdhit(snakemake.input[0], snakemake.output[0])
+fasta_retriever_from_cdhit(snakemake.input[0], snakemake.output[0])
 # fasta_retriever_from_cdhit("C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/Tables/cdhit_clusters_60-65_afterUPIMAPI.tsv", "C:/Users/Ze/Desktop/Mestrado/3ºSemestre/TESE/PDETool/workflow/Data/FASTA/CDHIT/60-65/1.fasta")
