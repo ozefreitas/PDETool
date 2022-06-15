@@ -14,10 +14,10 @@ def fasta_retriever_from_cdhit(tsv_file: str, out_file: str):
     # numb_cluster = get_number_clusters(tsv_file)
     threshold = out_file.split("/")[-2]
     cluster = out_file.split("/")[-1].split(".f")[0]
-    print(tsv_file)
-    print(out_file)
-    print("cluster", cluster)
-    print("thresh", threshold)
+    # print(tsv_file)
+    # print(out_file)
+    # print("cluster", cluster)
+    # print("thresh", threshold)
     for index, content in df.iterrows():
         print(index, type(index))
         if index == int(cluster):

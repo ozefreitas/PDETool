@@ -26,7 +26,7 @@ def cdhit_parser(txtfile):
             seqs_by_cluster[cluster].append(clean)
     return seqs_by_cluster
 
-def counter(clstr_lst, remove_single=True, tsv_ready=False):
+def counter(clstr_lst, remove_single=True, remove_duplicates=False, tsv_ready=False):
     """Functions receives a dictionary with keys as the number of the cluster and UniProt sequences IDs as values and returns another dictionary
     with the number of sequences per cluster, with the option of removing single sequence clusters.
 
@@ -34,7 +34,7 @@ def counter(clstr_lst, remove_single=True, tsv_ready=False):
         clstr_lst (dictionary): A dictionary with the number of the cluster as key and the UniProt ID's for the sequences inside each cluster as value.
         remove_single (bool, optional): Decides to remove single sequence clusters. Defaults to True.
         tsv_ready (bool, optional): Only works if remove_single is set to True, and makes a dicitionary of lists, ready to be saved as tsv. Defaults to False.
-
+        remove_duplicates (bool, optional): Decides to remove duplicates from the clusters. Defaults to False.
     Returns:
         dictionary: A dictionary with the number of the cluster as key and the UniProt ID's for the sequences inside each cluster, as well as the size
         of that same cluster as value, in the form of tuple.
@@ -49,6 +49,9 @@ def counter(clstr_lst, remove_single=True, tsv_ready=False):
                     number_seqs_by_cluster[k] = (v, len(v))
         else:
             number_seqs_by_cluster[k] = (v, len(v))
+    if remove_duplicates:
+        for k, v in number_seqs_by_cluster.items():
+            number_seqs_by_cluster[k] = list(set(v))
     return number_seqs_by_cluster
 
 def save_as_tsv(dic, out_path):
@@ -57,5 +60,5 @@ def save_as_tsv(dic, out_path):
 
 
 handle = cdhit_parser(snakemake.input[0])
-handle2 = counter(handle, tsv_ready=True)
+handle2 = counter(handle, tsv_ready=True, remove_duplicates=True)
 save_as_tsv(handle2, snakemake.output[0])
