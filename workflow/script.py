@@ -1,7 +1,7 @@
 from scripts.tsv_parser import UPIMAPI_parser, UPIMAPI_iter_per_sim
 from scripts.tsv_parser import diamond_parser, iter_per_sim, above_60, devide_by_query
 from scripts.uniprot_retriever import fasta_retriever, fasta_retriever_from_cdhit
-from docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmsearch
+from scripts.docker_run import docker_run_tcoffee, docker_run_hmmbuild, docker_run_hmmsearch
 from scripts.CDHIT_parser import cdhit_parser, counter, save_as_tsv
 from scripts.CDHIT_parser import get_clusters
 from glob import glob
