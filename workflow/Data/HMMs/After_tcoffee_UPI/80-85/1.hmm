@@ -1,5 +1,5 @@
-HMMER3/f [3.2.1 | June 2018]
-NAME  1.fasta
+HMMER3/f [3.1b1 | May 2013]
+NAME  1
 LENG  758
 ALPH  amino
 RF    no
@@ -7,7 +7,7 @@ MM    no
 CONS  yes
 CS    no
 MAP   yes
-DATE  Tue May  3 09:46:43 2022
+DATE  Wed Jun 15 10:01:39 2022
 NSEQ  3
 EFFN  0.541992
 CKSUM 2224888305
