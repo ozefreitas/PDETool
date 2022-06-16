@@ -1,7 +1,3 @@
-import os
-
-os.environ["PATH"] += os.pathsep + os.pathsep.join(["/home/josepedro/mambaforge/envs/thesis/lib/t_coffee-11.0.8/bin"])
-
 configfile: "config/config.yaml"
 
 # rule all:
