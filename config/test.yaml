@@ -5,3 +5,5 @@ seqids:
 - O22443
 - Q02567
 - Q9HTK9
+threads: 1
+workflow: annotation
