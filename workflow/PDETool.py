@@ -18,6 +18,7 @@ parser = argparse.ArgumentParser(description="PDETool's main script")
 parser.add_argument("-i", "--input", help = "input FASTA file containing\
                     a list of protein sequences to be analysed")
 parser.add_argument("-o", "--output", help = "path for output directory")
+parser.add_argument("--output_type", default = "out", help = "chose output type from 'out', 'tsv' ou 'complete' format. Defaults to 'out'")
 parser.add_argument("-db", "--database", help = "path to a user defined database. Default use of in-built database")
 parser.add_argument("-s", "--snakefile", help = f"user defined snakemake worflow Snakefile. Defaults to {snakefile_path}",
                     default = snakefile_path)
@@ -133,10 +134,10 @@ from scripts.hmmsearch_run import run_hmmsearch
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
     for file in file_generator(hmm_database_path):
-        run_hmmsearch(args.input, file, "search" + args.input + "_" + file + ".out")
+        run_hmmsearch(args.input, file, "search" + args.input + "_" + file + ".out", out_type = args.output_type)
 
 elif args.workflow == "database_construction":
-    print("VERY NISEEEE!")
+    print("VERY NISSSEEE!")
 
 
 doc = write_config(args.input, args.output, "test.yaml")
