@@ -91,23 +91,9 @@ def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
 
 
 def quality_check(dataframe: pd.DataFrame) -> pd.DataFrame:
-    pass
-
-
-def report(dataframe: pd.DataFrame, filename: str):
-    """Write the final report as .txt file.
-
-    Args:
-        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
-        filename (str): Name for the output file (defined by user when running tool)
-    """
-    with open(filename, "w") as f:
-        f.write("PlastEDMA hits report:")
-        f.close
+    
     pass
 
 
 s = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
 df = relevant_info_df(s)
-print("/".join(sys.path[0].replace("\\", "/").split("/")[:-2]) + "/results/PlastEDMA_results/")
-report(df, "/".join(sys.path[0].replace("\\", "/").split("/")[:-2]) + "/results/PlastEDMA_results/test_report.txt")

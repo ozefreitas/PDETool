@@ -5,6 +5,7 @@ from pathlib import Path, PureWindowsPath
 from time import time
 import yaml
 import re
+import pandas as pd
 
 
 version = "0.1.0"
@@ -130,6 +131,43 @@ def file_generator(path: str, full_path: bool = False) -> str:
                 yield os.path.join(path, file)
             else:
                 yield file
+
+
+def report(dataframe: pd.DataFrame, path: str):
+    """Write the final report as .txt file.
+
+    Args:
+        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
+        filename (str): Name for the output file (defined by user when running tool)
+    """
+    with open(path + "test_report.txt", "w") as f:
+        f.write("PlastEDMA hits report:")
+        f.close
+    pass
+
+
+def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
+    with open(path + "aligned.fasta", "w") as wf:
+        uniq_IDS = parse_fasta(inputed_seqs)
+        with open(inputed_seqs, "r") as rf:
+            for x in hit_IDs_list:
+                if x in uniq_IDS:
+                    try:
+                        Lines = rf.readlines()
+                        for line in Lines:
+                            if x in line:
+                                wf.write(line)
+                                wf.write("\n")
+                                continue
+                            while ">" not in line:
+                                wf.write(line)
+                                wf.write("\n")
+                    except:
+                        quit("File must be in Fasta format.")
+
+
+def generate_output_files(out_fodler: str):
+    pass
 
 
 doc = write_config(args.input, args.output, "test.yaml")
