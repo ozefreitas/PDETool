@@ -5,6 +5,17 @@ import sys
 hmmsearch_out_folder = "/".join(sys.path[0].replace("\\", "/").split("/")[:-1])+"/Data/HMMs/HMMsearch_results/"
 
 def read_hmmsearch_table(path: str, format:str = "tblout", save_as_csv: bool = False) -> pd.DataFrame:
+    """Function receives the path for a paseable tabular (space-delimited) file from hmmsearch execution, and processed to its conversion
+    to a pandas Dataframe object.
+
+    Args:
+        path (str): Full path for the hmmsearch resulting file.
+        format (str, optional): Refers to the out format from hmmsearch execution. Defaults to "tblout".
+        save_as_csv (bool, optional): User option to save file in a CSV format, for more readable output. Defaults to False.
+
+    Returns:
+        pd.DataFrame: Returns a pandas Dataframe object with the headers and data from the original file.
+    """
     index = {"tblout": 18}[format]
     dados, first_header, second_header = [], [], []
     with open(path, "r") as f:
@@ -46,7 +57,9 @@ def read_hmmsearch_table(path: str, format:str = "tblout", save_as_csv: bool = F
         colunas += mapa
     df = pd.DataFrame(dados)
     df.columns = pd.MultiIndex.from_tuples(colunas)
-    return df, colunas
+    if save_as_csv:
+        df.to_csv(path.split(".tsv")[:-1] + ".csv")
+    return df
 
 
 def column_generator(column_name: str, list_columns: list) -> list:
@@ -54,24 +67,40 @@ def column_generator(column_name: str, list_columns: list) -> list:
     return mapa
 
 
+def get_number_hits(dataframe: pd.DataFrame) -> int:
+    return dataframe.shape[0]
+
+
 def get_bit_scores(dataframe: pd.DataFrame) -> pd.Series:
-    scores = dataframe["full sequence"]["bit_score"]
-    return scores
+    return dataframe["full sequence"]["bit_score"]
 
 
-def get_e_values(dataframe: pd.DataFrame) -> pd.Series:
-    e_value = dataframe["full sequence"]["E-value"]
-    return e_value
+def get_e_values(dataframe: pd.DataFrame) -> pd.Series: 
+    return dataframe["full sequence"]["E-value"]
 
 
 def get_match_IDS(dataframe: pd.DataFrame) -> pd.Series:
-    matches = dataframe["identifier"]["target_name"]
-    return matches
+    return dataframe["identifier"]["target_name"]
 
 
-def relevant_info_df():
+def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
+    scores = get_bit_scores(dataframe)
+    evalues = get_e_values(dataframe)
+    matches = get_match_IDS(dataframe)
+    return pd.concat([scores, evalues, matches], axis = 1)
+
+
+def report(dataframe: pd.DataFrame, filename: str):
+    """Write the final report as .txt file.
+
+    Args:
+        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
+        filename (str): Name for the output file (defined by user when running tool)
+    """
     pass
 
 
-s, d = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
-print(s["full sequence"]["E-value"])
+s = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
+print(s.shape)
+df = relevant_info_df(s)
+print(df)
