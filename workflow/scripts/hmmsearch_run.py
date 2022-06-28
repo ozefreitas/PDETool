@@ -6,4 +6,4 @@ def run_hmmsearch(sequences_file: str, hmm_file: str, output_file: str, out_type
     elif out_type == "tsv":
         run_command(f"hmmsearch`--tblout`{output_file}`{hmm_file}`{sequences_file}", sep = "`")
     elif out_type == "pfam":
-        run_command(f"hmmsearch --pfamtblout {output_file} {hmm_file} {sequences_file}")
+        run_command(f"hmmsearch`--pfamtblout`{output_file}`{hmm_file}`{sequences_file}", sep = "`")
