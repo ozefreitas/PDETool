@@ -26,20 +26,33 @@ def read_hmmsearch_table(path, format = "tblout"):
                     if char != "":
                         linha.append(char)
                 dados.append(linha)
-    first_header = first_header[0].strip().split(" ")
     lst = []
-    for char in first_header:
-        if char != "#" and char != "" and "-" not in char:
+    for char in first_header[0].strip().split(" "):
+        if char != "#" and char != "":
             lst.append(char)
-    first_header = lst
+    first_header.clear()
+    for char in " ".join(lst).split("-"):
+        if char != "" and char != " ":
+            first_header.append(char.strip())
+    first_header.insert(0, "identifier")
+    first_header.append("descriptions")
     for entry in range(len(dados)):
         dados[entry] = dados[entry][:index] + [" ".join(dados[entry][index:])]
-    
+    second_header = [["target_name", "target_accession_number", "query_name", "query_accession_number"], 
+                    ["E-value", "bit_score", "bias"], 
+                    ["E-value", "bit_score", "bias"],
+                    ["exp", "reg", "clu", "ov", "env", "dom", "rep", "inc"],
+                    ["description of target"]]
+    colunas = []
+    for i in range(len(first_header)):
+        mapa = column_generator(first_header[i], second_header[i])
+        colunas += mapa
     df = pd.DataFrame(dados)
-    return df, columns
+    df.columns = pd.MultiIndex.from_tuples(colunas)
+    return df, colunas
 
 
-def column_generator(column_name, list_columns):
+def column_generator(column_name: str, list_columns: list) -> list:
     mapa = list(map(lambda field: (column_name, field), list_columns))
     return mapa
 
@@ -48,5 +61,5 @@ def get_bit_scores(dataframe):
     scores = dataframe.iloc["score"]
 
 
-s, d = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
-print(d)
+#s, d = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
+#print(s)

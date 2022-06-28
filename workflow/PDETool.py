@@ -11,7 +11,7 @@ version = "0.1.0"
 
 snakefile_path = sys.path[0].replace("\\", "/")+"/Snakefile"
 # config_path = "/".join(sys.path[0].split("\\")[:-1])+"/config/config.yaml"  # Para WINDOWS
-config_path = "/".join(sys.path[0].split("/")[:-1])+"/config/config.yaml"  # Para Linux
+config_path = "/".join(sys.path[0].split("/")[:-1])+"/config/"  # Para Linux
 hmm_database_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/After_tcoffee_UPI/"
 
 parser = argparse.ArgumentParser(description="PDETool's main script")
@@ -103,7 +103,9 @@ def write_config(input_file: str, out_dir: str, config_filename: str) -> yaml:
     results_dir += "/" + out_dir
     results_dir = results_dir.replace("\\", "/")
     dict_file = {"seqids": seq_IDS,
+                "input_file": args.input.split("/")[-1],
                 "output_directory": results_dir,
+                "hmmsearch_outtype": args.output_type,
                 "threads": args.threads,
                 "workflow": args.workflow}
     caminho = "/".join(config_path.split("/")[:-1]) + "/" + config_filename
@@ -112,7 +114,7 @@ def write_config(input_file: str, out_dir: str, config_filename: str) -> yaml:
     return document
 
 
-def file_generator(path: str) -> str:
+def file_generator(path: str, full_path: bool = False) -> str:
     """Function that yield the name of all and only files inside a directory in the given path, for iteration purposes
     Args:
         path (str): Path for the folder to be analyzed
@@ -123,21 +125,27 @@ def file_generator(path: str) -> str:
 
     for file in os.listdir(path):
         if os.path.isfile(os.path.join(path, file)):
-            yield file
+            if full_path:
+                yield os.path.join(path, file)
+            else:
+                yield file
 
 doc = write_config(args.input, args.output, "test.yaml")
+config, config_format = read_config_yaml(config_path + "test.yaml")
 
-hmm_database_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/After_tcoffee_UPI/"
-
+hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_results/"
 
 from scripts.hmmsearch_run import run_hmmsearch
-
+from scripts.hmm_process import read_hmmsearch_table
 
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
-    for file in file_generator(hmm_database_path):
-        run_hmmsearch(args.input, file, "search" + args.input + "_" + file + "." + args.output_type, out_type = args.output_type)
+    for hmm_file in file_generator(hmm_database_path, full_path = True):
+       run_hmmsearch(args.input, hmm_file, 
+                    hmmsearch_results_path + "search_" + config["input_file"] + "_" + hmm_file + "." + args.output_type,
+                    out_type = args.output_type)
+    # for file in file_generator(hmmsearch_results_path):
+    #    read_hmmsearch_table(hmm_database_path + file)
 
 elif args.workflow == "database_construction":
     print("VERY NISSSEEE!")
-
