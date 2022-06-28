@@ -130,6 +130,7 @@ def file_generator(path: str, full_path: bool = False) -> str:
             else:
                 yield file
 
+
 doc = write_config(args.input, args.output, "test.yaml")
 config, config_format = read_config_yaml(config_path + "test.yaml")
 
@@ -141,8 +142,8 @@ from scripts.hmm_process import read_hmmsearch_table
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
     for hmm_file in file_generator(hmm_database_path, full_path = True):
-       run_hmmsearch(args.input, hmm_file, 
-                    hmmsearch_results_path + "search_" + config["input_file"] + "_" + hmm_file + "." + args.output_type,
+        run_hmmsearch(args.input, hmm_file, 
+                    hmmsearch_results_path + "search_" + config["input_file"] + "_" + hmm_file.split("/")[-1] + "." + args.output_type,
                     out_type = args.output_type)
     # for file in file_generator(hmmsearch_results_path):
     #    read_hmmsearch_table(hmm_database_path + file)

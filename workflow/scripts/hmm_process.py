@@ -1,14 +1,10 @@
-from asyncore import read
 import pandas as pd
 import sys 
 
 
 hmmsearch_out_folder = "/".join(sys.path[0].replace("\\", "/").split("/")[:-1])+"/Data/HMMs/HMMsearch_results/"
 
-#handle = pd.read_csv(hmmsearch_out_folder + "test_multprofiles.tsv", header = 1, sep = " ")
-# print(handle)
-
-def read_hmmsearch_table(path, format = "tblout"):
+def read_hmmsearch_table(path: str, format:str = "tblout", save_as_csv: bool = False) -> pd.DataFrame:
     index = {"tblout": 18}[format]
     dados, first_header, second_header = [], [], []
     with open(path, "r") as f:
@@ -26,6 +22,7 @@ def read_hmmsearch_table(path, format = "tblout"):
                     if char != "":
                         linha.append(char)
                 dados.append(linha)
+    dados.pop()
     lst = []
     for char in first_header[0].strip().split(" "):
         if char != "#" and char != "":
@@ -57,9 +54,24 @@ def column_generator(column_name: str, list_columns: list) -> list:
     return mapa
 
 
-def get_bit_scores(dataframe):
-    scores = dataframe.iloc["score"]
+def get_bit_scores(dataframe: pd.DataFrame) -> pd.Series:
+    scores = dataframe["full sequence"]["bit_score"]
+    return scores
 
 
-#s, d = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
-#print(s)
+def get_e_values(dataframe: pd.DataFrame) -> pd.Series:
+    e_value = dataframe["full sequence"]["E-value"]
+    return e_value
+
+
+def get_match_IDS(dataframe: pd.DataFrame) -> pd.Series:
+    matches = dataframe["identifier"]["target_name"]
+    return matches
+
+
+def relevant_info_df():
+    pass
+
+
+s, d = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
+print(s["full sequence"]["E-value"])
