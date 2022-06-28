@@ -19,7 +19,8 @@ parser.add_argument("-i", "--input", help = "input FASTA file containing\
                     a list of protein sequences to be analysed")
 parser.add_argument("-o", "--output", help = "path for output directory")
 parser.add_argument("--output_type", default = "out", help = "chose output type from 'out', 'tsv' ou 'pfam' format. Defaults to 'out'")
-parser.add_argument("-p", "--processing", help = "")
+parser.add_argument("-p", "--produce_inter_tables", default = False, action = "store_true", help = "call if user wants to save intermediate\
+                    tables as parseale .csv files")
 parser.add_argument("-db", "--database", help = "path to a user defined database. Default use of in-built database")
 parser.add_argument("-s", "--snakefile", help = f"user defined snakemake worflow Snakefile. Defaults to {snakefile_path}",
                     default = snakefile_path)
@@ -29,7 +30,7 @@ parser.add_argument("-hm", "--hmm_models", type=str, help = f"path to a director
                     PDETool uses the built-in HMMs from database in {hmm_database_path}")
 parser.add_argument("--concat_hmm_models", action = "store_true", default = False, help = "concatenate HMM models into a single file")
 parser.add_argument("--unlock", action = "store_true", default = False, help = "could be required after forced workflow termination")
-parser.add_argument("-w", "--workflow", default = "annotation", help = 'defines the workflow to follow, \
+parser.add_argument("-w", "--workflow", default = "annotation", help = 'defines the workflow to follow,\
                     between "annotation" and "database_construction". Defaults to "annotation"')
 parser.add_argument("-c", "--config_file", help = f"user defined config file. Only recommended for\
                     advanced users. Defaults to {config_path}. If given, overrides config file construction\
