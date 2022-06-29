@@ -64,16 +64,19 @@ def parse_fasta(filename: str) -> list:
         list: A list containing IDs from all sequences
     """
     unip_IDS = []
-    with open(filename, "r") as f:
-        try:
-            Lines = f.readlines()
-            for line in Lines:
-                if line.startswith(">"):
-                    identi = re.findall("\|.*\|", line)
-                    identi = re.sub("\|", "", identi[0])
-                    unip_IDS.append(identi)
-        except:
-            quit("File must be in FASTA format.")
+    try:
+        with open(filename, "r") as f:
+            try:
+                Lines = f.readlines()
+                for line in Lines:
+                    if line.startswith(">"):
+                        identi = re.findall("\|.*\|", line)
+                        identi = re.sub("\|", "", identi[0])
+                        unip_IDS.append(identi)
+            except:
+                quit("File must be in FASTA format.")
+    except TypeError:
+        quit("Missing input file! Make sure -i option is filled")
     return unip_IDS
 
 
@@ -175,9 +178,10 @@ def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
                         quit("File must be in Fasta format.")
 
 
-def generate_output_files(dataframe: pd.DataFrame, path: str, hit_IDs_list: list, inputed_seqs: str):
+def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_seqs: str):
     """Function that initializes the output files creation simultaneously, for now, only two files are generated:
-    report and aligned sequences
+    report and aligned sequences.
+    Path will always be the output folder defined by the user when running tool in CLI
 
     Args:
         dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
@@ -186,8 +190,8 @@ def generate_output_files(dataframe: pd.DataFrame, path: str, hit_IDs_list: list
         inputed_seqs (str): name of the initial input file.
     """
     out_fodler = get_results_directory() + args.output
-    report(dataframe, path)
-    get_hit_sequences(hit_IDs_list, path, inputed_seqs)
+    report(dataframe, out_fodler)
+    get_hit_sequences(hit_IDs_list, out_fodler, inputed_seqs)
 
 
 doc = write_config(args.input, args.output, "test.yaml")
@@ -196,17 +200,21 @@ config, config_format = read_config_yaml(config_path + "test.yaml")
 hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_results/"
 
 from scripts.hmmsearch_run import run_hmmsearch
-from scripts.hmm_process import read_hmmsearch_table
+from scripts.hmm_process import read_hmmsearch_table, concat_df_byrow
 
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
-    for hmm_file in file_generator(hmm_database_path, full_path = True):
-        run_hmmsearch(args.input, hmm_file, 
-                    hmmsearch_results_path + "search_" + config["input_file"] + "_" + hmm_file.split("/")[-1] + "." + args.output_type,
-                    out_type = args.output_type)
-    list_df = []
+    # for hmm_file in file_generator(hmm_database_path, full_path = True):
+    #     run_hmmsearch(args.input, hmm_file, 
+    #                 hmmsearch_results_path + "search_" + config["input_file"] + "_" + hmm_file.split("/")[-1] + "." + args.output_type,
+    #                 out_type = args.output_type)
+    lista_dataframes = []
     for file in file_generator(hmmsearch_results_path):
-        list_df.append(read_hmmsearch_table(hmm_database_path + file))
-    print(list_df)
+        print(f'File {file} detected \n')
+        lista_dataframes.append(read_hmmsearch_table(hmmsearch_results_path + file))
+    print(lista_dataframes)
+    final_df = concat_df_byrow(list_df = lista_dataframes)
+    # print(final_df)
+
 elif args.workflow == "database_construction":
     print("VERY NISSSEEE!")

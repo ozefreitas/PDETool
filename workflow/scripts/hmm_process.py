@@ -20,7 +20,7 @@ def read_hmmsearch_table(path: str, format:str = "tblout", save_as_csv: bool = F
     dados, first_header, second_header = [], [], []
     with open(path, "r") as f:
         for line in f.readlines():
-            if line.startswith("#  -"):
+            if line.startswith("#  -") or line.startswith("#-"):
                 continue
             elif line.startswith("# target name"):
                 second_header.append(line)
@@ -152,31 +152,47 @@ def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([scores, evalues, matches], axis = 1)
 
 
-def concat_df_byrow(list_df = None, *dfs) -> pd.DataFrame:
+def concat_df_byrow(*dfs: pd.DataFrame, list_df: list = []) -> pd.DataFrame:
     """Given any number of pandas dataframes, concatenate them by row.
+
+    Args:
+        list_df (list): A list of pandas dataframe objects to be merged together.
 
     Returns:
         pd.DataFrame: A bigger (by number of indexes) Dataframe, with all hits from all given dataframes.
     """
-    if list_df is None:
+    if list_df == []:
         list_df = [df for df in dfs]
-    big_df = pd.concat(list_df, ignore_index=True, sort=False)
+    big_df = pd.concat(list_df, ignore_index = True, sort = False)
     return big_df
 
 
-def quality_check(dataframe: pd.DataFrame) -> pd.DataFrame:
+def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFrame) -> pd.DataFrame:
     """Reads the full Dataframe from the complete hmmsearch run in all thresholds
-    Function concat_df_byrow() can help put all Dataframes toguether.
+    Function concat_df_byrow() can help put all Dataframes together.
 
     Args:
         dataframe (pd.DataFrame): A bigger (by number of indexes) Dataframe, with all hits from all given dataframes.
+        list_df (list, optional): Can give a list of pandas dataframe objects to be merged together, if not done previously.
+        *dfs (pd.Dataframe): Can also give any number of Dataframes, that will also be concatenated in the start of the function.
 
     Returns:
         pd.DataFrame: A Dataframe where it was decided in which hits were good enough to conclude whether that hit
-        
+    is going to be in the final report as to be a sequence with potential plastic degradation.
     """
-    pass
+    if list_df:
+        dataframe = concat_df_byrow(list_df = list_df)
+    elif dfs:
+        dataframe = concat_df_byrow(dfs=dfs)
+    
 
 
-s = read_hmmsearch_table(hmmsearch_out_folder + "test_multprofiles.tsv")
-df = relevant_info_df(s)
+# s = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_60-65.hmm.tsv")
+# s1 = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_65-70.hmm.tsv")
+# s2 = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_70-75.hmm.tsv")
+# df = relevant_info_df(s)
+# df1 = relevant_info_df(s1)
+# df2 = relevant_info_df(s1)
+
+# big = concat_df_byrow(df, df1, df2)
+# print(big)
