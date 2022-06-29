@@ -32,7 +32,8 @@ parser.add_argument("-hm", "--hmm_models", type=str, help = f"path to a director
 parser.add_argument("--concat_hmm_models", action = "store_true", default = False, help = "concatenate HMM models into a single file")
 parser.add_argument("--unlock", action = "store_true", default = False, help = "could be required after forced workflow termination")
 parser.add_argument("-w", "--workflow", default = "annotation", help = 'defines the workflow to follow,\
-                    between "annotation" and "database_construction". Defaults to "annotation"')
+                    between "annotation", "database_construction" and "both". Latter keyword makes the database construction\
+                    first and posterior annotation. Defaults to "annotation"')
 parser.add_argument("-c", "--config_file", help = f"user defined config file. Only recommended for\
                     advanced users. Defaults to {config_path}. If given, overrides config file construction\
                     from input", default = config_path)
@@ -200,7 +201,7 @@ config, config_format = read_config_yaml(config_path + "test.yaml")
 hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_results/"
 
 from scripts.hmmsearch_run import run_hmmsearch
-from scripts.hmm_process import read_hmmsearch_table, concat_df_byrow
+from scripts.hmm_process import read_hmmsearch_table, concat_df_byrow, quality_check, get_match_IDS
 
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
@@ -212,9 +213,16 @@ if args.workflow == "annotation":
     for file in file_generator(hmmsearch_results_path):
         print(f'File {file} detected \n')
         lista_dataframes.append(read_hmmsearch_table(hmmsearch_results_path + file))
-    print(lista_dataframes)
     final_df = concat_df_byrow(list_df = lista_dataframes)
-    # print(final_df)
+    quality_df = quality_check(final_df)
+    hited_seqs = get_match_IDS(quality_check, True)
+    generate_output_files(quality_df, hited_seqs,args.input)
 
 elif args.workflow == "database_construction":
     print("VERY NISSSEEE!")
+
+elif args.workflow == "both":
+    print("DAAAAAAMMMNNN")
+
+else:
+    raise ValueError("-w worflow flag only ranges from 'annotation', 'database_construction' or 'both'. Chose one from the list.")
