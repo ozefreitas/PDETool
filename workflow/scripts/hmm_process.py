@@ -152,19 +152,29 @@ def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([scores, evalues, matches], axis = 1)
 
 
-def concat_df_byrow(*dfs) -> pd.DataFrame:
+def concat_df_byrow(list_df = None, *dfs) -> pd.DataFrame:
     """Given any number of pandas dataframes, concatenate them by row.
 
     Returns:
         pd.DataFrame: A bigger (by number of indexes) Dataframe, with all hits from all given dataframes.
     """
-    df_list = [df for df in dfs]
-    big_df = pd.concat(df_list, ignore_index=True, sort=False)
+    if list_df is None:
+        list_df = [df for df in dfs]
+    big_df = pd.concat(list_df, ignore_index=True, sort=False)
     return big_df
 
 
 def quality_check(dataframe: pd.DataFrame) -> pd.DataFrame:
-    
+    """Reads the full Dataframe from the complete hmmsearch run in all thresholds
+    Function concat_df_byrow() can help put all Dataframes toguether.
+
+    Args:
+        dataframe (pd.DataFrame): A bigger (by number of indexes) Dataframe, with all hits from all given dataframes.
+
+    Returns:
+        pd.DataFrame: A Dataframe where it was decided in which hits were good enough to conclude whether that hit
+        
+    """
     pass
 
 

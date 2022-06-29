@@ -18,7 +18,7 @@ hmm_database_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/After_tcoffee_UPI
 parser = argparse.ArgumentParser(description="PDETool's main script")
 parser.add_argument("-i", "--input", help = "input FASTA file containing\
                     a list of protein sequences to be analysed")
-parser.add_argument("-o", "--output", help = "path for output directory")
+parser.add_argument("-o", "--output", help = "name for the output directory")
 parser.add_argument("--output_type", default = "out", help = "chose output type from 'out', 'tsv' ou 'pfam' format. Defaults to 'out'")
 parser.add_argument("-p", "--produce_inter_tables", default = False, action = "store_true", help = "call if user wants to save intermediate\
                     tables as parseale .csv files")
@@ -85,7 +85,7 @@ def get_results_directory() -> str:
         str: Path for the output folder
     """
     p = Path(sys.path[0])
-    return str(p.parents[0] / "results")
+    return str(p.parents[0] / "results/")
 
 
 def write_config(input_file: str, out_dir: str, config_filename: str) -> yaml:
@@ -134,11 +134,12 @@ def file_generator(path: str, full_path: bool = False) -> str:
 
 
 def report(dataframe: pd.DataFrame, path: str):
-    """Write the final report as .txt file.
+    """Write the final report as .txt file, with a summary of the results from the annotation 
+    performed with hmmsearch.
 
     Args:
         dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
-        filename (str): Name for the output file (defined by user when running tool)
+        path (str): output path.
     """
     with open(path + "test_report.txt", "w") as f:
         f.write("PlastEDMA hits report:")
@@ -147,6 +148,14 @@ def report(dataframe: pd.DataFrame, path: str):
 
 
 def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
+    """Wirtes an ouput Fasta file with the sequences from the input files that had a hit in hmmsearch 
+    annotation against the hmm models.
+
+    Args:
+        hit_IDs_list (list): list of Uniprot IDs that hit.
+        path (str): ouput path.
+        inputed_seqs (str): name of the initial input file.
+    """
     with open(path + "aligned.fasta", "w") as wf:
         uniq_IDS = parse_fasta(inputed_seqs)
         with open(inputed_seqs, "r") as rf:
@@ -166,8 +175,19 @@ def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
                         quit("File must be in Fasta format.")
 
 
-def generate_output_files(out_fodler: str):
-    pass
+def generate_output_files(dataframe: pd.DataFrame, path: str, hit_IDs_list: list, inputed_seqs: str):
+    """Function that initializes the output files creation simultaneously, for now, only two files are generated:
+    report and aligned sequences
+
+    Args:
+        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
+        path (str): output path
+        hit_IDs_list (list): list of Uniprot IDs that hit.
+        inputed_seqs (str): name of the initial input file.
+    """
+    out_fodler = get_results_directory() + args.output
+    report(dataframe, path)
+    get_hit_sequences(hit_IDs_list, path, inputed_seqs)
 
 
 doc = write_config(args.input, args.output, "test.yaml")
@@ -184,8 +204,9 @@ if args.workflow == "annotation":
         run_hmmsearch(args.input, hmm_file, 
                     hmmsearch_results_path + "search_" + config["input_file"] + "_" + hmm_file.split("/")[-1] + "." + args.output_type,
                     out_type = args.output_type)
-    # for file in file_generator(hmmsearch_results_path):
-    #    read_hmmsearch_table(hmm_database_path + file)
-
+    list_df = []
+    for file in file_generator(hmmsearch_results_path):
+        list_df.append(read_hmmsearch_table(hmm_database_path + file))
+    print(list_df)
 elif args.workflow == "database_construction":
     print("VERY NISSSEEE!")
