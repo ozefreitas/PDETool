@@ -63,31 +63,104 @@ def read_hmmsearch_table(path: str, format:str = "tblout", save_as_csv: bool = F
 
 
 def column_generator(column_name: str, list_columns: list) -> list:
+    """Maps the main header (column name) with the second headers (list_columns) to be added to a Dataframe as a MultiIndex
+
+    Args:
+        column_name (str): Name for the main name for the set of underlying columns
+        list_columns (list): Name for the underlying columns
+
+    Returns:
+        list: Returns a list of tuples in the form of (first header, second header)
+    """
     mapa = list(map(lambda field: (column_name, field), list_columns))
     return mapa
 
 
 def get_number_hits(dataframe: pd.DataFrame) -> int:
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns the number of hits against the models.
+
+    Args:
+        dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+
+    Returns:
+        int: Number of hits given by hmmsearch.
+    """
     return dataframe.shape[0]
 
 
-def get_bit_scores(dataframe: pd.DataFrame) -> pd.Series:
-    return dataframe["full sequence"]["bit_score"]
+def get_bit_scores(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all values of bit scores.
+
+    Args:
+        to_list (bool, optional): Coverts Series values to list format. Defaults to False.
+        dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+
+    Returns:
+        pd.Series: The column containg all bit scores.
+    """
+    if to_list:
+        return dataframe["full sequence"]["bit_score"].values.tolist()
+    else:
+        return dataframe["full sequence"]["bit_score"]
 
 
-def get_e_values(dataframe: pd.DataFrame) -> pd.Series: 
-    return dataframe["full sequence"]["E-value"]
+def get_e_values(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all e-values.
+
+    Args:
+        to_list (bool, optional): Coverts Series values to list format. Defaults to False.
+        dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+
+    Returns:
+        pd.Series: The column containg all e-values.
+    """
+    if to_list:
+        return dataframe["full sequence"]["E-value"].values.tolist()
+    else: 
+        return dataframe["full sequence"]["E-value"]
 
 
-def get_match_IDS(dataframe: pd.DataFrame) -> pd.Series:
-    return dataframe["identifier"]["target_name"]
+def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all Uniprot IDs from the targuet sequences 
+    that gave a hit.
+
+    Args:
+        to_list (bool, optional): Coverts Series values to list format. Defaults to False.
+        dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+
+    Returns:
+        pd.Series: The column containg all Uniprot IDS.
+    """
+    if to_list:
+        return dataframe["identifier"]["target_name"].values.tolist()
+    else:
+        return dataframe["identifier"]["target_name"]
 
 
 def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
+    """Concatenate all the relevant info (e-values, bit scores and targuet names) to a single Dataframe
+
+    Args:
+        dataframe (pd.DataFrame): A pandas Dataframe object with the headers and data from the original file.
+
+    Returns:
+        pd.DataFrame: A smaller Dataframe with only relevant information
+    """
     scores = get_bit_scores(dataframe)
     evalues = get_e_values(dataframe)
     matches = get_match_IDS(dataframe)
     return pd.concat([scores, evalues, matches], axis = 1)
+
+
+def concat_df_byrow(*dfs) -> pd.DataFrame:
+    """Given any number of pandas dataframes, concatenate them by row.
+
+    Returns:
+        pd.DataFrame: A bigger (by number of indexes) Dataframe, with all hits from all given dataframes.
+    """
+    df_list = [df for df in dfs]
+    big_df = pd.concat(df_list, ignore_index=True, sort=False)
+    return big_df
 
 
 def quality_check(dataframe: pd.DataFrame) -> pd.DataFrame:
