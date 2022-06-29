@@ -4,7 +4,7 @@ import sys
 
 hmmsearch_out_folder = "/".join(sys.path[0].replace("\\", "/").split("/")[:-1])+"/Data/HMMs/HMMsearch_results/"
 
-def read_hmmsearch_table(path: str, format:str = "tblout", save_as_csv: bool = False) -> pd.DataFrame:
+def read_hmmsearch_table(path: str, format: str = "tblout", save_as_csv: bool = False) -> pd.DataFrame:
     """Function receives the path for a paseable tabular (space-delimited) file from hmmsearch execution, and processed to its conversion
     to a pandas Dataframe object.
 
@@ -132,7 +132,7 @@ def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
         pd.Series: The column containg all Uniprot IDS.
     """
     if to_list:
-        return dataframe["identifier"]["target_name"].values.tolist()
+        return dataframe["identifier"]["target_name"].tolist()
     else:
         return dataframe["identifier"]["target_name"]
 

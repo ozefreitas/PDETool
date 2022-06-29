@@ -214,9 +214,10 @@ if args.workflow == "annotation":
         print(f'File {file} detected \n')
         lista_dataframes.append(read_hmmsearch_table(hmmsearch_results_path + file))
     final_df = concat_df_byrow(list_df = lista_dataframes)
-    quality_df = quality_check(final_df)
-    hited_seqs = get_match_IDS(quality_check, True)
-    generate_output_files(quality_df, hited_seqs,args.input)
+    # quality_df = quality_check(final_df)
+    hited_seqs = get_match_IDS(final_df, True)
+    print(hited_seqs)
+    # generate_output_files(quality_df, hited_seqs,args.input)
 
 elif args.workflow == "database_construction":
     print("VERY NISSSEEE!")
