@@ -7,6 +7,10 @@ import yaml
 import re
 import pandas as pd
 from collections import Counter
+# import snakemake
+
+from scripts.hmmsearch_run import run_hmmsearch
+from scripts.hmm_process import read_hmmsearch_table, relevant_info_df, concat_df_byrow, quality_check, get_match_IDS
 
 
 version = "0.1.0"
@@ -143,24 +147,46 @@ def report(dataframe: pd.DataFrame, path: str):
     performed with hmmsearch.
 
     Args:
-        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
+        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution for all hmm from all threshold ranges.
         path (str): output path.
     """
+    query_names = get_match_IDS(dataframe, to_list = True, only_relevant = True)
+    number_hits_perseq = get_number_hits_perseq(query_names)
+    unique_seqs = get_unique_hits(query_names)
     with open(path + "test_report.txt", "w") as f:
         f.write("PlastEDMA hits report:")
         f.close
 
 
+def get_number_hits_perseq(hit_IDs_list: list) -> dict:
+    """Given a list of sequences IDs from the hits against the hmm models from hmmsearch, counts the number of each ID.
+
+    Args:
+        hit_IDs_list (list): List of sequence IDs.
+
+    Returns:
+        dict: Dictionary containing each ID as key and the respective number of occurrences as value.
+    """
+    counter = {}
+    for i in hit_IDs_list:
+        counter[i] = counter.get(i, 0) + 1
+    return counter
+
+
 def get_unique_hits(hit_IDs_list: list) -> list:
+    """Given a list of sequence IDs from the hits against the hmm models from hmmsearch, return a new list with only the unique elements.
+
+    Args:
+        hit_IDs_list (list): List of sequence IDs.
+
+    Returns:
+        list: List with only a single occurrence of each ID.
+    """
     unique_IDs_list = []
     for x in hit_IDs_list:
         if x not in unique_IDs_list:
             unique_IDs_list.append(x)
     return unique_IDs_list
-
-
-def get_number_hits_perseq(hit_IDs_list: list) -> Counter:
-    return Counter(hit_IDs_list)
 
 
 def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
@@ -212,8 +238,6 @@ config, config_format = read_config_yaml(config_path + "test.yaml")
 
 hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_results/"
 
-from scripts.hmmsearch_run import run_hmmsearch
-from scripts.hmm_process import read_hmmsearch_table, relevant_info_df, concat_df_byrow, quality_check, get_match_IDS
 
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
