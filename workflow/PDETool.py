@@ -7,6 +7,7 @@ import yaml
 import re
 import pandas as pd
 from collections import Counter
+import glob
 # import snakemake
 
 from scripts.hmmsearch_run import run_hmmsearch
@@ -142,19 +143,25 @@ def file_generator(path: str, full_path: bool = False) -> str:
                 yield file
 
 
-def report(dataframe: pd.DataFrame, path: str):
+def report(dataframe: pd.DataFrame, path: str, hmmpath: str):
     """Write the final report as .txt file, with a summary of the results from the annotation 
-    performed with hmmsearch.
+    performed with hmmsearch. Starts by calculating the number of in-built HMM profiles.
 
     Args:
         dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution for all hmm from all threshold ranges.
         path (str): output path.
     """
+    number_init_hmms = 0
+    for dir in os.listdir(hmmpath):
+        if os.path.isdir(os.path.join(hmmpath, dir)):
+            for _ in os.listdir(os.path.join(hmmpath, dir)):
+                number_init_hmms += 1
     query_names = get_match_IDS(dataframe, to_list = True, only_relevant = True)
     number_hits_perseq = get_number_hits_perseq(query_names)
     unique_seqs = get_unique_hits(query_names)
     with open(path + "test_report.txt", "w") as f:
-        f.write("PlastEDMA hits report:")
+        f.write(f"PlastEDMA hits report:\n \
+                \n From a total number of {number_init_hmms} HMM profiles initially considered, only {len(query_names)}")
         f.close
 
 
@@ -228,9 +235,10 @@ def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_s
         hit_IDs_list (list): list of Uniprot IDs that hit.
         inputed_seqs (str): name of the initial input file.
     """
-    out_fodler = get_results_directory() + args.output
-    report(dataframe, out_fodler)
-    get_hit_sequences(hit_IDs_list, out_fodler, inputed_seqs)
+    out_fodler = get_results_directory() + "/" + args.output + "/"
+    print(out_fodler)
+    report(dataframe, out_fodler, hmm_database_path)
+    # get_hit_sequences(hit_IDs_list, out_fodler, inputed_seqs)
 
 
 doc = write_config(args.input, args.output, "test.yaml")
@@ -251,11 +259,11 @@ if args.workflow == "annotation":
         lista_dataframes.append(read_hmmsearch_table(hmmsearch_results_path + file))
     final_df = concat_df_byrow(list_df = lista_dataframes)
     rel_df = relevant_info_df(final_df)
-    print(rel_df)
+    # print(rel_df)
     quality_df = quality_check(rel_df)
     hited_seqs = get_match_IDS(quality_df, to_list = True, only_relevant = True)
-    print(hited_seqs)
-    # generate_output_files(quality_df, hited_seqs,args.input)
+    # print(hited_seqs)
+    generate_output_files(quality_df, hited_seqs, args.input)
 
 elif args.workflow == "database_construction":
     print("VERY NISSSEEE!")
