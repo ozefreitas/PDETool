@@ -1,8 +1,11 @@
+from concurrent.futures import process
 import pandas as pd
 import sys 
 
 
-hmmsearch_out_folder = "/".join(sys.path[0].replace("\\", "/").split("/")[:-1])+"/Data/HMMs/HMMsearch_results/"
+hmmsearch_out_folder = "/".join(sys.path[0].replace("\\", "/").split("/"))+"/Data/HMMs/HMMsearch_results/"
+# Para testar em raw python
+# hmmsearch_out_folder = "/".join(sys.path[0].replace("\\", "/").split("/")[:-1])+"/Data/HMMs/HMMsearch_results/"
 
 def read_hmmsearch_table(path: str, format: str = "tblout", save_as_csv: bool = False) -> pd.DataFrame:
     """Function receives the path for a paseable tabular (space-delimited) file from hmmsearch execution, and processed to its conversion
@@ -99,9 +102,9 @@ def get_bit_scores(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
         pd.Series: The column containg all bit scores.
     """
     if to_list:
-        return dataframe["full sequence"]["bit_score"].values.tolist()
+        return dataframe["full sequence"]["bit_score"].tolist()
     else:
-        return dataframe["full sequence"]["bit_score"]
+        return pd.to_numeric(dataframe["full sequence"]["bit_score"])
 
 
 def get_e_values(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
@@ -115,26 +118,33 @@ def get_e_values(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
         pd.Series: The column containg all e-values.
     """
     if to_list:
-        return dataframe["full sequence"]["E-value"].values.tolist()
+        return dataframe["full sequence"]["E-value"].tolist()
     else: 
-        return dataframe["full sequence"]["E-value"]
+        return pd.to_numeric(dataframe["full sequence"]["E-value"])
 
 
-def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
+def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False, only_relevant: bool = False) -> pd.Series:
     """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all Uniprot IDs from the targuet sequences 
-    that gave a hit.
+    that gave a hit. Can also be given a dataframe after beeing cut down to only the relevant data.
 
     Args:
         to_list (bool, optional): Coverts Series values to list format. Defaults to False.
         dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+        (only_relevant, optional): Set to True if given Dataframe is already in its small format. Defaults to False.
 
     Returns:
         pd.Series: The column containg all Uniprot IDS.
     """
     if to_list:
-        return dataframe["identifier"]["target_name"].tolist()
+        if only_relevant:
+            return dataframe["target_name"].tolist()
+        else:
+            return dataframe["identifier"]["target_name"].tolist()
     else:
-        return dataframe["identifier"]["target_name"]
+        if only_relevant:
+            return dataframe["target_name"]
+        else:
+            return dataframe["identifier"]["target_name"]
 
 
 def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
@@ -184,7 +194,8 @@ def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFr
         dataframe = concat_df_byrow(list_df = list_df)
     elif dfs:
         dataframe = concat_df_byrow(dfs=dfs)
-    
+    process_df = dataframe[(dataframe["bit_score"] >= 180) & (dataframe["E-value"] <= 0.00001)]
+    return process_df.reset_index()
 
 
 # s = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_60-65.hmm.tsv")
@@ -193,6 +204,6 @@ def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFr
 # df = relevant_info_df(s)
 # df1 = relevant_info_df(s1)
 # df2 = relevant_info_df(s1)
-
+# print(df)
 # big = concat_df_byrow(df, df1, df2)
 # print(big)

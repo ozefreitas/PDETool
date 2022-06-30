@@ -6,6 +6,7 @@ from time import time
 import yaml
 import re
 import pandas as pd
+from collections import Counter
 
 
 version = "0.1.0"
@@ -15,7 +16,7 @@ snakefile_path = sys.path[0].replace("\\", "/")+"/Snakefile"
 config_path = "/".join(sys.path[0].split("/")[:-1])+"/config/"  # Para Linux
 hmm_database_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/After_tcoffee_UPI/"
 
-parser = argparse.ArgumentParser(description="PDETool's main script")
+parser = argparse.ArgumentParser(description="PlastEDMA's main script")
 parser.add_argument("-i", "--input", help = "input FASTA file containing\
                     a list of protein sequences to be analysed")
 parser.add_argument("-o", "--output", help = "name for the output directory")
@@ -148,7 +149,18 @@ def report(dataframe: pd.DataFrame, path: str):
     with open(path + "test_report.txt", "w") as f:
         f.write("PlastEDMA hits report:")
         f.close
-    pass
+
+
+def get_unique_hits(hit_IDs_list: list) -> list:
+    unique_IDs_list = []
+    for x in hit_IDs_list:
+        if x not in unique_IDs_list:
+            unique_IDs_list.append(x)
+    return unique_IDs_list
+
+
+def get_number_hits_perseq(hit_IDs_list: list) -> Counter:
+    return Counter(hit_IDs_list)
 
 
 def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
@@ -201,21 +213,23 @@ config, config_format = read_config_yaml(config_path + "test.yaml")
 hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_results/"
 
 from scripts.hmmsearch_run import run_hmmsearch
-from scripts.hmm_process import read_hmmsearch_table, concat_df_byrow, quality_check, get_match_IDS
+from scripts.hmm_process import read_hmmsearch_table, relevant_info_df, concat_df_byrow, quality_check, get_match_IDS
 
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
     # for hmm_file in file_generator(hmm_database_path, full_path = True):
     #     run_hmmsearch(args.input, hmm_file, 
-    #                 hmmsearch_results_path + "search_" + config["input_file"] + "_" + hmm_file.split("/")[-1] + "." + args.output_type,
+    #                 hmmsearch_results_path + "search_" + config["input_file"].split(".")[0] + "_" + hmm_file.split(".")[0] + "." + args.output_type,
     #                 out_type = args.output_type)
     lista_dataframes = []
     for file in file_generator(hmmsearch_results_path):
         print(f'File {file} detected \n')
         lista_dataframes.append(read_hmmsearch_table(hmmsearch_results_path + file))
     final_df = concat_df_byrow(list_df = lista_dataframes)
-    # quality_df = quality_check(final_df)
-    hited_seqs = get_match_IDS(final_df, True)
+    rel_df = relevant_info_df(final_df)
+    print(rel_df)
+    quality_df = quality_check(rel_df)
+    hited_seqs = get_match_IDS(quality_df, to_list = True, only_relevant = True)
     print(hited_seqs)
     # generate_output_files(quality_df, hited_seqs,args.input)
 
