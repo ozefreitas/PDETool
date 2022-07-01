@@ -1,5 +1,6 @@
 import argparse
 import sys
+print(sys.path)
 import os
 from pathlib import Path, PureWindowsPath
 from time import time
@@ -260,22 +261,35 @@ def get_aligned_seqs(hit_IDs_list: list, path: str, inputed_seqs: str):
     with open(path + "aligned.fasta", "w") as wf:
         # returns list of IDs from inputed FASTA sequences (only what is between | |)
         input_IDs = parse_fasta(inputed_seqs, remove_excess_ID = False)
-        print("Sequencias que vieram do input file", input_IDs)
+        # print("Sequencias que vieram do input file", input_IDs)
         # returns a list the sequences that hit against the models (only one entry)
-        uniq_IDS = get_unique_hits(hit_IDs_list)
-        print("Sequencias que vieram dos hits com os HMMs", uniq_IDS)
+        unique_IDS = get_unique_hits(hit_IDs_list)
+        # print("Sequencias que vieram dos hits com os HMMs", unique_IDS)
         with open(inputed_seqs, "r") as rf:
-            for x in uniq_IDS:
-                print(x)
+            Lines = rf.readlines()
+            for x in unique_IDS:
                 if x in input_IDs:
-                    print("OLAAAAAAAAAAAAAAA", x)
-                    try:
-                        Lines = rf.readlines()
-                        for line in Lines:
-                            if x in line:
-                                print("encontrou sfngaogi")
-                    except:
-                        quit("File must be in Fasta format.")
+                    # try:
+                        iterador = iter(Lines)
+                        linha = next(iterador)
+                        while linha is not None:
+                            if x not in linha:
+                                linha = next(iterador, None)
+                                continue
+                            elif x in linha:
+                                wf.write(linha)
+                                # print(linha)
+                                linha = next(iterador, None)
+                                # print(linha)
+                                while linha is not None and not linha.startswith(">"):
+                                    wf.write(linha)
+                                    linha = next(iterador, None)
+                                    # print(linha)
+                            elif x not in linha and linha.startswith(">"):
+                                break
+                            linha = next(iterador, None)
+                    # except:
+                        # quit("File must be in Fasta format.")
                 else:
                     continue
         rf.close()
