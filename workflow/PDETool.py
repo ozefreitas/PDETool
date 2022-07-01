@@ -3,6 +3,7 @@ import sys
 import os
 from pathlib import Path, PureWindowsPath
 from time import time
+from types import prepare_class
 import yaml
 import re
 import pandas as pd
@@ -11,7 +12,7 @@ import glob
 # import snakemake
 
 from scripts.hmmsearch_run import run_hmmsearch
-from scripts.hmm_process import read_hmmsearch_table, relevant_info_df, concat_df_byrow, quality_check, get_match_IDS
+from scripts.hmm_process import *
 
 
 version = "0.1.0"
@@ -24,10 +25,13 @@ hmm_database_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/After_tcoffee_UPI
 parser = argparse.ArgumentParser(description="PlastEDMA's main script")
 parser.add_argument("-i", "--input", help = "input FASTA file containing\
                     a list of protein sequences to be analysed")
-parser.add_argument("-o", "--output", default = "PlastEDMA_results", help = "name for the output directory. Defaults to 'PlastEDMA_results'.")
-parser.add_argument("--output_type", default = "out", help = "chose output type from 'out', 'tsv' ou 'pfam' format. Defaults to 'out'")
+parser.add_argument("-o", "--output", default = "PlastEDMA_results", help = "name for the output directory. Defaults to 'PlastEDMA_results'")
+parser.add_argument("--output_type", default = "tsv", help = "chose report table outpt format from 'tsv', 'csv' or 'excel'. Defaults to 'tsv'")
+parser.add_argument("-rt", "--report_text", default = False, action = "store_true", help = "decides wether to produce or not a friendly report in \
+                    txt format with easy to read information")
+parser.add_argument("--hmms_output_type", default = "out", help = "chose output type from 'out', 'tsv' ou 'pfam' format. Defaults to 'out'")
 parser.add_argument("-p", "--produce_inter_tables", default = False, action = "store_true", help = "call if user wants to save intermediate\
-                    tables as parseale .csv files")
+                    tables as parseale .csv files (tables from hmmsearch results processing)")
 parser.add_argument("-db", "--database", help = "path to a user defined database. Default use of in-built database")
 parser.add_argument("-s", "--snakefile", help = f"user defined snakemake worflow Snakefile. Defaults to {snakefile_path}",
                     default = snakefile_path)
@@ -117,7 +121,8 @@ def write_config(input_file: str, out_dir: str, config_filename: str) -> yaml:
     dict_file = {"seqids": seq_IDS,
                 "input_file": args.input.split("/")[-1],
                 "output_directory": results_dir,
-                "hmmsearch_outtype": args.output_type,
+                "out_table_format": args.output_type,
+                "hmmsearch_out_type": args.hmms_output_type,
                 "threads": args.threads,
                 "workflow": args.workflow}
     caminho = "/".join(config_path.split("/")[:-1]) + "/" + config_filename
@@ -143,12 +148,45 @@ def file_generator(path: str, full_path: bool = False) -> str:
                 yield file
 
 
-def text_report(dataframe: pd.DataFrame, path: str, hmmpath: str):
-    """Write the final report as .txt file, with a summary of the results from the annotation 
-    performed with hmmsearch. Starts by calculating the number of in-built HMM profiles.
+def table_report(dataframe: pd.DataFrame, path: str, type_format):
+    """Saves a table in a user specified format, with the processed and filtered information from the 
+    hmmsearch execution with the HMMs against the query sequences.
 
     Args:
-        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution for all hmm from all threshold ranges.
+        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution 
+        for all hmm from all threshold ranges.
+        path (str): output path.
+        type_format (_type_): Specify the output format.
+
+    Raises:
+        TypeError: Raises TypeError error if user gives an unsupported output format.
+    """
+    querys = get_match_IDS(dataframe, to_list = True, only_relevant = True)
+    models = get_models_names(dataframe, to_list = True, only_relevant = True)
+    pre_plastic = "PE_"
+    models = [pre_plastic + model for model in models]
+    metrics = {"bit_scores": [],
+                "e_values": []}
+    df = pd.DataFrame()
+    table_name = "report_table." + type_format
+    if type_format == "tsv":
+        df.to_csv(path + table_name, sep = "\t")
+    elif type_format == "csv":
+        df.to_csv(path + table_name)
+    elif type_format == "excel":
+        df.to_excel(path + "report_table.xlsx")
+    else:
+        raise TypeError("Specified table format is not available. Read documentation for --output_type.")
+
+
+def text_report(dataframe: pd.DataFrame, path: str, hmmpath: str, bit_threshold: float, eval_threshold: float):
+    """Write the final report as .txt file, with a summary of the results from the annotation 
+    performed with hmmsearch. Starts by calculating the number of in-built HMM profiles, and gives an insight of the 
+    filtration thresholds.
+
+    Args:
+        dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution 
+        for all hmm from all threshold ranges.
         path (str): output path.
     """
     number_init_hmms = 0
@@ -161,7 +199,9 @@ def text_report(dataframe: pd.DataFrame, path: str, hmmpath: str):
     unique_seqs = get_unique_hits(query_names)
     with open(path + "test_report.txt", "w") as f:
         f.write(f"PlastEDMA hits report:\n \
-                \n From a total number of {number_init_hmms} HMM profiles initially considered, only {len(query_names)}")
+                \n From a total number of {number_init_hmms} HMM profiles initially considered, only {len(query_names)}.\
+                Filtering process was performed considering the values from bit score and E-value from the HMM search run,\
+                in which the considered bit score threshold was {bit_threshold} and E-value was {eval_threshold}")
         f.close
 
 
@@ -224,20 +264,20 @@ def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
                         quit("File must be in Fasta format.")
 
 
-def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_seqs: str):
+def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_seqs: str, bit_threshold: float, eval_threshold: float):
     """Function that initializes the output files creation simultaneously, for now, only two files are generated:
     report and aligned sequences.
-    Path will always be the output folder defined by the user when running tool in CLI
+    Path will always be the output folder defined by the user when running tool in CLI, so no pat argument is required.
 
     Args:
         dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution.
-        path (str): output path
         hit_IDs_list (list): list of Uniprot IDs that hit.
         inputed_seqs (str): name of the initial input file.
     """
     out_fodler = get_results_directory() + "/" + args.output + "/"
-    print(out_fodler)
-    text_report(dataframe, out_fodler, hmm_database_path)
+    table_report(dataframe, out_fodler, args.output_type)
+    if args.report_text:
+        text_report(dataframe, out_fodler, hmm_database_path, bit_threshold, eval_threshold)
     # get_hit_sequences(hit_IDs_list, out_fodler, inputed_seqs)
 
 
@@ -260,10 +300,10 @@ if args.workflow == "annotation":
     final_df = concat_df_byrow(list_df = lista_dataframes)
     rel_df = relevant_info_df(final_df)
     # print(rel_df)
-    quality_df, bscore, evalue = quality_check(rel_df, give_params = True)
+    quality_df, bs_thresh, eval_thresh = quality_check(rel_df, give_params = True)
     hited_seqs = get_match_IDS(quality_df, to_list = True, only_relevant = True)
     # print(hited_seqs)
-    generate_output_files(quality_df, hited_seqs, args.input)
+    generate_output_files(quality_df, hited_seqs, args.input, bs_thresh, eval_thresh)
 
 elif args.workflow == "database_construction":
     print("VERY NISSSEEE!")

@@ -123,7 +123,8 @@ def get_e_values(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
 
 
 def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False, only_relevant: bool = False) -> pd.Series:
-    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all Uniprot IDs from the targuet sequences 
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), 
+    returns all Uniprot IDs from the targuet sequences 
     that gave a hit. Can also be given a dataframe after beeing cut down to only the relevant data.
 
     Args:
@@ -144,6 +145,31 @@ def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False, only_relevant: 
             return dataframe["target_name"]
         else:
             return dataframe["identifier"]["target_name"]
+
+
+def get_models_names(dataframe: pd.DataFrame, to_list: bool = False, only_relevant:bool = False) -> pd.Series:
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), 
+    returns all model's names that were used as a databased to run against the query sequences.
+    Can also be given a dataframe after beeing cut down to only the relevant data.
+
+    Args:
+        dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+        to_list (bool, optional): Coverts Series values to list format. Defaults to False.
+        only_relevant (bool, optional): Set to True if given Dataframe is already in its small format. Defaults to False.
+
+    Returns:
+        pd.Series: The column containg all HMM's names.
+    """
+    if to_list:
+        if only_relevant:
+            return dataframe["query name"].tolist()
+        else:
+            return dataframe["identifier"]["query name"].tolist()
+    else:
+        if only_relevant:
+            return dataframe["query name"]
+        else:
+            return dataframe["identifier"]["query name"]
 
 
 def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
@@ -195,9 +221,9 @@ def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFr
         dataframe = concat_df_byrow(dfs=dfs)
     process_df = dataframe[(dataframe["bit_score"] >= bit_threshold) & (dataframe["E-value"] <= eval_threshold)]
     if give_params:
-        return process_df.reset_index(), bit_threshold, eval_threshold
+        return process_df.reset_index(drop = True), bit_threshold, eval_threshold
     else:
-        return process_df.reset_index()
+        return process_df.reset_index(drop = True)
 
 
 # s = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_60-65.hmm.tsv")
