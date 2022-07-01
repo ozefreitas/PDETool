@@ -151,14 +151,19 @@ def report(dataframe: pd.DataFrame, path: str, hmmpath: str):
         dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution for all hmm from all threshold ranges.
         path (str): output path.
     """
+    # number of initial HMM profiles
     number_init_hmms = 0
     for dir in os.listdir(hmmpath):
         if os.path.isdir(os.path.join(hmmpath, dir)):
             for _ in os.listdir(os.path.join(hmmpath, dir)):
                 number_init_hmms += 1
+    # get the IDs from all hits after quality check
     query_names = get_match_IDS(dataframe, to_list = True, only_relevant = True)
+    # get number of hits given for each sequence
     number_hits_perseq = get_number_hits_perseq(query_names)
+    # get the unique sequences
     unique_seqs = get_unique_hits(query_names)
+    # open the report file to write
     with open(path + "test_report.txt", "w") as f:
         f.write(f"PlastEDMA hits report:\n \
                 \n From a total number of {number_init_hmms} HMM profiles initially considered, only {len(query_names)}")

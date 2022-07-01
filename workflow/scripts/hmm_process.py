@@ -177,7 +177,7 @@ def concat_df_byrow(*dfs: pd.DataFrame, list_df: list = []) -> pd.DataFrame:
     return big_df
 
 
-def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFrame) -> pd.DataFrame:
+def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFrame, bit_threshold: float = 180, eval_threshold: float = 0.00001) -> pd.DataFrame:
     """Reads the full Dataframe from the complete hmmsearch run in all thresholds
     Function concat_df_byrow() can help put all Dataframes together.
 
@@ -190,12 +190,17 @@ def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFr
         pd.DataFrame: A Dataframe where it was decided in which hits were good enough to conclude whether that hit
     is going to be in the final report as to be a sequence with potential plastic degradation.
     """
+    # get_bit_evalue_thresholds(bit_threshold, eval_threshold)
     if list_df:
         dataframe = concat_df_byrow(list_df = list_df)
     elif dfs:
         dataframe = concat_df_byrow(dfs=dfs)
-    process_df = dataframe[(dataframe["bit_score"] >= 180) & (dataframe["E-value"] <= 0.00001)]
+    process_df = dataframe[(dataframe["bit_score"] >= bit_threshold) & (dataframe["E-value"] <= eval_threshold)]
     return process_df.reset_index()
+
+
+def get_bit_evalue_thresholds(bit, evalue) -> tuple:
+    return (bit, evalue)
 
 
 # s = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_60-65.hmm.tsv")
