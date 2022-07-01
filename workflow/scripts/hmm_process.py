@@ -1,4 +1,3 @@
-from concurrent.futures import process
 import pandas as pd
 import sys 
 
@@ -177,7 +176,7 @@ def concat_df_byrow(*dfs: pd.DataFrame, list_df: list = []) -> pd.DataFrame:
     return big_df
 
 
-def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFrame) -> pd.DataFrame:
+def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFrame, bit_threshold: float = 180, eval_threshold: float = 0.00001, give_params: bool = False) -> pd.DataFrame:
     """Reads the full Dataframe from the complete hmmsearch run in all thresholds
     Function concat_df_byrow() can help put all Dataframes together.
 
@@ -194,8 +193,11 @@ def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFr
         dataframe = concat_df_byrow(list_df = list_df)
     elif dfs:
         dataframe = concat_df_byrow(dfs=dfs)
-    process_df = dataframe[(dataframe["bit_score"] >= 180) & (dataframe["E-value"] <= 0.00001)]
-    return process_df.reset_index()
+    process_df = dataframe[(dataframe["bit_score"] >= bit_threshold) & (dataframe["E-value"] <= eval_threshold)]
+    if give_params:
+        return process_df.reset_index(), bit_threshold, eval_threshold
+    else:
+        return process_df.reset_index()
 
 
 # s = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_60-65.hmm.tsv")

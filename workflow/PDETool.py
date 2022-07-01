@@ -24,7 +24,7 @@ hmm_database_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/After_tcoffee_UPI
 parser = argparse.ArgumentParser(description="PlastEDMA's main script")
 parser.add_argument("-i", "--input", help = "input FASTA file containing\
                     a list of protein sequences to be analysed")
-parser.add_argument("-o", "--output", help = "name for the output directory")
+parser.add_argument("-o", "--output", default = "PlastEDMA_results", help = "name for the output directory. Defaults to 'PlastEDMA_results'.")
 parser.add_argument("--output_type", default = "out", help = "chose output type from 'out', 'tsv' ou 'pfam' format. Defaults to 'out'")
 parser.add_argument("-p", "--produce_inter_tables", default = False, action = "store_true", help = "call if user wants to save intermediate\
                     tables as parseale .csv files")
@@ -143,7 +143,7 @@ def file_generator(path: str, full_path: bool = False) -> str:
                 yield file
 
 
-def report(dataframe: pd.DataFrame, path: str, hmmpath: str):
+def text_report(dataframe: pd.DataFrame, path: str, hmmpath: str):
     """Write the final report as .txt file, with a summary of the results from the annotation 
     performed with hmmsearch. Starts by calculating the number of in-built HMM profiles.
 
@@ -237,7 +237,7 @@ def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_s
     """
     out_fodler = get_results_directory() + "/" + args.output + "/"
     print(out_fodler)
-    report(dataframe, out_fodler, hmm_database_path)
+    text_report(dataframe, out_fodler, hmm_database_path)
     # get_hit_sequences(hit_IDs_list, out_fodler, inputed_seqs)
 
 
@@ -260,7 +260,7 @@ if args.workflow == "annotation":
     final_df = concat_df_byrow(list_df = lista_dataframes)
     rel_df = relevant_info_df(final_df)
     # print(rel_df)
-    quality_df = quality_check(rel_df)
+    quality_df, bscore, evalue = quality_check(rel_df, give_params = True)
     hited_seqs = get_match_IDS(quality_df, to_list = True, only_relevant = True)
     # print(hited_seqs)
     generate_output_files(quality_df, hited_seqs, args.input)
