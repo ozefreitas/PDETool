@@ -148,7 +148,7 @@ def file_generator(path: str, full_path: bool = False) -> str:
                 yield file
 
 
-def table_report(dataframe: pd.DataFrame, path: str, type_format):
+def table_report(dataframe: pd.DataFrame, path: str, type_format: str):
     """Saves a table in a user specified format, with the processed and filtered information from the 
     hmmsearch execution with the HMMs against the query sequences.
 
@@ -156,25 +156,27 @@ def table_report(dataframe: pd.DataFrame, path: str, type_format):
         dataframe (pd.DataFrame): Dataframe with only the relevant information from hmmsearch execution 
         for all hmm from all threshold ranges.
         path (str): output path.
-        type_format (_type_): Specify the output format.
+        type_format (str): Specify the output format.
 
     Raises:
         TypeError: Raises TypeError error if user gives an unsupported output format.
     """
-    querys = get_match_IDS(dataframe, to_list = True, only_relevant = True)
-    models = get_models_names(dataframe, to_list = True, only_relevant = True)
     pre_plastic = "PE_"
-    models = [pre_plastic + model for model in models]
-    metrics = {"bit_scores": [],
-                "e_values": []}
-    df = pd.DataFrame()
+    summary_dic = {
+        "querys": get_match_IDS(dataframe, to_list = True, only_relevant = True),
+        "models": [pre_plastic + model for model in get_models_names(dataframe, to_list = True, only_relevant = True)],
+        "bit_scores": get_bit_scores(dataframe, to_list = True, only_relevant = True),
+        "e_values": get_e_values(dataframe, to_list = True, only_relevant = True)
+        }
+    print(summary_dic)
+    df = pd.DataFrame.from_dict(summary_dic)
     table_name = "report_table." + type_format
     if type_format == "tsv":
         df.to_csv(path + table_name, sep = "\t")
     elif type_format == "csv":
         df.to_csv(path + table_name)
     elif type_format == "excel":
-        df.to_excel(path + "report_table.xlsx")
+        df.to_excel(path + "report_table.xlsx", sheet_name = "Table_Report", index = 0)
     else:
         raise TypeError("Specified table format is not available. Read documentation for --output_type.")
 
@@ -197,11 +199,14 @@ def text_report(dataframe: pd.DataFrame, path: str, hmmpath: str, bit_threshold:
     query_names = get_match_IDS(dataframe, to_list = True, only_relevant = True)
     number_hits_perseq = get_number_hits_perseq(query_names)
     unique_seqs = get_unique_hits(query_names)
+    inputed_seqs = parse_fasta(args.input)
     with open(path + "test_report.txt", "w") as f:
         f.write(f"PlastEDMA hits report:\n \
-                \n From a total number of {number_init_hmms} HMM profiles initially considered, only {len(query_names)}.\
-                Filtering process was performed considering the values from bit score and E-value from the HMM search run,\
-                in which the considered bit score threshold was {bit_threshold} and E-value was {eval_threshold}")
+                \nFrom a total number of {number_init_hmms} HMM profiles initially considered, only {len(query_names)} where considered"
+                "for the final report. \nFiltering process was performed considering the values from bit score and E-value from the HMM search run,"
+                f"in which the considered bit score threshold was {bit_threshold} and E-value was {eval_threshold}.\n"
+                f"Also, {len(inputed_seqs)} initial query sequences where inputed form {args.input} file, from which {len(unique_seqs)} "
+                f"out of these {len(inputed_seqs)} were considered to have a hit against the HMM database.")
         f.close
 
 
