@@ -65,7 +65,7 @@ def read_config_yaml(filename: str) -> tuple:
     return config_file, config_type
 
 
-def parse_fasta(filename: str) -> list:
+def parse_fasta(filename: str, remove_excess_ID = True) -> list:
     """Given a FASTA file, returns the IDs from all sequences in that file.
 
     Args:
@@ -81,9 +81,12 @@ def parse_fasta(filename: str) -> list:
                 Lines = f.readlines()
                 for line in Lines:
                     if line.startswith(">"):
-                        identi = re.findall("\|.*\|", line)
-                        identi = re.sub("\|", "", identi[0])
-                        unip_IDS.append(identi)
+                        if not remove_excess_ID:
+                            unip_IDS.append(line.split(" ")[0][1:])
+                        else:
+                            identi = re.findall("\|.*\|", line)
+                            identi = re.sub("\|", "", identi[0])
+                            unip_IDS.append(identi)
             except:
                 quit("File must be in FASTA format.")
     except TypeError:
@@ -168,7 +171,7 @@ def table_report(dataframe: pd.DataFrame, path: str, type_format: str):
         "bit_scores": get_bit_scores(dataframe, to_list = True, only_relevant = True),
         "e_values": get_e_values(dataframe, to_list = True, only_relevant = True)
         }
-    print(summary_dic)
+    # print(summary_dic)
     df = pd.DataFrame.from_dict(summary_dic)
     table_name = "report_table." + type_format
     if type_format == "tsv":
@@ -241,7 +244,7 @@ def get_unique_hits(hit_IDs_list: list) -> list:
     return unique_IDs_list
 
 
-def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
+def get_aligned_seqs(hit_IDs_list: list, path: str, inputed_seqs: str):
     """Wirtes an ouput Fasta file with the sequences from the input files that had a hit in hmmsearch 
     annotation against the hmm models.
 
@@ -251,22 +254,28 @@ def get_hit_sequences(hit_IDs_list: list, path: str, inputed_seqs: str):
         inputed_seqs (str): name of the initial input file.
     """
     with open(path + "aligned.fasta", "w") as wf:
-        uniq_IDS = parse_fasta(inputed_seqs)
+        # returns list of IDs from inputed FASTA sequences (only what is between | |)
+        input_IDs = parse_fasta(inputed_seqs, remove_excess_ID = False)
+        print("Sequencias que vieram do input file", input_IDs)
+        # returns a list the sequences that hit against the models (only one entry)
+        uniq_IDS = get_unique_hits(hit_IDs_list)
+        print("Sequencias que vieram dos hits com os HMMs", uniq_IDS)
         with open(inputed_seqs, "r") as rf:
-            for x in hit_IDs_list:
-                if x in uniq_IDS:
+            for x in uniq_IDS:
+                print(x)
+                if x in input_IDs:
+                    print("OLAAAAAAAAAAAAAAA", x)
                     try:
                         Lines = rf.readlines()
                         for line in Lines:
                             if x in line:
-                                wf.write(line)
-                                wf.write("\n")
-                                continue
-                            while ">" not in line:
-                                wf.write(line)
-                                wf.write("\n")
+                                print("encontrou sfngaogi")
                     except:
                         quit("File must be in Fasta format.")
+                else:
+                    continue
+        rf.close()
+    wf.close()
 
 
 def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_seqs: str, bit_threshold: float, eval_threshold: float):
@@ -283,7 +292,7 @@ def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_s
     table_report(dataframe, out_fodler, args.output_type)
     if args.report_text:
         text_report(dataframe, out_fodler, hmm_database_path, bit_threshold, eval_threshold)
-    # get_hit_sequences(hit_IDs_list, out_fodler, inputed_seqs)
+    get_aligned_seqs(hit_IDs_list, out_fodler, inputed_seqs)
 
 
 doc = write_config(args.input, args.output, "test.yaml")
@@ -300,7 +309,7 @@ if args.workflow == "annotation":
     #                 out_type = args.output_type)
     lista_dataframes = []
     for file in file_generator(hmmsearch_results_path):
-        print(f'File {file} detected \n')
+        # print(f'File {file} detected \n')
         lista_dataframes.append(read_hmmsearch_table(hmmsearch_results_path + file))
     final_df = concat_df_byrow(list_df = lista_dataframes)
     rel_df = relevant_info_df(final_df)
