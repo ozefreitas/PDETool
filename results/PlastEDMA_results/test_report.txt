@@ -1,0 +1,3 @@
+PlastEDMA hits report:
+                 
+ From a total number of 329 HMM profiles initially considered, only 191
