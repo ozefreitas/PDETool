@@ -1,4 +1,3 @@
-from concurrent.futures import process
 import pandas as pd
 import sys 
 
@@ -91,40 +90,55 @@ def get_number_hits(dataframe: pd.DataFrame) -> int:
     return dataframe.shape[0]
 
 
-def get_bit_scores(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
+def get_bit_scores(dataframe: pd.DataFrame, to_list:bool = False, only_relevant: bool = False) -> pd.Series:
     """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all values of bit scores.
 
     Args:
         to_list (bool, optional): Coverts Series values to list format. Defaults to False.
         dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+        only_relevant (bool, option): Set to True if given Dataframe is already in its small format. Defaults to False.
 
     Returns:
         pd.Series: The column containg all bit scores.
     """
     if to_list:
-        return dataframe["full sequence"]["bit_score"].tolist()
+        if only_relevant:
+            return dataframe["bit_score"].tolist()
+        else:
+            return dataframe["full sequence"]["bit_score"].tolist()
     else:
-        return pd.to_numeric(dataframe["full sequence"]["bit_score"])
+        if only_relevant:
+            return pd.to_numeric(dataframe["bit_score"])
+        else:
+            return pd.to_numeric(dataframe["full sequence"]["bit_score"])
 
 
-def get_e_values(dataframe: pd.DataFrame, to_list:bool = False) -> pd.Series:
+def get_e_values(dataframe: pd.DataFrame, to_list:bool = False, only_relevant: bool = False) -> pd.Series:
     """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all e-values.
 
     Args:
         to_list (bool, optional): Coverts Series values to list format. Defaults to False.
         dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+        only_relevant (bool, option): Set to True if given Dataframe is already in its small format. Defaults to False.
 
     Returns:
         pd.Series: The column containg all e-values.
     """
     if to_list:
-        return dataframe["full sequence"]["E-value"].tolist()
-    else: 
-        return pd.to_numeric(dataframe["full sequence"]["E-value"])
+        if only_relevant:
+            return dataframe["E-value"].tolist()
+        else:
+            return dataframe["full sequence"]["E-value"].tolist()
+    else:
+        if only_relevant:
+            return pd.to_numeric(dataframe["E-value"])
+        else:
+            return pd.to_numeric(dataframe["full sequence"]["E-value"])
 
 
 def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False, only_relevant: bool = False) -> pd.Series:
-    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), returns all Uniprot IDs from the targuet sequences 
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), 
+    returns all Uniprot IDs from the targuet sequences 
     that gave a hit. Can also be given a dataframe after beeing cut down to only the relevant data.
 
     Args:
@@ -147,6 +161,31 @@ def get_match_IDS(dataframe: pd.DataFrame, to_list:bool = False, only_relevant: 
             return dataframe["identifier"]["target_name"]
 
 
+def get_models_names(dataframe: pd.DataFrame, to_list: bool = False, only_relevant:bool = False) -> pd.Series:
+    """Given a Dataframe with data from hmmsearch execution (post processed into a pd.Dataframe), 
+    returns all model's names that were used as a databased to run against the query sequences.
+    Can also be given a dataframe after beeing cut down to only the relevant data.
+
+    Args:
+        dataframe (pd.DataFrame): A processed txt file resulting from hmmsearch into pandas dataframe.
+        to_list (bool, optional): Coverts Series values to list format. Defaults to False.
+        only_relevant (bool, optional): Set to True if given Dataframe is already in its small format. Defaults to False.
+
+    Returns:
+        pd.Series: The column containg all HMM's names.
+    """
+    if to_list:
+        if only_relevant:
+            return dataframe["query_name"].tolist()
+        else:
+            return dataframe["identifier"]["query_name"].tolist()
+    else:
+        if only_relevant:
+            return dataframe["query_name"]
+        else:
+            return dataframe["identifier"]["query_name"]
+
+
 def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
     """Concatenate all the relevant info (e-values, bit scores and targuet names) to a single Dataframe
 
@@ -159,7 +198,8 @@ def relevant_info_df(dataframe: pd.DataFrame) -> pd.DataFrame:
     scores = get_bit_scores(dataframe)
     evalues = get_e_values(dataframe)
     matches = get_match_IDS(dataframe)
-    return pd.concat([scores, evalues, matches], axis = 1)
+    models = get_models_names(dataframe)
+    return pd.concat([scores, evalues, matches, models], axis = 1)
 
 
 def concat_df_byrow(*dfs: pd.DataFrame, list_df: list = []) -> pd.DataFrame:
@@ -177,7 +217,7 @@ def concat_df_byrow(*dfs: pd.DataFrame, list_df: list = []) -> pd.DataFrame:
     return big_df
 
 
-def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFrame, bit_threshold: float = 180, eval_threshold: float = 0.00001) -> pd.DataFrame:
+def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFrame, bit_threshold: float = 180, eval_threshold: float = 0.00001, give_params: bool = False) -> pd.DataFrame:
     """Reads the full Dataframe from the complete hmmsearch run in all thresholds
     Function concat_df_byrow() can help put all Dataframes together.
 
@@ -196,7 +236,10 @@ def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFr
     elif dfs:
         dataframe = concat_df_byrow(dfs=dfs)
     process_df = dataframe[(dataframe["bit_score"] >= bit_threshold) & (dataframe["E-value"] <= eval_threshold)]
-    return process_df.reset_index()
+    if give_params:
+        return process_df.reset_index(drop = True), bit_threshold, eval_threshold
+    else:
+        return process_df.reset_index(drop = True)
 
 
 def get_bit_evalue_thresholds(bit, evalue) -> tuple:

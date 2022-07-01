@@ -1,6 +1,7 @@
-hmmsearch_outtype: tsv
+hmmsearch_out_type: tsv
 input_file: lit_sequences.fasta
-output_directory: /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/PDETool/results/PlastEDMA_results
+out_table_format: excel
+output_directory: "/mnt/c/Users/Ze/Desktop/Mestrado/3\xBASemestre/TESE/PDETool/results/PlastEDMA_results"
 seqids:
 - A0A1H6AD45
 - G9BY57
