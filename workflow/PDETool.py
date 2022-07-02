@@ -3,7 +3,7 @@ import sys
 print(sys.path)
 import os
 from pathlib import Path, PureWindowsPath
-from time import time
+import time
 from types import prepare_class
 import yaml
 import re
@@ -319,6 +319,7 @@ config, config_format = read_config_yaml(config_path + "test.yaml")
 hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_results/"
 
 
+st = time.time()
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
     # for hmm_file in file_generator(hmm_database_path, full_path = True):
@@ -345,3 +346,10 @@ elif args.workflow == "both":
 
 else:
     raise ValueError("-w worflow flag only ranges from 'annotation', 'database_construction' or 'both'. Chose one from the list.")
+
+
+et = time.time()
+elapsed_time = et - st
+elapsed_time = elapsed_time * 1000
+print(f'Execution time: {elapsed_time:.4f} milliseconds')
+print("PlastEDMA has stoped running!")
