@@ -244,14 +244,3 @@ def quality_check(dataframe: pd.DataFrame, list_df: list = None, *dfs: pd.DataFr
 
 def get_bit_evalue_thresholds(bit, evalue) -> tuple:
     return (bit, evalue)
-
-
-# s = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_60-65.hmm.tsv")
-# s1 = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_65-70.hmm.tsv")
-# s2 = read_hmmsearch_table(hmmsearch_out_folder + "search_lit_sequences.fasta_70-75.hmm.tsv")
-# df = relevant_info_df(s)
-# df1 = relevant_info_df(s1)
-# df2 = relevant_info_df(s1)
-# print(df)
-# big = concat_df_byrow(df, df1, df2)
-# print(big)
