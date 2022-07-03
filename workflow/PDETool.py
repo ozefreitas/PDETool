@@ -4,7 +4,6 @@ print(sys.path)
 import os
 from pathlib import Path, PureWindowsPath
 import time
-from types import prepare_class
 import yaml
 import re
 import pandas as pd
@@ -320,6 +319,7 @@ hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_re
 
 
 st = time.time()
+
 if args.workflow == "annotation":
     print("GREAT SUCESS!!!")
     # for hmm_file in file_generator(hmm_database_path, full_path = True):
@@ -339,10 +339,12 @@ if args.workflow == "annotation":
     generate_output_files(quality_df, hited_seqs, args.input, bs_thresh, eval_thresh)
 
 elif args.workflow == "database_construction":
-    print("VERY NISSSEEE!")
+    print("This feature will be available soon!")
+    quit("Exiting PlastEDMA's program execution...")
 
 elif args.workflow == "both":
-    print("DAAAAAAMMMNNN")
+    print("Feature still waiting to be implemented into the workflow. Thank you for your patience!")
+    quit("Exiting PlastEDMA's program execution...")
 
 else:
     raise ValueError("-w worflow flag only ranges from 'annotation', 'database_construction' or 'both'. Chose one from the list.")
