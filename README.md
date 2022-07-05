@@ -22,21 +22,31 @@ Also, PlastEDMA is meant to analyse metagenomic sequences, but version 0.1.0 onl
 
 ## Installation
 <br>
-PlastEDMA is, for know, avaliable for Linux platforms though GitHub repository clonning, using the following in a git bash terminal inside the desired (empty) folder:<p>
+PlastEDMA is, for know, avaliable for Linux platforms though GitHub repository clonning, using the following line in a git bash terminal inside the desired (empty) folder:<p>
 
-> <code>git clone https://github.com/pg42872/PDETool.git</code> <p>
+> <code> git clone https://github.com/pg42872/PDETool.git <br> 
+> #in a command propmt <br>
+> cd workdflow/ </code>
 
-PlastEDMA is also planned to be available as a conda package from conda-forge. <p>
+We highly recommed users to create an appropriate conda environment with the required dependencies so PlastEDMA executes smoothly, with:
 
-> <code></code> <p>
+> <code> cd envs/ <br> 
+> conda env create -n \<name of env> -f plastedma.yaml <br>
+> conda activate \<name of env> <br>
+> cd .. </code>
 
-<br>
+PlastEDMA is also planned to be available as a conda package from bioconda. Simply open an Anaconda prompt:
+
+> <code>conda install plastedma</code> ,
+
+and you will be good to go.
+<p>
 
 ## Usage
 <br>
 The main and most basic use for PlastEDMA is:<p>
 
-> <code>python PDETool.pt -i path/to/input_file -o output_folder -rt --output_type excel</code> ,<p>
+> <code>python PDETool.pt -i path/to/input_file -o output_folder -rt --output_type excel</code> ,
 
 as the input file must be in FASTA format and contain only (for the time being) aminoacidic sequences, otherwise, program will exit. Output folder can be a pre-existing folder or any name for a fodler that will be created anyways. The `-rt` option flag instructs the tool to include in the output the report in text format, for an easier interpretations of the annotation results and conclusion taking. Also, `--output_type` is recommended to be set to "excel" on these earlier versions, as other output format for the table report will be incrementally coded. <p>
 PlastEDMA
