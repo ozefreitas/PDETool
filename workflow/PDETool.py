@@ -1,5 +1,7 @@
 import argparse
 import sys
+
+from numpy import outer
 print(sys.path)
 import os
 from pathlib import Path, PureWindowsPath
@@ -306,6 +308,8 @@ def generate_output_files(dataframe: pd.DataFrame, hit_IDs_list: list, inputed_s
         inputed_seqs (str): name of the initial input file.
     """
     out_fodler = get_results_directory() + "/" + args.output + "/"
+    if not os.path.exists(out_fodler):
+        os.mkdir(out_fodler)
     table_report(dataframe, out_fodler, args.output_type)
     if args.report_text:
         text_report(dataframe, out_fodler, hmm_database_path, bit_threshold, eval_threshold)
