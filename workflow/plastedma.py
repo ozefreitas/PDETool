@@ -327,11 +327,11 @@ hmmsearch_results_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/HMMsearch_re
 st = time.time()
 
 if args.workflow == "annotation":
-    print("GREAT SUCESS!!!")
-    # for hmm_file in file_generator(hmm_database_path, full_path = True):
-    #     run_hmmsearch(args.input, hmm_file, 
-    #                 hmmsearch_results_path + "search_" + config["input_file"].split(".")[0] + "_" + hmm_file.split(".")[0] + "." + args.output_type,
-    #                 out_type = args.output_type)
+    print("Annotation workflow with hmmsearch started...")
+    for hmm_file in file_generator(hmm_database_path, full_path = True):
+        run_hmmsearch(args.input, hmm_file, 
+                    hmmsearch_results_path + "search_" + config["input_file"].split(".")[0] + "_" + hmm_file.split(".")[0] + "." + args.output_type,
+                    out_type = args.output_type)
     lista_dataframes = []
     for file in file_generator(hmmsearch_results_path):
         # print(f'File {file} detected \n')

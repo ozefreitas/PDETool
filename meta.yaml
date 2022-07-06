@@ -14,9 +14,9 @@ build:
   noarch: python
   number: 0
   script: > 
-    mkdir -p $PREFIX/share && cp plastedma.py $PREFIX/share && cp workflow/* $PREFIX/share && chmod +x $PREFIX/share/plastedma.py
+    mkdir -p $PREFIX/share && cp workflow/plastedma.py $PREFIX/share && cp -R workflow/*/ $PREFIX/share 
+    && chmod +x $PREFIX/share/plastedma.py
     && ln -s $PREFIX/share/plastedma.py $PREFIX/bin/plastedma
-
 
 requirements:
   run:
@@ -41,8 +41,11 @@ about:
     PlastEDMA takes an input FASTA file with a variable number of aminoacidic
     sequences and performes a search against an considerable amount of Hidden 
     Markov Models, previously built and trained from state of the art plastic 
-    (PE - polyethylene) degrading enzymes. This tool relies in HMMS 
-    
+    (PE - polyethylene) degrading enzymes. This process relies on the hmmsearch 
+    function from HMMER to perform the structural annotation. Output deduces 
+    about the potential presence of plastic degradring enzymes in the inputed
+    sequences, and is composed by 3 distinct files, in order to help the user 
+    to have an easier time to read and conclude about the results.
   doc_url: https://github.com/pg42872/PDETool/blob/main/README.md
   dev_url: https://github.com/pg42872/PDETool 
 

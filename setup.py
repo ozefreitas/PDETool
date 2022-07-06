@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="PDEFinder",
-    version="1.0.0",
+    name="PLastEDMA",
+    version="0.1.0",
     author="José Freitas",
     author_email="jpsfreitas12@gmail.com",
     description="Package for plastic degrading enzymes prediction from metagenomic samples",
