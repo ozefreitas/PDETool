@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 import sys
 
@@ -20,8 +22,8 @@ from scripts.hmm_process import *
 version = "0.1.0"
 
 snakefile_path = sys.path[0].replace("\\", "/")+"/Snakefile"
-# config_path = "/".join(sys.path[0].split("\\")[:-1])+"/config/config.yaml"  # Para WINDOWS
-config_path = "/".join(sys.path[0].split("/")[:-1])+"/config/"  # Para Linux
+# config_path = "/".join(sys.path[0].split("\\")[:-1])+"/config/config.yaml"  # for WINDOWS
+config_path = "/".join(sys.path[0].split("/")[:-1])+"/config/"  # for Linux
 hmm_database_path = sys.path[0].replace("\\", "/")+"/Data/HMMs/After_tcoffee_UPI/"
 
 parser = argparse.ArgumentParser(description="PlastEDMA's main script")
