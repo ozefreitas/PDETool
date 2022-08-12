@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|H9V753|H9V753_PINTA -          259_oneless_1        -            4.7e-55  170.0   2.5   5.2e-55  169.9   2.5   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Pinus taeda OX=3352 GN=CL66Contig4_04 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/259_oneless_1.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/259_outseq_1.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_259_hmm_1_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/259_oneless_1.hmm resources/Data/FASTA/HMM_outseqs/60-65/259_outseq_1.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:12 2022
+# [ok]

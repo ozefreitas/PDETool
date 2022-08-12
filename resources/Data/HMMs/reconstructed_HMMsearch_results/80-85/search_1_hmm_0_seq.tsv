@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A1S3VGP7|A0A1S3VGP7_VIGRR -          1_oneless_0          -                  0 1808.6  21.3         0 1808.4  21.3   1.0   1   0   0   1   1   1   1 Peroxidase OS=Vigna radiata var. radiata OX=3916 GN=LOC106774868 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/1_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/80-85/1_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/80-85/search_1_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/80-85/1_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/80-85/1_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:21 2022
+# [ok]

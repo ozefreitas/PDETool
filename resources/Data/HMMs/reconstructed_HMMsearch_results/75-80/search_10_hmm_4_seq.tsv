@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|Q88C69|Q88C69_PSEPK -          10_oneless_4         -           2.7e-266  868.4   5.8    3e-266  868.2   5.8   1.0   1   0   0   1   1   1   1 Rubredoxin-NAD(+) reductase OS=Pseudomonas putida (strain ATCC 47054 / DSM 6125 / CFBP 8728 / NCIMB 11950 / KT2440) OX=160488 GN=alkT PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/10_oneless_4.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/75-80/10_outseq_4.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/75-80/search_10_hmm_4_seq.tsv resources/Data/HMMs/HMM_reconstructed/75-80/10_oneless_4.hmm resources/Data/FASTA/HMM_outseqs/75-80/10_outseq_4.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:18 2022
+# [ok]

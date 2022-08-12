@@ -1,0 +1,15 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|W1YUB9|W1YUB9_9ZZZZ -          95_oneless_0         -               0.29   11.7   0.0      0.33   11.6   0.0   1.1   1   0   0   1   1   1   0 Hydroxyethylthiazole kinase (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC00670G0001 PE=4 SV=1
+tr|K1S6Y4|K1S6Y4_9ZZZZ -          95_oneless_0         -               0.39   11.3   0.2      0.54   10.9   0.2   1.1   1   0   0   1   1   1   0 PdaC domain-containing protein (Fragment) OS=human gut metagenome OX=408170 GN=OBE_14620 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/95_oneless_0.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/60-65/search_95_oneless_0_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/60-65/95_oneless_0.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:36:33 2022
+# [ok]

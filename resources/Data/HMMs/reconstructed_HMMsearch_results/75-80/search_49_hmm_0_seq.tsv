@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A7U4P5|A7U4P5_9APHY -          49_oneless_0         -           3.4e-137  440.9   8.5  3.8e-137  440.7   8.5   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Cryptoporus volvatus OX=40431 GN=mnp PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/49_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/75-80/49_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/75-80/search_49_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/75-80/49_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/75-80/49_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:21 2022
+# [ok]

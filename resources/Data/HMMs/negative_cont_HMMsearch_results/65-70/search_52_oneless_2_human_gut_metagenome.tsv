@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1TKY6|K1TKY6_9ZZZZ -          52_oneless_2         -               0.86   10.3   0.0      0.97   10.1   0.0   1.0   1   0   0   1   1   1   0 Glycosyltransferase (Fragment) OS=human gut metagenome OX=408170 GN=OBE_05671 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/52_oneless_2.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/65-70/search_52_oneless_2_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/65-70/52_oneless_2.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:37:16 2022
+# [ok]

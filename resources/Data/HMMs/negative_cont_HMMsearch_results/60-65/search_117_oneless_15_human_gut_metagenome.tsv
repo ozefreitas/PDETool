@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1SY36|K1SY36_9ZZZZ -          117_oneless_15       -               0.14   12.9   0.0      0.18   12.6   0.0   1.2   1   0   0   1   1   1   0 Site-specific recombinase, phage integrase family (Fragment) OS=human gut metagenome OX=408170 GN=OBE_13201 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/117_oneless_15.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/60-65/search_117_oneless_15_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/60-65/117_oneless_15.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:34:26 2022
+# [ok]

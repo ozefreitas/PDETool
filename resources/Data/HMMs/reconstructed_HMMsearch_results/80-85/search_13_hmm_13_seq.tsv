@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A397MCE2|A0A397MCE2_PSEOL -          13_oneless_13        -           1.3e-259  846.3   7.7  1.4e-259  846.2   7.7   1.0   1   0   0   1   1   1   1 Rubredoxin-NAD+ reductase OS=Pseudomonas oleovorans OX=301 GN=DFO61_3512 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/13_oneless_13.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/80-85/13_outseq_13.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/80-85/search_13_hmm_13_seq.tsv resources/Data/HMMs/HMM_reconstructed/80-85/13_oneless_13.hmm resources/Data/FASTA/HMM_outseqs/80-85/13_outseq_13.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:22 2022
+# [ok]

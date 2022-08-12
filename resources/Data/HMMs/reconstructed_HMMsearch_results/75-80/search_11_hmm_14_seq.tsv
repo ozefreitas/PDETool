@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A1H2PE86|A0A1H2PE86_PSEVA -          11_oneless_14        -           5.1e-262  854.3   4.9  5.6e-262  854.1   4.9   1.0   1   0   0   1   1   1   1 FAD-dependent oxidoreductase OS=Pseudomonas vancouverensis OX=95300 GN=EIY72_06600 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/11_oneless_14.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/75-80/11_outseq_14.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/75-80/search_11_hmm_14_seq.tsv resources/Data/HMMs/HMM_reconstructed/75-80/11_oneless_14.hmm resources/Data/FASTA/HMM_outseqs/75-80/11_outseq_14.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:19 2022
+# [ok]

@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1TB66|K1TB66_9ZZZZ -          267_oneless_2        -               0.23   13.3   0.2       5.1    9.0   0.0   2.5   2   0   0   2   2   2   0 Aldo/keto reductase (Fragment) OS=human gut metagenome OX=408170 GN=OBE_07340 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/267_oneless_2.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/60-65/search_267_oneless_2_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/60-65/267_oneless_2.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:35:40 2022
+# [ok]

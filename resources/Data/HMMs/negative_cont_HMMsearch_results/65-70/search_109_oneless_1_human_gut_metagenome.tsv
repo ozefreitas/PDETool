@@ -1,0 +1,15 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1SDB7|K1SDB7_9ZZZZ -          109_oneless_1        -              0.097   14.4   0.0      0.19   13.4   0.0   1.5   1   0   0   1   1   1   0 Uncharacterized protein (Fragment) OS=human gut metagenome OX=408170 GN=LEA_15307 PE=4 SV=1
+tr|K1S8M4|K1S8M4_9ZZZZ -          109_oneless_1        -               0.43   12.3   0.0       0.8   11.5   0.0   1.4   1   0   0   1   1   1   0 Transposase, IS4 family OS=human gut metagenome OX=408170 GN=LEA_14557 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/109_oneless_1.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/65-70/search_109_oneless_1_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/65-70/109_oneless_1.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:36:39 2022
+# [ok]

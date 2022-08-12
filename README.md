@@ -24,20 +24,26 @@ Also, PlastEDMA is meant to analyse metagenomic sequences, but version 0.1.0 onl
 <br>
 PlastEDMA is, for know, avaliable for Linux platforms though GitHub repository clonning, using the following line in a git bash terminal inside the desired (empty) folder:<p>
 
-> <code> git clone https://github.com/pg42872/PDETool.git <br> 
-> #in a command propmt <br>
-> cd workdflow/ </code>
+```
+git clone https://github.com/pg42872/PDETool.git  
+#in a command propmt 
+cd workdflow/ 
+```
 
 We highly recommed users to create an appropriate conda environment with the required dependencies so PlastEDMA executes smoothly, with:
 
-> <code> cd envs/ <br> 
-> conda env create -n \<name of env> -f plastedma.yaml <br>
-> conda activate \<name of env> <br>
-> cd .. </code>
+```
+cd envs/ 
+conda env create -n \<name of env> -f plastedma.yaml 
+conda activate \<name of env> 
+cd ..
+```
 
 PlastEDMA is also planned to be available as a conda package from bioconda. Simply open an Anaconda prompt:
 
-> <code>conda install plastedma</code> ,
+```
+conda install plastedma 
+```
 
 and you will be good to go.
 <p>
@@ -46,7 +52,63 @@ and you will be good to go.
 <br>
 The main and most basic use for PlastEDMA is:<p>
 
-> <code>python PDETool.pt -i path/to/input_file -o output_folder -rt --output_type excel</code> ,
+```
+python PDETool.pt -i path/to/input_file -o output_folder -rt --output_type excel 
+```
 
 as the input file must be in FASTA format and contain only (for the time being) aminoacidic sequences, otherwise, program will exit. Output folder can be a pre-existing folder or any name for a fodler that will be created anyways. The `-rt` option flag instructs the tool to include in the output the report in text format, for an easier interpretations of the annotation results and conclusion taking. Also, `--output_type` is recommended to be set to "excel" on these earlier versions, as other output format for the table report will be incrementally coded. <p>
 PlastEDMA
+
+## Aditional arguments
+
+```
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        input FASTA file containing a list of protein
+                        sequences to be analysed
+  -o OUTPUT, --output OUTPUT
+                        name for the output directory. Defaults to
+                        'PlastEDMA_results'
+  --output_type OUTPUT_TYPE
+                        chose report table outpt format from 'tsv', 'csv' or
+                        'excel'. Defaults to 'tsv'
+  -rt, --report_text    decides wether to produce or not a friendly report in
+                        txt format with easy to read information
+  --hmms_output_type HMMS_OUTPUT_TYPE
+                        chose output type from 'out', 'tsv' ou 'pfam' format.
+                        Defaults to 'out'
+  -p, --produce_inter_tables
+                        call if user wants to save intermediate tables as
+                        parseale .csv files (tables from hmmsearch results
+                        processing)
+  -db DATABASE, --database DATABASE
+                        path to a user defined database. Default use of in-
+                        built database
+  -s SNAKEFILE, --snakefile SNAKEFILE
+                        user defined snakemake worflow Snakefile. Defaults to
+                        /mnt/c/Users/jpsfr/OneDrive/Ambiente de
+                        Trabalho/TOOL/PDETool/workflow/Snakefile
+  -t THREADS, --threads THREADS
+                        number of threads for Snakemake to use. Defaults to 1
+  -hm HMM_MODELS, --hmm_models HMM_MODELS
+                        path to a directory containing HMM models previously
+                        created by the user. By default PDETool uses the
+                        built-in HMMs from database in
+                        /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/TOOL/
+                        PDETool/workflow/Data/HMMs/After_tcoffee_UPI/
+  --concat_hmm_models   concatenate HMM models into a single file
+  --unlock              could be required after forced workflow termination
+  -w WORKFLOW, --workflow WORKFLOW
+                        defines the workflow to follow, between "annotation",
+                        "database_construction" and "both". Latter keyword
+                        makes the database construction first and posterior
+                        annotation. Defaults to "annotation"
+  -c CONFIG_FILE, --config_file CONFIG_FILE
+                        user defined config file. Only recommended for
+                        advanced users. Defaults to
+                        /mnt/c/Users/jpsfr/OneDrive/Ambiente de
+                        Trabalho/TOOL/PDETool/config/. If given, overrides
+                        config file construction from input
+  -v, --version         show program's version number and exit
+```

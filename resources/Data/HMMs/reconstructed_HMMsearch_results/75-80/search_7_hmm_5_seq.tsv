@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|F6AF65|F6AF65_PSEF1 -          7_oneless_5          -           9.7e-266  866.6   8.2  1.1e-265  866.4   8.2   1.0   1   0   0   1   1   1   1 Rubredoxin--NAD(+) reductase OS=Pseudomonas fulva (strain 12-X) OX=743720 GN=Psefu_0279 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/7_oneless_5.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/75-80/7_outseq_5.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/75-80/search_7_hmm_5_seq.tsv resources/Data/HMMs/HMM_reconstructed/75-80/7_oneless_5.hmm resources/Data/FASTA/HMM_outseqs/75-80/7_outseq_5.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:21 2022
+# [ok]

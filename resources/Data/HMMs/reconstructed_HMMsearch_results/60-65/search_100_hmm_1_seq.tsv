@@ -1,0 +1,14 @@
+#                                                                --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name         accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+# ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+sp|P24102|PER22_ARATH -          100_oneless_1        -             3e-257  838.0   5.5  3.4e-257  837.9   5.5   1.0   1   0   0   1   1   1   1 Peroxidase 22 OS=Arabidopsis thaliana OX=3702 GN=PER22 PE=1 SV=2
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/100_oneless_1.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/100_outseq_1.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_100_hmm_1_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/100_oneless_1.hmm resources/Data/FASTA/HMM_outseqs/60-65/100_outseq_1.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:08 2022
+# [ok]

@@ -1,0 +1,15 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|W1XU09|W1XU09_9ZZZZ -          28_oneless_0         -             0.0097   16.6   0.1     0.011   16.4   0.1   1.0   1   0   0   1   1   1   1 Uncharacterized protein (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC13184G0001 PE=4 SV=1
+tr|K1T4N1|K1T4N1_9ZZZZ -          28_oneless_0         -               0.25   12.0   0.0      0.39   11.3   0.0   1.2   1   0   0   1   1   1   0 Isoleucyl-tRNA synthetase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_11800 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/28_oneless_0.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/65-70/search_28_oneless_0_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/65-70/28_oneless_0.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:36:58 2022
+# [ok]

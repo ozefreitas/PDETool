@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A2V0R7L2|A0A2V0R7L2_PSESF -          2_oneless_19         -           2.9e-264  861.7   5.5  3.3e-264  861.5   5.5   1.0   1   0   0   1   1   1   1 NADPH-dependent 2,4-dienoyl-CoA reductase OS=Pseudomonas syringae pv. actinidiae OX=103796 GN=ALP75_202309 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/2_oneless_19.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/75-80/2_outseq_19.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/75-80/search_2_hmm_19_seq.tsv resources/Data/HMMs/HMM_reconstructed/75-80/2_oneless_19.hmm resources/Data/FASTA/HMM_outseqs/75-80/2_outseq_19.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:20 2022
+# [ok]

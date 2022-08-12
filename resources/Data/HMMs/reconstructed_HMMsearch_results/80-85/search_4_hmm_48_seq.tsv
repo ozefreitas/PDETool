@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|F2KB76|F2KB76_PSEBN -          4_oneless_48         -           1.2e-262  856.3   4.9  1.4e-262  856.2   4.9   1.0   1   0   0   1   1   1   1 Putative rubredoxin--NAD(+) reductase OS=Pseudomonas brassicacearum (strain NFM421) OX=994484 GN=PSEBR_a133 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/4_oneless_48.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/80-85/4_outseq_48.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/80-85/search_4_hmm_48_seq.tsv resources/Data/HMMs/HMM_reconstructed/80-85/4_oneless_48.hmm resources/Data/FASTA/HMM_outseqs/80-85/4_outseq_48.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:23 2022
+# [ok]

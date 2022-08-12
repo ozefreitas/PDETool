@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|W6R151|W6R151_PSEP5 -          13_oneless_6         -           9.3e-268  873.1   7.1    1e-267  872.9   7.1   1.0   1   0   0   1   1   1   1 Rubredoxin reductase OS=Pseudomonas pseudoalcaligenes (strain CECT 5344) OX=1182590 GN=rubB PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/13_oneless_6.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/80-85/13_outseq_6.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/80-85/search_13_hmm_6_seq.tsv resources/Data/HMMs/HMM_reconstructed/80-85/13_oneless_6.hmm resources/Data/FASTA/HMM_outseqs/80-85/13_outseq_6.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:21 2022
+# [ok]

@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|Q4K3M2|Q4K3M2_PSEF5 -          11_oneless_25        -           4.4e-260  847.9   4.8    5e-260  847.7   4.8   1.0   1   0   0   1   1   1   1 Rubredoxin-NAD(+) reductase OS=Pseudomonas fluorescens (strain ATCC BAA-477 / NRRL B-23932 / Pf-5) OX=220664 GN=rubB PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/11_oneless_25.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/75-80/11_outseq_25.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/75-80/search_11_hmm_25_seq.tsv resources/Data/HMMs/HMM_reconstructed/75-80/11_oneless_25.hmm resources/Data/FASTA/HMM_outseqs/75-80/11_outseq_25.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:19 2022
+# [ok]

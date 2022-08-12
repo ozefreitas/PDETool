@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A067FI92|A0A067FI92_CITSI -          1_oneless_0          -           1.5e-223  730.6  17.9  3.3e-177  577.2  10.0   2.6   1   1   2   3   3   3   3 Peroxidase OS=Citrus sinensis OX=2711 GN=CISIN_1g018871mg PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/1_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/1_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_1_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/1_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/60-65/1_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:07 2022
+# [ok]

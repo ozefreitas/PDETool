@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A6V7PQD2|A0A6V7PQD2_ANACO -          88_oneless_2         -           4.1e-168  545.0  11.0  5.1e-168  544.7  11.0   1.0   1   0   0   1   1   1   1 Peroxidase OS=Ananas comosus var. bracteatus OX=296719 GN=CB5_LOCUS16104 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/88_oneless_2.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/88_outseq_2.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_88_hmm_2_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/88_oneless_2.hmm resources/Data/FASTA/HMM_outseqs/60-65/88_outseq_2.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:14 2022
+# [ok]

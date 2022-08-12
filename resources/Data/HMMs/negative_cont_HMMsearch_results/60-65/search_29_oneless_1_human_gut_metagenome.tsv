@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1RJD7|K1RJD7_9ZZZZ -          29_oneless_1         -               0.34   11.4   0.2       3.9    7.9   0.0   2.0   2   0   0   2   2   2   0 Ribosomal large subunit pseudouridine synthase B (Fragment) OS=human gut metagenome OX=408170 GN=OBE_15040 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/29_oneless_1.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/60-65/search_29_oneless_1_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/60-65/29_oneless_1.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:35:47 2022
+# [ok]

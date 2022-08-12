@@ -1,0 +1,15 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1U568|K1U568_9ZZZZ -          7_oneless_2          -               0.26   12.0   0.1        11    6.6   0.1   2.0   2   0   0   2   2   2   0 Uncharacterized protein (Fragment) OS=human gut metagenome OX=408170 GN=OBE_00356 PE=4 SV=1
+tr|W1Y777|W1Y777_9ZZZZ -          7_oneless_2          -               0.49   11.1   0.1      0.57   10.8   0.1   1.0   1   0   0   1   1   1   0 Mlp (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC08767G0001 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/70-75/7_oneless_2.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/70-75/search_7_oneless_2_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/70-75/7_oneless_2.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:37:48 2022
+# [ok]

@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A0D2Q9Z1|A0A0D2Q9Z1_GOSRA -          117_oneless_15       -           2.3e-240  782.3  21.4  2.6e-240  782.2  21.4   1.0   1   0   0   1   1   1   1 Peroxidase OS=Gossypium raimondii OX=29730 GN=B456_006G143400 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/117_oneless_15.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/117_outseq_15.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_117_hmm_15_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/117_oneless_15.hmm resources/Data/FASTA/HMM_outseqs/60-65/117_outseq_15.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:09 2022
+# [ok]

@@ -1,0 +1,16 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1TZC4|K1TZC4_9ZZZZ -          102_oneless_0        -             0.0077   18.1   0.1     0.026   16.4   0.0   1.9   2   0   0   2   2   2   1 GTP-binding protein LepA OS=human gut metagenome OX=408170 GN=OBE_06880 PE=3 SV=1
+tr|W1WTE2|W1WTE2_9ZZZZ -          102_oneless_0        -               0.16   13.9   0.1       8.7    8.2   0.0   2.2   2   0   0   2   2   2   0 HotDog ACOT-type domain-containing protein OS=human gut metagenome OX=408170 GN=Q604_UNBC18336G0010 PE=4 SV=1
+tr|K1SCS1|K1SCS1_9ZZZZ -          102_oneless_0        -               0.22   13.4   0.0       2.1   10.2   0.0   1.9   2   0   0   2   2   2   0 2-isopropylmalate synthase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_16481 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/102_oneless_0.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/65-70/search_102_oneless_0_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/65-70/102_oneless_0.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:36:36 2022
+# [ok]

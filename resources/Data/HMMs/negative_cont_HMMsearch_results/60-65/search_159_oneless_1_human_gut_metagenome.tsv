@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1U9M2|K1U9M2_9ZZZZ -          159_oneless_1        -               0.14   13.0   0.0      0.15   12.9   0.0   1.0   1   0   0   1   1   1   0 Glycosyl hydrolase family protein (Fragment) OS=human gut metagenome OX=408170 GN=OBE_05047 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/159_oneless_1.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/60-65/search_159_oneless_1_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/60-65/159_oneless_1.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:35:00 2022
+# [ok]

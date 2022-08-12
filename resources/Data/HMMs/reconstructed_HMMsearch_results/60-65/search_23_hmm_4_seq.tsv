@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|B5U993|B5U993_LENED -          23_oneless_4         -           5.5e-244  794.8  12.2  6.2e-244  794.6  12.2   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Lentinula edodes OX=5353 GN=mnp2b PE=2 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/23_oneless_4.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/23_outseq_4.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_23_hmm_4_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/23_oneless_4.hmm resources/Data/FASTA/HMM_outseqs/60-65/23_outseq_4.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:11 2022
+# [ok]

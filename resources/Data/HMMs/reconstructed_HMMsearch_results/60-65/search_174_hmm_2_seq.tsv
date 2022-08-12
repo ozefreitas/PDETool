@@ -1,0 +1,14 @@
+#                                                                --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name         accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+# ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+sp|E9LVH8|PETH1_THECS -          174_oneless_2        -           2.1e-194  630.5   0.5  2.4e-194  630.4   0.5   1.0   1   0   0   1   1   1   1 Cutinase 1 (Fragment) OS=Thermobifida cellulosilytica OX=144786 GN=cut1 PE=1 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/174_oneless_2.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/174_outseq_2.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_174_hmm_2_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/174_oneless_2.hmm resources/Data/FASTA/HMM_outseqs/60-65/174_outseq_2.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:11 2022
+# [ok]

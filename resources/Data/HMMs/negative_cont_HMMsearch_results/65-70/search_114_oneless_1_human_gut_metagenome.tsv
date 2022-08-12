@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|W1XRM4|W1XRM4_9ZZZZ -          114_oneless_1        -               0.14   14.2   0.0      0.17   14.0   0.0   1.1   1   0   0   1   1   1   0 Catalase/peroxidase HPI (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC13394G0001 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/114_oneless_1.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/65-70/search_114_oneless_1_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/65-70/114_oneless_1.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:36:42 2022
+# [ok]

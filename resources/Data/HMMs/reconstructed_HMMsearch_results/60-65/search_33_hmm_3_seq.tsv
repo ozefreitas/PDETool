@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A6D2HPW2|A0A6D2HPW2_9BRAS -          33_oneless_3         -           2.8e-243  792.2  21.5  3.1e-243  792.0  21.5   1.0   1   0   0   1   1   1   1 Peroxidase OS=Microthlaspi erraticum OX=1685480 GN=MERR_LOCUS14083 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/33_oneless_3.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/33_outseq_3.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_33_hmm_3_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/33_oneless_3.hmm resources/Data/FASTA/HMM_outseqs/60-65/33_outseq_3.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:12 2022
+# [ok]

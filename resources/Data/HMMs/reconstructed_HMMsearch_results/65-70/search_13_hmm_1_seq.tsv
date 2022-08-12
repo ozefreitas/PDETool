@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|B1B555|B1B555_9APHY -          13_oneless_1         -           1.2e-279  912.4  13.5  1.3e-279  912.3  13.5   1.0   1   0   0   1   1   1   1 Peroxidase OS=Phlebia sp. MG60 OX=321831 GN=mnp2 PE=2 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/13_oneless_1.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/65-70/13_outseq_1.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/65-70/search_13_hmm_1_seq.tsv resources/Data/HMMs/HMM_reconstructed/65-70/13_oneless_1.hmm resources/Data/FASTA/HMM_outseqs/65-70/13_outseq_1.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:15 2022
+# [ok]

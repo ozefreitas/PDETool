@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A399NX42|A0A399NX42_9MICO -          189_oneless_1        -           1.2e-172  557.8  14.9  1.3e-172  557.6  14.9   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase family protein OS=Clavibacter michiganensis OX=28447 GN=DZF96_05180 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/189_oneless_1.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/189_outseq_1.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_189_hmm_1_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/189_oneless_1.hmm resources/Data/FASTA/HMM_outseqs/60-65/189_outseq_1.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:11 2022
+# [ok]

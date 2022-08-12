@@ -1,0 +1,15 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|W1XYI9|W1XYI9_9ZZZZ -          1_oneless_2          -               0.21   12.5   0.2      0.26   12.2   0.2   1.1   1   0   0   1   1   1   0 ABC transporter, ATP-binding protein (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC10289G0001 PE=4 SV=1
+tr|K1RYZ5|K1RYZ5_9ZZZZ -          1_oneless_2          -               0.31   12.0   0.2      0.41   11.6   0.2   1.1   1   0   0   1   1   1   0 Lipoprotein (Fragment) OS=human gut metagenome OX=408170 GN=LEA_19750 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/1_oneless_2.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/65-70/search_1_oneless_2_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/65-70/1_oneless_2.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:36:47 2022
+# [ok]

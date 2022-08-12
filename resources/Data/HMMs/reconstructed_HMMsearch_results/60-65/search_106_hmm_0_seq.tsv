@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A836DH37|A0A836DH37_9ROSI -          106_oneless_0        -           5.2e-235  765.0  10.0  5.8e-235  764.8  10.0   1.0   1   0   0   1   1   1   1 Peroxidase OS=Salix suchowensis OX=1278906 GN=IMY05_016G0008400 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/106_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/106_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_106_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/106_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/60-65/106_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:08 2022
+# [ok]

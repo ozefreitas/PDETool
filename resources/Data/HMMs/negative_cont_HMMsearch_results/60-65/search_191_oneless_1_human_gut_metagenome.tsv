@@ -1,0 +1,24 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1TA62|K1TA62_9ZZZZ -          191_oneless_1        -            0.00025   22.3   0.1    0.0003   22.1   0.1   1.2   1   0   0   1   1   1   1 Alpha/beta superfamily hydrolase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_09772 PE=4 SV=1
+tr|K1TCZ4|K1TCZ4_9ZZZZ -          191_oneless_1        -            0.00094   20.4   0.2    0.0014   19.9   0.2   1.3   1   0   0   1   1   1   1 Alpha/beta superfamily hydrolase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_09239 PE=4 SV=1
+tr|K1UMR7|K1UMR7_9ZZZZ -          191_oneless_1        -             0.0012   20.1   0.1    0.0016   19.7   0.1   1.3   1   0   0   1   1   1   1 Alpha/beta superfamily hydrolase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_00233 PE=4 SV=1
+tr|K1RX24|K1RX24_9ZZZZ -          191_oneless_1        -             0.0032   18.7   0.1    0.0044   18.2   0.1   1.2   1   0   0   1   1   1   1 Alpha/beta superfamily hydrolase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_18183 PE=4 SV=1
+tr|W1YJ31|W1YJ31_9ZZZZ -          191_oneless_1        -             0.0054   17.9   0.0    0.0054   17.9   0.0   1.1   1   0   0   1   1   1   1 Carboxymethylenebutenolidase (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC04329G0001 PE=4 SV=1
+tr|W1XUX8|W1XUX8_9ZZZZ -          191_oneless_1        -             0.0059   17.8   0.0    0.0068   17.6   0.0   1.1   1   0   0   1   1   1   1 DLH domain-containing protein (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC12279G0001 PE=4 SV=1
+tr|W1XD37|W1XD37_9ZZZZ -          191_oneless_1        -              0.011   17.0   0.0     0.013   16.8   0.0   1.1   1   0   0   1   1   1   0 Dienelactone hydrolase (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC17269G0001 PE=4 SV=1
+tr|W1YU54|W1YU54_9ZZZZ -          191_oneless_1        -              0.023   15.9   0.1     0.032   15.4   0.1   1.3   1   0   0   1   1   1   0 Peptidase_S15 domain-containing protein OS=human gut metagenome OX=408170 GN=Q604_UNBC00014G0006 PE=4 SV=1
+tr|W1WX34|W1WX34_9ZZZZ -          191_oneless_1        -              0.039   15.1   0.0      0.06   14.5   0.0   1.2   1   0   0   1   1   1   0 Carboxylesterase family protein OS=human gut metagenome OX=408170 GN=Q604_UNBC18363G0004 PE=4 SV=1
+tr|K1SX25|K1SX25_9ZZZZ -          191_oneless_1        -              0.051   14.8   0.0     0.063   14.5   0.0   1.1   1   0   0   1   1   1   0 Alpha/beta superfamily hydrolase (Fragment) OS=human gut metagenome OX=408170 GN=OBE_08062 PE=4 SV=1
+tr|K1RLT1|K1RLT1_9ZZZZ -          191_oneless_1        -               0.22   12.7   0.0      0.34   12.1   0.0   1.2   1   0   0   1   1   1   0 Alpha/beta hydrolase OS=human gut metagenome OX=408170 GN=OBE_17448 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/191_oneless_1.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/60-65/search_191_oneless_1_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/60-65/191_oneless_1.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:35:12 2022
+# [ok]

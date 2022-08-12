@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|Q20FU0|Q20FU0_PINYU -          267_oneless_19       -              6e-38  115.1   0.8   6.5e-38  115.0   0.8   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Pinus yunnanensis OX=88732 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/267_oneless_19.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/267_outseq_19.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_267_hmm_19_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/267_oneless_19.hmm resources/Data/FASTA/HMM_outseqs/60-65/267_outseq_19.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:12 2022
+# [ok]

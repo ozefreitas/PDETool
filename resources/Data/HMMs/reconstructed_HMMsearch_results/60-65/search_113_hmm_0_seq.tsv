@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A4D6M975|A0A4D6M975_VIGUN -          113_oneless_0        -             3e-231  752.2  22.3  3.6e-231  752.0  22.3   1.0   1   0   0   1   1   1   1 Peroxidase OS=Vigna unguiculata OX=3917 GN=DEO72_LG6g2236 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/113_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/113_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_113_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/113_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/60-65/113_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:09 2022
+# [ok]

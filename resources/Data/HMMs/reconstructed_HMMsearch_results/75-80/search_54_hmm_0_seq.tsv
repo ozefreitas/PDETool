@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A392NJR0|A0A392NJR0_9FABA -          54_oneless_0         -            8.9e-87  273.6   3.6   9.9e-87  273.5   3.6   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Trifolium medium OX=97028 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/54_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/75-80/54_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/75-80/search_54_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/75-80/54_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/75-80/54_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:21 2022
+# [ok]

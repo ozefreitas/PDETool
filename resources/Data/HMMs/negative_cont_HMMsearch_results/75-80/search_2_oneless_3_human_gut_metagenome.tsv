@@ -1,0 +1,43 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1TDQ5|K1TDQ5_9ZZZZ -          2_oneless_3          -            3.6e-31  110.2   0.1   5.6e-31  109.6   0.1   1.3   1   0   0   1   1   1   1 Pyridine nucleotide-disulfide oxidoreductase family protein OS=human gut metagenome OX=408170 GN=LEA_09050 PE=4 SV=1
+tr|W1WVR0|W1WVR0_9ZZZZ -          2_oneless_3          -            3.9e-10   41.0   0.0   6.3e-10   40.3   0.0   1.3   1   0   0   1   1   1   1 Dihydrolipoamide dehydrogenase OS=human gut metagenome OX=408170 GN=Q604_UNBC18348G0020 PE=3 SV=1
+tr|K1RMX8|K1RMX8_9ZZZZ -          2_oneless_3          -            1.3e-08   36.0   0.0   1.4e-08   35.8   0.0   1.1   1   0   0   1   1   1   1 NADH dehydrogenase OS=human gut metagenome OX=408170 GN=OBE_17239 PE=4 SV=1
+tr|K1TY46|K1TY46_9ZZZZ -          2_oneless_3          -            2.9e-07   31.5   0.0   3.5e-07   31.2   0.0   1.3   1   1   0   1   1   1   1 NADH dehydrogenase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_05538 PE=4 SV=1
+tr|K1TYL1|K1TYL1_9ZZZZ -          2_oneless_3          -            1.2e-06   29.5   0.1   1.4e-06   29.3   0.1   1.1   1   0   0   1   1   1   1 FAD-dependent pyridine nucleotide-disulfide oxidoreductase OS=human gut metagenome OX=408170 GN=LEA_05461 PE=4 SV=1
+tr|K1TPC5|K1TPC5_9ZZZZ -          2_oneless_3          -            7.2e-06   26.9   0.0   8.2e-06   26.7   0.0   1.0   1   0   0   1   1   1   1 Protein containing Pyridine nucleotide-disulfide oxidoreductase, NAD-binding region domain protein (Fragment) OS=human gut metagenome OX=408170 GN=LEA_05460 PE=4 SV=1
+tr|W1WLF0|W1WLF0_9ZZZZ -          2_oneless_3          -            8.4e-06   26.7   0.0   1.3e-05   26.1   0.0   1.2   1   0   0   1   1   1   1 Dihydrolipoyl dehydrogenase OS=human gut metagenome OX=408170 GN=Q604_UNBC18702G0008 PE=3 SV=1
+tr|K1TP26|K1TP26_9ZZZZ -          2_oneless_3          -              5e-05   24.1   0.1   6.4e-05   23.8   0.1   1.2   1   0   0   1   1   1   1 NADH dehydrogenase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_07274 PE=4 SV=1
+tr|W1XKL3|W1XKL3_9ZZZZ -          2_oneless_3          -            5.2e-05   24.1   0.0   5.8e-05   24.0   0.0   1.0   1   0   0   1   1   1   1 NADH oxidase (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC15470G0001 PE=4 SV=1
+tr|K1UKM8|K1UKM8_9ZZZZ -          2_oneless_3          -            6.2e-05   23.9   0.0   0.00012   22.9   0.0   1.4   1   0   0   1   1   1   1 NADH dehydrogenase OS=human gut metagenome OX=408170 GN=LEA_03229 PE=4 SV=1
+tr|K1SUX7|K1SUX7_9ZZZZ -          2_oneless_3          -            7.4e-05   23.6   0.2   0.00013   22.8   0.2   1.3   1   0   0   1   1   1   1 2-enoate reductase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_14298 PE=3 SV=1
+tr|K1RSN4|K1RSN4_9ZZZZ -          2_oneless_3          -            0.00013   22.8   0.1   0.00014   22.7   0.1   1.0   1   0   0   1   1   1   1 Protein containing Pyridine nucleotide-disulfide oxidoreductase, NAD-binding region domain protein (Fragment) OS=human gut metagenome OX=408170 GN=OBE_17440 PE=4 SV=1
+tr|W1Y9A9|W1Y9A9_9ZZZZ -          2_oneless_3          -            0.00025   21.9   0.0    0.0003   21.6   0.0   1.0   1   0   0   1   1   1   1 NADH dehydrogenase (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC06898G0001 PE=3 SV=1
+tr|W1XMA9|W1XMA9_9ZZZZ -          2_oneless_3          -            0.00059   20.6   0.0   0.00061   20.6   0.0   1.0   1   0   0   1   1   1   1 NADH oxidase (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC14878G0001 PE=4 SV=1
+tr|K1TJL5|K1TJL5_9ZZZZ -          2_oneless_3          -            0.00091   20.0   1.4    0.0012   19.6   1.0   1.4   1   1   0   1   1   1   1 2-enoate reductase (Fragment) OS=human gut metagenome OX=408170 GN=OBE_09508 PE=4 SV=1
+tr|K1RWC2|K1RWC2_9ZZZZ -          2_oneless_3          -            0.00098   19.9   0.2    0.0016   19.2   0.2   1.4   1   1   0   1   1   1   1 Sarcosine oxidase alpha subunit OS=human gut metagenome OX=408170 GN=LEA_20065 PE=4 SV=1
+tr|K1RG05|K1RG05_9ZZZZ -          2_oneless_3          -             0.0049   17.6   0.2     0.014   16.1   0.2   1.6   1   1   0   1   1   1   1 Dihydrolipoyl dehydrogenase (Dihydrolipoamide dehydrogenase) (Fragment) OS=human gut metagenome OX=408170 GN=OBE_15612 PE=4 SV=1
+tr|W1WJP8|W1WJP8_9ZZZZ -          2_oneless_3          -              0.019   15.7   0.0     0.032   14.9   0.0   1.3   1   0   0   1   1   1   0 Mercuric reductase-like protein OS=human gut metagenome OX=408170 GN=Q604_UNBC18673G0006 PE=3 SV=1
+tr|W1YGP4|W1YGP4_9ZZZZ -          2_oneless_3          -              0.022   15.4   0.0     0.024   15.4   0.0   1.0   1   0   0   1   1   1   0 Nitric oxide reductase (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC04522G0001 PE=4 SV=1
+tr|K1TTC7|K1TTC7_9ZZZZ -          2_oneless_3          -              0.034   14.8   0.0     0.036   14.7   0.0   1.0   1   0   0   1   1   1   0 Protein containing FAD dependent oxidoreductase domain protein (Fragment) OS=human gut metagenome OX=408170 GN=OBE_04403 PE=4 SV=1
+tr|K1RRU4|K1RRU4_9ZZZZ -          2_oneless_3          -              0.034   14.8   0.1     0.045   14.4   0.1   1.1   1   0   0   1   1   1   0 FAD-dependent pyridine nucleotide-disulfide oxidoreductase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_20769 PE=4 SV=1
+tr|K1TYD0|K1TYD0_9ZZZZ -          2_oneless_3          -              0.037   14.7   0.1     0.041   14.6   0.1   1.1   1   0   0   1   1   1   0 Glutamate synthase (NADPH), homotetrameric (Fragment) OS=human gut metagenome OX=408170 GN=OBE_01601 PE=4 SV=1
+tr|K1UAN5|K1UAN5_9ZZZZ -          2_oneless_3          -              0.041   14.6   0.6      0.11   13.2   0.1   1.8   2   0   0   2   2   2   0 Secreted protein (Fragment) OS=human gut metagenome OX=408170 GN=LEA_08748 PE=4 SV=1
+tr|K1S9Y4|K1S9Y4_9ZZZZ -          2_oneless_3          -              0.047   14.4   0.9       3.1    8.4   0.2   2.1   1   1   0   2   2   2   0 NADH:flavin oxidoreductase/NADH oxidase OS=human gut metagenome OX=408170 GN=LEA_17007 PE=3 SV=1
+tr|K1R7E7|K1R7E7_9ZZZZ -          2_oneless_3          -              0.048   14.3   0.0     0.054   14.2   0.0   1.1   1   0   0   1   1   1   0 Thioredoxin-disulfide reductase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_20429 PE=4 SV=1
+tr|K1RQE0|K1RQE0_9ZZZZ -          2_oneless_3          -              0.073   13.7   0.0      0.14   12.8   0.0   1.4   1   0   0   1   1   1   0 Thioredoxin-disulfide reductase OS=human gut metagenome OX=408170 GN=OBE_15633 PE=4 SV=1
+tr|K1RL37|K1RL37_9ZZZZ -          2_oneless_3          -               0.14   12.8   0.0      0.16   12.6   0.0   1.1   1   0   0   1   1   1   0 Sarcosine oxidase alpha subunit (Fragment) OS=human gut metagenome OX=408170 GN=OBE_17564 PE=4 SV=1
+tr|K1SXT7|K1SXT7_9ZZZZ -          2_oneless_3          -               0.25   12.0   0.0       2.7    8.6   0.0   2.1   2   0   0   2   2   2   0 Thioredoxin-disulfide reductase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_10316 PE=4 SV=1
+tr|K1RS09|K1RS09_9ZZZZ -          2_oneless_3          -               0.29   11.8   0.0      0.29   11.8   0.0   1.1   1   0   0   1   1   1   0 Protein containing Signal transduction response regulator, receiver region domain protein OS=human gut metagenome OX=408170 GN=LEA_17422 PE=4 SV=1
+tr|K1SNU4|K1SNU4_9ZZZZ -          2_oneless_3          -               0.57   10.8   0.0      0.69   10.5   0.0   1.1   1   0   0   1   1   1   0 NAD-dependent epimerase/dehydratase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_18632 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/75-80/2_oneless_3.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/75-80/search_2_oneless_3_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/75-80/2_oneless_3.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:38:35 2022
+# [ok]

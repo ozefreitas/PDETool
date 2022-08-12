@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A7U4R6|A7U4R6_9AGAM -          41_oneless_1         -           1.2e-145  468.5   7.5  1.4e-145  468.4   7.5   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Cytidia salicina OX=55344 GN=mnp PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/41_oneless_1.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/80-85/41_outseq_1.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/80-85/search_41_hmm_1_seq.tsv resources/Data/HMMs/HMM_reconstructed/80-85/41_oneless_1.hmm resources/Data/FASTA/HMM_outseqs/80-85/41_outseq_1.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:24 2022
+# [ok]

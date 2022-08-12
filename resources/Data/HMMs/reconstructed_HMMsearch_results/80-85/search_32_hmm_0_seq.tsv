@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|Q873X7|Q873X7_CERSU -          32_oneless_0         -           1.9e-272  888.5  16.1  2.1e-272  888.3  16.1   1.0   1   0   0   1   1   1   1 Peroxidase OS=Ceriporiopsis subvermispora OX=42742 GN=mnp4 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/32_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/80-85/32_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/80-85/search_32_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/80-85/32_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/80-85/32_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:22 2022
+# [ok]

@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1TNY2|K1TNY2_9ZZZZ -          41_oneless_0         -               0.53   11.6   0.0      0.58   11.4   0.0   1.2   1   0   0   1   1   1   0 ATP-dependent DNA helicase (Fragment) OS=human gut metagenome OX=408170 GN=LEA_08358 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/41_oneless_0.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/80-85/search_41_oneless_0_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/80-85/41_oneless_0.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:39:16 2022
+# [ok]

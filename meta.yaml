@@ -29,14 +29,14 @@ requirements:
 
 test:
   commands:
-    - PDETool.py -h
+    - plastedma.py -h
 
 about:
   home: https://github.com/pg42872/PDETool
   license: MIT license
   license_family: MIT
   license_file: LICENSE
-  summary: 'Plastic Enzymes Degrading for Metagenomic databases Analysis'
+  summary: 'Plastic Enzymes Degrading in Metagenomic databases Analysis'
   description: |
     PlastEDMA takes an input FASTA file with a variable number of aminoacidic
     sequences and performes a search against an considerable amount of Hidden 

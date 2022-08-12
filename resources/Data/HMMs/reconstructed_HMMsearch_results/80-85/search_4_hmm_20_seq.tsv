@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|I4K882|I4K882_9PSED -          4_oneless_20         -           3.4e-263  858.2   5.0  3.8e-263  858.0   5.0   1.0   1   0   0   1   1   1   1 FAD-dependent oxidoreductase OS=Pseudomonas lactis OX=1615674 GN=rubB PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/80-85/4_oneless_20.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/80-85/4_outseq_20.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/80-85/search_4_hmm_20_seq.tsv resources/Data/HMMs/HMM_reconstructed/80-85/4_oneless_20.hmm resources/Data/FASTA/HMM_outseqs/80-85/4_outseq_20.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:23 2022
+# [ok]

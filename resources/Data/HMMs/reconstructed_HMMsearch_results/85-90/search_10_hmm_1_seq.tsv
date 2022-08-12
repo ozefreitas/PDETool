@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A7U4Q1|A7U4Q1_PHLGI -          10_oneless_1         -           2.9e-144  464.1   4.2  3.2e-144  463.9   4.2   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Phlebiopsis gigantea OX=82310 GN=mnp PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/85-90/10_oneless_1.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/85-90/10_outseq_1.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/85-90/search_10_hmm_1_seq.tsv resources/Data/HMMs/HMM_reconstructed/85-90/10_oneless_1.hmm resources/Data/FASTA/HMM_outseqs/85-90/10_outseq_1.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:24 2022
+# [ok]

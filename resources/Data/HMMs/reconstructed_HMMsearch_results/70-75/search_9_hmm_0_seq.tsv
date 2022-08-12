@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A8E2DLB8|A0A8E2DLB8_9APHY -          9_oneless_0          -           3.8e-280  913.9  22.7  4.3e-280  913.8  22.7   1.0   1   0   0   1   1   1   1 Peroxidase OS=Obba rivulosa OX=1052685 GN=OBBRIDRAFT_729972 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/70-75/9_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/70-75/9_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/70-75/search_9_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/70-75/9_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/70-75/9_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:18 2022
+# [ok]

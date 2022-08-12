@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|M4CYC3|M4CYC3_BRARP -          119_oneless_7        -           1.1e-232  757.0  25.6  1.2e-232  756.8  25.6   1.0   1   0   0   1   1   1   1 Peroxidase OS=Brassica rapa subsp. pekinensis OX=51351 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/119_oneless_7.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/119_outseq_7.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_119_hmm_7_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/119_oneless_7.hmm resources/Data/FASTA/HMM_outseqs/60-65/119_outseq_7.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:09 2022
+# [ok]

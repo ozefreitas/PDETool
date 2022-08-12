@@ -1,0 +1,15 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1SJQ7|K1SJQ7_9ZZZZ -          51_oneless_0         -               0.42   12.8   0.1       1.1   11.5   0.1   1.7   1   0   0   1   1   1   0 PTS system D-fructose-specific IIA component (Fragment) OS=human gut metagenome OX=408170 GN=LEA_15251 PE=4 SV=1
+tr|K1S2M0|K1S2M0_9ZZZZ -          51_oneless_0         -               0.51   12.5   0.0      0.91   11.7   0.0   1.4   1   0   0   1   1   1   0 Dak1_2 domain-containing protein OS=human gut metagenome OX=408170 GN=LEA_15606 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/70-75/51_oneless_0.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/70-75/search_51_oneless_0_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/70-75/51_oneless_0.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:37:43 2022
+# [ok]

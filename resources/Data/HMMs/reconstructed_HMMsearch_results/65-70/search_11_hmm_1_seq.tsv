@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A6A4P7V2|A0A6A4P7V2_LUPAL -          11_oneless_1         -           3.3e-257  840.0  23.8  1.6e-213  695.9  15.2   2.0   1   1   1   2   2   2   2 Peroxidase OS=Lupinus albus OX=3870 GN=Lalb_Chr18g0057901 PE=3 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/11_oneless_1.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/65-70/11_outseq_1.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/65-70/search_11_hmm_1_seq.tsv resources/Data/HMMs/HMM_reconstructed/65-70/11_oneless_1.hmm resources/Data/FASTA/HMM_outseqs/65-70/11_outseq_1.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:15 2022
+# [ok]

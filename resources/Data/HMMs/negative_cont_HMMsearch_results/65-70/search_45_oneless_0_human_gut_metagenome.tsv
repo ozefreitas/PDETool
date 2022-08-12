@@ -1,0 +1,15 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|K1UNH9|K1UNH9_9ZZZZ -          45_oneless_0         -               0.14   13.1   1.3      0.23   12.4   1.3   1.2   1   0   0   1   1   1   0 Chromosomal replication initiator protein DnaA (Fragment) OS=human gut metagenome OX=408170 GN=LEA_02159 PE=3 SV=1
+tr|W1XK81|W1XK81_9ZZZZ -          45_oneless_0         -               0.18   12.7   0.0      0.21   12.5   0.0   1.0   1   0   0   1   1   1   0 Uncharacterized protein (Fragment) OS=human gut metagenome OX=408170 GN=Q604_UNBC14931G0001 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/45_oneless_0.hmm
+# Target file:     resources/Data/FASTA/human_gut_metagenome.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/negative_cont_HMMsearch_results/65-70/search_45_oneless_0_human_gut_metagenome.tsv resources/Data/HMMs/HMM_reconstructed/65-70/45_oneless_0.hmm resources/Data/FASTA/human_gut_metagenome.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Fri Aug 12 09:37:09 2022
+# [ok]

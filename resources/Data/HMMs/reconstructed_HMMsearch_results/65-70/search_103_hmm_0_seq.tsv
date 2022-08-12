@@ -1,0 +1,14 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A2P1AFW2|A0A2P1AFW2_9FUNG -          103_oneless_0        -            1.7e-92  293.1   9.0   1.9e-92  293.0   9.0   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=uncultured fungus OX=175245 PE=2 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/103_oneless_0.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/65-70/103_outseq_0.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/65-70/search_103_hmm_0_seq.tsv resources/Data/HMMs/HMM_reconstructed/65-70/103_oneless_0.hmm resources/Data/FASTA/HMM_outseqs/65-70/103_outseq_0.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:15 2022
+# [ok]

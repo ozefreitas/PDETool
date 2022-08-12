@@ -1,0 +1,14 @@
+#                                                                 --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name          accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#  ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|Q20G16|Q20G16_PINTB -          267_oneless_11       -            4.6e-37  112.2   0.6   4.9e-37  112.1   0.6   1.0   1   0   0   1   1   1   1 Peroxidase (Fragment) OS=Pinus tabuliformis OX=88731 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/267_oneless_11.hmm
+# Target file:     resources/Data/FASTA/HMM_outseqs/60-65/267_outseq_11.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/reconstructed_HMMsearch_results/60-65/search_267_hmm_11_seq.tsv resources/Data/HMMs/HMM_reconstructed/60-65/267_oneless_11.hmm resources/Data/FASTA/HMM_outseqs/60-65/267_outseq_11.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Thu Aug 11 14:28:12 2022
+# [ok]
