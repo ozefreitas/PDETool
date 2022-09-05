@@ -1,0 +1,15 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A3R9GU26|A0A3R9GU26_9HYPH -          72_oneless_0         -           2.6e-182  600.6   4.1    3e-182  600.5   4.1   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase OS=Rhizobium pisi OX=574561 GN=E0J16_32695 PE=4 SV=1
+tr|A0A7W6B7Y5|A0A7W6B7Y5_9HYPH -          72_oneless_0         -           2.9e-182  600.5   4.0  3.2e-182  600.3   4.0   1.0   1   0   0   1   1   1   1 Putative dienelactone hydrolase OS=Rhizobium fabae OX=573179 GN=GGQ65_004649 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/65-70/72_oneless_0.hmm
+# Target file:     resources/Data/HMMs/other_seqs_HMMsearch_results/65-70/72_out.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/other_seqs_HMMsearch_results/65-70/search_oneless_0.hmm_clustout72.tsv resources/Data/HMMs/HMM_reconstructed/65-70/72_oneless_0.hmm resources/Data/HMMs/other_seqs_HMMsearch_results/65-70/72_out.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Mon Aug 15 12:31:44 2022
+# [ok]

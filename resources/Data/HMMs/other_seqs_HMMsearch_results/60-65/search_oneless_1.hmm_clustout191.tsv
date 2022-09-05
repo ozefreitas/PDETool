@@ -1,0 +1,19 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A399TA14|A0A399TA14_9MICO -          191_oneless_1        -            2.2e-55  183.4   7.0   2.6e-55  183.2   7.0   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase family protein OS=Clavibacter sp. CFBP 8615 OX=2301718 GN=DZG00_06815 PE=4 SV=1
+tr|A0A8I0S8T0|A0A8I0S8T0_9MICO -          191_oneless_1        -            6.4e-55  181.9   6.7   7.4e-55  181.7   6.7   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase family protein OS=Clavibacter michiganensis subsp. phaseoli OX=1734031 GN=ITJ42_01140 PE=4 SV=1
+tr|M5B8Q1|M5B8Q1_9MICO         -          191_oneless_1        -            3.2e-54  179.6   8.2   3.9e-54  179.3   8.2   1.0   1   0   0   1   1   1   1 Putative dienelactone hydrolase OS=Clavibacter michiganensis subsp. nebraskensis NCPPB 2581 OX=1097677 GN=CMN_01498 PE=4 SV=1
+tr|A0A8F5W1Z5|A0A8F5W1Z5_CLAMM -          191_oneless_1        -            6.7e-54  178.5   7.3   7.6e-54  178.3   7.3   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase family protein OS=Clavibacter michiganensis subsp. michiganensis OX=33013 GN=KN200_07605 PE=4 SV=1
+tr|A0A399NX42|A0A399NX42_9MICO -          191_oneless_1        -            1.4e-53  177.5   7.1   1.7e-53  177.2   7.1   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase family protein OS=Clavibacter michiganensis OX=28447 GN=DZF96_05180 PE=4 SV=1
+tr|A0A399NAG9|A0A399NAG9_9MICO -          191_oneless_1        -            6.2e-53  175.4   7.4   7.3e-53  175.1   7.4   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase family protein OS=Clavibacter michiganensis OX=28447 GN=DZF95_10865 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/191_oneless_1.hmm
+# Target file:     resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/191_out.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/search_oneless_1.hmm_clustout191.tsv resources/Data/HMMs/HMM_reconstructed/60-65/191_oneless_1.hmm resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/191_out.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Mon Aug 15 12:25:24 2022
+# [ok]

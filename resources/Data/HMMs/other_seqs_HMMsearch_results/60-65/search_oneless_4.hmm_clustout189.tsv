@@ -1,0 +1,15 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|A0A842GTQ5|A0A842GTQ5_9NOCA -          189_oneless_4        -            1.3e-55  183.9   4.5   1.6e-55  183.6   4.5   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase family protein OS=Rhodococcus aetherivorans OX=191292 GN=H0B42_00780 PE=4 SV=1
+tr|A0A1Q8I864|A0A1Q8I864_9NOCA -          189_oneless_4        -            3.4e-55  182.5   4.0   4.4e-55  182.1   4.0   1.0   1   0   0   1   1   1   1 Dienelactone hydrolase OS=Rhodococcus sp. M8 OX=1925550 GN=BKE56_018635 PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/189_oneless_4.hmm
+# Target file:     resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/189_out.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/search_oneless_4.hmm_clustout189.tsv resources/Data/HMMs/HMM_reconstructed/60-65/189_oneless_4.hmm resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/189_out.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Mon Aug 15 12:25:23 2022
+# [ok]

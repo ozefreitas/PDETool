@@ -1,0 +1,13 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      resources/Data/HMMs/HMM_reconstructed/60-65/174_oneless_2.hmm
+# Target file:     resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/174_out.fasta
+# Option settings: hmmsearch --tblout resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/search_oneless_2.hmm_clustout174.tsv resources/Data/HMMs/HMM_reconstructed/60-65/174_oneless_2.hmm resources/Data/HMMs/other_seqs_HMMsearch_results/60-65/174_out.fasta 
+# Current dir:     /mnt/c/Users/jpsfr/OneDrive/Ambiente de Trabalho/PlastEDMA
+# Date:            Mon Aug 15 12:25:21 2022
+# [ok]
